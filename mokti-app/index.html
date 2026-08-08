@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mokti — quiet fashion, meaningful words</title>
+<meta name="description" content="Mokti is a quiet place to write, read, and be honest — stories, quotes, real experiences, and a daily journal.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Hidden static form so Netlify's build bot can detect the real one below -->
+<form name="mokti-experience" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="text" name="name" />
+  <input type="text" name="contact" />
+  <textarea name="experience"></textarea>
+  <input type="text" name="consent" />
+</form>
+
+<div class="notebook">
+
+  <!-- Spiral binding / nav rail -->
+  <nav class="spine" aria-label="Sections">
+    <div class="spine-holes" aria-hidden="true"></div>
+    <div class="tabs">
+      <button class="tab active" data-target="home">Home</button>
+      <button class="tab" data-target="journal">Journal</button>
+      <button class="tab" data-target="quotes">Quotes</button>
+      <button class="tab" data-target="experience">Experience</button>
+      <button class="tab" data-target="stories">Stories</button>
+      <button class="tab" data-target="you">You</button>
+      <button class="tab" data-target="blog">Blog Post</button>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <!-- HOME -->
+    <section id="home" class="pane active">
+      <p class="eyebrow">mokti.in</p>
+      <h1 class="wordmark">Mokti</h1>
+      <p class="tagline">quiet fashion, meaningful words</p>
+      <p class="lede">A place to read what other people were too afraid to say out loud —<br>
+      and a page of your own, for whenever you need one.</p>
+      <div class="home-links">
+        <button class="linklike" data-target="journal">Start writing today's page →</button>
+        <button class="linklike" data-target="quotes">Read today's quotes →</button>
+      </div>
+    </section>
+
+    <!-- JOURNAL -->
+    <section id="journal" class="pane">
+      <p class="eyebrow">your page, today</p>
+      <h2>Journal</h2>
+      <p class="section-intro">Write whenever you open the app. Nothing saves anywhere but this device until you choose to share it.</p>
+
+      <div class="ruled-sheet">
+        <textarea id="journal-entry" placeholder="Start writing…" rows="8"></textarea>
+      </div>
+
+      <div class="journal-controls">
+        <label class="toggle">
+          <input type="checkbox" id="public-toggle">
+          <span class="toggle-track"><span class="toggle-thumb"></span></span>
+          <span class="toggle-label" id="toggle-label-text">Private</span>
+        </label>
+        <button id="save-entry" class="btn-ink">Save entry</button>
+      </div>
+
+      <div class="journal-list" id="journal-list">
+        <p class="empty-note">Your saved entries will appear here.</p>
+      </div>
+    </section>
+
+    <!-- QUOTES -->
+    <section id="quotes" class="pane">
+      <p class="eyebrow">free · Hindi + English</p>
+      <h2>Quotes</h2>
+      <p class="section-intro">Anyone can write here, and anyone can comment. No login needed.</p>
+
+      <div class="quote-feed" id="quote-feed">
+        <!-- seeded + public journal entries inserted by JS -->
+      </div>
+
+      <form id="quote-form" class="quote-form">
+        <textarea id="quote-input" placeholder="Likho kuch... / Write something..." rows="3" required></textarea>
+        <button type="submit" class="btn-ink">Post quote</button>
+      </form>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="pane">
+      <p class="eyebrow">my experience</p>
+      <h2>A life, in chapters</h2>
+      <p class="section-intro">First chapter is free. The rest unlock with a small one-time payment.</p>
+
+      <ol class="timeline">
+        <li class="chapter unlocked">
+          <span class="chapter-tag">Free</span>
+          <h3>When she was in college</h3>
+          <p>The first chapter — read it, no strings attached.</p>
+          <button class="linklike">Read chapter →</button>
+        </li>
+        <li class="chapter locked">
+          <span class="chapter-tag">₹49</span>
+          <h3>When she started her job</h3>
+          <p>Unlock this chapter and the ones after it.</p>
+          <a class="btn-ink" href="#" data-razorpay="experience" target="_blank" rel="noopener">Unlock — ₹49</a>
+        </li>
+        <li class="chapter locked">
+          <span class="chapter-tag">₹49</span>
+          <h3>When she got married</h3>
+        </li>
+        <li class="chapter locked">
+          <span class="chapter-tag">₹49</span>
+          <h3>When she separated</h3>
+        </li>
+        <li class="chapter locked">
+          <span class="chapter-tag">₹49</span>
+          <h3>When she rebuilt her community</h3>
+        </li>
+        <li class="chapter locked">
+          <span class="chapter-tag">₹49</span>
+          <h3>When she went on a solo trip</h3>
+        </li>
+      </ol>
+      <p class="fine-print">Payment is handled securely by Razorpay. After paying, your access link is emailed to you.</p>
+    </section>
+
+    <!-- STORIES -->
+    <section id="stories" class="pane">
+      <p class="eyebrow">paid · ₹99</p>
+      <h2>Stories</h2>
+      <p class="section-intro">Three stories. Unlock all of them for ₹99.</p>
+
+      <div class="story-grid">
+        <div class="story-card"><h3>Story One</h3><p>A short line to tease it, without giving it away.</p></div>
+        <div class="story-card"><h3>Story Two</h3><p>A short line to tease it, without giving it away.</p></div>
+        <div class="story-card"><h3>Story Three</h3><p>A short line to tease it, without giving it away.</p></div>
+      </div>
+      <a class="btn-ink" href="#" data-razorpay="stories" target="_blank" rel="noopener">Unlock all 3 — ₹99</a>
+    </section>
+
+    <!-- YOU -->
+    <section id="you" class="pane">
+      <p class="eyebrow">no one will judge you</p>
+      <h2>You</h2>
+      <p class="section-intro">Type your experience. Anything. Share your name, or don't — it's your call.</p>
+
+      <form name="mokti-experience" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="you-form" id="you-form">
+        <input type="hidden" name="form-name" value="mokti-experience" />
+        <p class="hidden-field"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+        <label class="anon-toggle">
+          <input type="checkbox" id="anon-check">
+          <span>Post anonymously</span>
+        </label>
+
+        <div id="identity-fields">
+          <input type="text" name="name" placeholder="Name">
+          <input type="text" name="contact" placeholder="Number or email">
+        </div>
+
+        <textarea name="experience" placeholder="Type your experience…" rows="6" required></textarea>
+
+        <label class="consent">
+          <input type="checkbox" name="consent" value="yes">
+          If you want, we can post your story under "Experience"
+        </label>
+
+        <button type="submit" class="btn-ink">Send</button>
+      </form>
+      <p class="form-note" id="you-note" hidden>Thank you — your words are safe with us. 🤍</p>
+    </section>
+
+    <!-- BLOG -->
+    <section id="blog" class="pane">
+      <p class="eyebrow">any topic</p>
+      <h2>Blog Post</h2>
+      <p class="section-intro">Business, finance, health, personal — anything worth writing about.</p>
+
+      <div class="blog-grid" id="blog-grid">
+        <article class="blog-card"><span class="chapter-tag">Personal</span><h3>Placeholder post title</h3><p>A line of preview text goes here.</p></article>
+        <article class="blog-card"><span class="chapter-tag">Finance</span><h3>Placeholder post title</h3><p>A line of preview text goes here.</p></article>
+        <article class="blog-card"><span class="chapter-tag">Health</span><h3>Placeholder post title</h3><p>A line of preview text goes here.</p></article>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>

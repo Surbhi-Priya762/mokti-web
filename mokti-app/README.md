@@ -1,0 +1,68 @@
+# Mokti — v1 Web App
+
+A working starting point for mokti.in: Home, Journal (private/public), Quotes, Experience (timeline + paywall), Stories (paywall), You (submission form), Blog Post.
+
+## Before you launch — 3 things to edit
+
+1. **Razorpay links** — open `app.js`, top of the file, and paste your real Payment Page/Link URLs in place of the placeholders for `stories` and `experience`.
+2. **Real content** — swap the placeholder story/blog text in `index.html` for your actual writing.
+3. **Your 3 stories + free chapter** — right now "Read chapter →" doesn't link anywhere real; wire it to wherever that content lives (a PDF, a private page, an email).
+
+## Important limitation — read this
+
+The Journal's private/public toggle currently saves to **this browser only** (localStorage). That means:
+- It works great as a personal daily-journal habit on your own phone.
+- "Public" entries only show up in the Quotes feed **on your own device** — they will NOT be visible to other visitors on the live site yet, because there's no shared database.
+
+To make Public entries actually visible to everyone (real community feature), you'll need a backend — the easiest add-on is **Supabase** (free tier, ~30 min to wire up) or **Firebase**. I can build that layer next once you've seen this version live and are happy with the direction.
+
+The **You** submission form is already fully real — it uses Netlify Forms, so submissions land directly in your Netlify dashboard inbox with no extra setup.
+
+---
+
+## Step-by-step: Launch on Netlify
+
+### 1. Put the code on GitHub
+1. Go to [github.com](https://github.com) → New repository → name it `mokti-web`.
+2. On your computer, download this project folder, then in a terminal inside it run:
+   ```
+   git init
+   git add .
+   git commit -m "Mokti v1"
+   git branch -M main
+   git remote add origin https://github.com/YOUR-USERNAME/mokti-web.git
+   git push -u origin main
+   ```
+   (No terminal? GitHub also lets you drag-and-drop the files directly into the repo via "Add file → Upload files".)
+
+### 2. Connect Netlify
+1. Go to [app.netlify.com](https://app.netlify.com) → sign in (GitHub login is easiest).
+2. Click **Add new site → Import an existing project**.
+3. Choose GitHub, then select the `mokti-web` repo.
+4. Build settings: leave **Build command blank**, **Publish directory** = `.` (already set in `netlify.toml`).
+5. Click **Deploy site**.
+
+Netlify gives you a live link immediately, like `random-name-123.netlify.app`.
+
+### 3. Connect your domain (mokti.in)
+1. In your new site → **Domain settings → Add a domain** → enter `mokti.in`.
+2. Netlify will show you DNS records (usually an A record + CNAME).
+3. Go to wherever you bought mokti.in (GoDaddy / Namecheap / etc.) → DNS settings → add those records.
+4. Wait 10 minutes–24 hours for DNS to propagate. Netlify auto-issues free HTTPS once it detects the domain is pointed correctly.
+
+### 4. Turn on form notifications
+1. In Netlify → **Forms** tab → you'll see `mokti-experience` listed once someone submits.
+2. Site settings → Forms → Form notifications → **Add notification → Email notification** → put in your email so you get pinged the moment someone shares their experience.
+
+### 5. Test before sharing the link
+- Submit a test entry through **You** → confirm it shows in Netlify's Forms tab.
+- Write a journal entry, mark it public, check it appears in Quotes (on the same device).
+- Click both "Unlock" buttons and confirm they go to your real Razorpay links.
+
+---
+
+## What to build next (in order I'd suggest)
+1. Real Razorpay links + real story/chapter content (today).
+2. Supabase backend so Public journal entries + Quotes are visible to *everyone*, not just you.
+3. Simple content-unlock-after-payment flow (email delivery to start, automated later).
+4. Blog Post section pulling from real posts instead of placeholders.
