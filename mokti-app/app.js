@@ -1,7 +1,8 @@
 // ---------- CONFIG: paste your real Razorpay Payment Page/Link URLs here ----------
 const RAZORPAY_LINKS = {
   stories: "https://rzp.io/l/PASTE-YOUR-STORIES-LINK",
-  experience: "https://rzp.io/l/PASTE-YOUR-EXPERIENCE-LINK"
+  experience: "https://rzp.io/l/PASTE-YOUR-EXPERIENCE-LINK",
+  ebook: "https://rzp.io/l/PASTE-YOUR-EBOOK-LINK"
 };
 document.querySelectorAll('[data-razorpay]').forEach(el => {
   const key = el.getAttribute('data-razorpay');
