@@ -148,6 +148,22 @@ youForm.addEventListener('submit', () => {
   document.getElementById('you-note').hidden = false;
 });
 
+// ---------- SERVICES: "Enquire" pre-fills the enquiry form ----------
+const enquiryService = document.getElementById('enquiry-service');
+const enquiryPackage = document.getElementById('enquiry-package');
+document.querySelectorAll('[data-enquire]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const [service, pkg] = btn.dataset.enquire.split('|');
+    enquiryService.value = service;
+    enquiryPackage.value = pkg;
+    document.getElementById('enquiry').scrollIntoView({behavior:'smooth'});
+  });
+});
+
+document.getElementById('enquiry-form').addEventListener('submit', () => {
+  document.getElementById('enquiry-note').hidden = false;
+});
+
 // ---------- INIT ----------
 renderEntries();
 renderQuoteFeedFull();
