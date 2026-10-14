@@ -2,11 +2,12 @@
 
 A working starting point for mokti.in: Home, Journal (private/public), Quotes, Experience (timeline + paywall), Stories (paywall), You (submission form), Blog Post.
 
-## Before you launch — 3 things to edit
+## Before you launch — 4 things to edit
 
 1. **Razorpay links** — open `app.js`, top of the file, and paste your real Payment Page/Link URLs in place of the placeholders for `stories` and `experience`.
 2. **Real content** — swap the placeholder story/blog text in `index.html` for your actual writing.
 3. **Your 3 stories + free chapter** — right now "Read chapter →" doesn't link anywhere real; wire it to wherever that content lives (a PDF, a private page, an email).
+4. **About, Contact, Terms, Refund and Privacy pages** — open `about.html`, `contact.html`, `terms.html`, `refund-policy.html` and `privacy-policy.html` and replace every highlighted `[FILL IN: …]` with your own details. Razorpay checks for these pages when it activates your account.
 
 ## Important limitation — read this
 
