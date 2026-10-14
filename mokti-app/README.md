@@ -1,6 +1,6 @@
 # Mokti — v1 Web App
 
-A working starting point for mokti.in: Home, Journal (private/public), Quotes, Experience (timeline + paywall), Stories (paywall), Ebooks (sales page for 2 books), You (submission form), Blog Post.
+The mokti.in website: a one-page site with a header menu (Home, Ebooks, Services, Writing, About, Contact). The home page covers a hero, the 2 ebooks, Services with an enquiry form, and a Writing area (Journal, Quotes, Experience, Stories, Share yours, Blog). The About, Contact, Terms, Refund and Privacy pages are separate HTML files that share the same header and footer. The header menu lives in `menu.js`, and the rest of the page logic is in `app.js`.
 
 ## Before you launch — 5 things to edit
 

@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mokti — quiet fashion, meaningful words</title>
-<meta name="description" content="Mokti is a quiet place to write, read, and be honest — stories, quotes, real experiences, and a daily journal.">
+<title>Mokti by Surbhi Priya: ebooks, websites, logos and t-shirt mockups</title>
+<meta name="description" content="Love stories by Surbhi Priya, plus websites, logo design and t-shirt mockups for small brands. Read, shop or start a project at mokti.in.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -31,141 +31,67 @@
   <textarea name="details"></textarea>
 </form>
 
-<div class="notebook">
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a class="brand" href="#top">Mokti<span class="brand-dot">.</span></a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <a href="#top">Home</a>
+      <a href="#ebooks">Ebooks</a>
+      <a href="#services">Services</a>
+      <a href="#writing">Writing</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a class="btn-ink nav-cta" href="#enquiry">Start a project</a>
+    </nav>
+  </div>
+</header>
 
-  <!-- Spiral binding / nav rail -->
-  <nav class="spine" aria-label="Sections">
-    <div class="spine-holes" aria-hidden="true"></div>
-    <div class="tabs">
-      <button class="tab active" data-target="home">Home</button>
-      <button class="tab" data-target="journal">Journal</button>
-      <button class="tab" data-target="quotes">Quotes</button>
-      <button class="tab" data-target="experience">Experience</button>
-      <button class="tab" data-target="stories">Stories</button>
-      <button class="tab" data-target="ebook">Ebook</button>
-      <button class="tab" data-target="you">You</button>
-      <button class="tab" data-target="blog">Blog Post</button>
-      <button class="tab" data-target="services">Services</button>
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <p class="eyebrow">author · designer · mokti.in</p>
+        <h1>Stories that stay with you. Designs that speak for you.</h1>
+        <p class="hero-lede">I'm Surbhi Priya. I write honest love stories, and I design websites, logos and t-shirt mockups for small brands.</p>
+        <div class="hero-actions">
+          <a class="btn-ink btn-lg" href="#ebooks">Browse ebooks</a>
+          <a class="btn-outline btn-lg" href="#services">See services</a>
+        </div>
+      </div>
+      <div class="hero-books" aria-hidden="true">
+        <img class="hero-book hero-book-back" src="cover-was-that-love.jpg" alt="" width="519" height="610">
+        <img class="hero-book hero-book-front" src="cover-coincidence.jpg" alt="" width="410" height="613">
+      </div>
     </div>
-  </nav>
+  </section>
 
-  <main class="page">
-
-    <!-- HOME -->
-    <section id="home" class="pane active">
-      <p class="eyebrow">mokti.in</p>
-      <h1 class="wordmark">Mokti</h1>
-      <p class="tagline">quiet fashion, meaningful words</p>
-      <p class="lede">A place to read what other people were too afraid to say out loud —<br>
-      and a page of your own, for whenever you need one.</p>
-      <div class="home-links">
-        <button class="linklike" data-target="journal">Start writing today's page →</button>
-        <button class="linklike" data-target="quotes">Read today's quotes →</button>
-        <button class="linklike" data-target="ebook">Read the ebooks →</button>
-        <button class="linklike" data-target="services">Work with me: websites, logos, t-shirt mockups →</button>
+  <!-- WHAT I DO -->
+  <section class="section section-tight">
+    <div class="container">
+      <div class="offer-grid">
+        <a class="offer" href="#ebooks"><span class="offer-num">01</span><h3>Ebooks</h3><p>Two love stories, instant download.</p></a>
+        <a class="offer" href="#service-website"><span class="offer-num">02</span><h3>Websites</h3><p>Clean, fast sites for brands and shops.</p></a>
+        <a class="offer" href="#service-logo"><span class="offer-num">03</span><h3>Logo design</h3><p>A logo that feels like you.</p></a>
+        <a class="offer" href="#service-tshirt"><span class="offer-num">04</span><h3>T-shirt mockups</h3><p>Store-ready images of your designs.</p></a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- JOURNAL -->
-    <section id="journal" class="pane">
-      <p class="eyebrow">your page, today</p>
-      <h2>Journal</h2>
-      <p class="section-intro">Write whenever you open the app. Nothing saves anywhere but this device until you choose to share it.</p>
-
-      <div class="ruled-sheet">
-        <textarea id="journal-entry" placeholder="Start writing…" rows="8"></textarea>
+  <!-- EBOOKS -->
+  <section class="section section-alt" id="ebooks">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">ebooks · instant download</p>
+        <h2>Read my stories</h2>
+        <p class="section-intro">Two love stories in Hindi-English, written for anyone who has ever wondered what love really was.</p>
       </div>
-
-      <div class="journal-controls">
-        <label class="toggle">
-          <input type="checkbox" id="public-toggle">
-          <span class="toggle-track"><span class="toggle-thumb"></span></span>
-          <span class="toggle-label" id="toggle-label-text">Private</span>
-        </label>
-        <button id="save-entry" class="btn-ink">Save entry</button>
-      </div>
-
-      <div class="journal-list" id="journal-list">
-        <p class="empty-note">Your saved entries will appear here.</p>
-      </div>
-    </section>
-
-    <!-- QUOTES -->
-    <section id="quotes" class="pane">
-      <p class="eyebrow">free · Hindi + English</p>
-      <h2>Quotes</h2>
-      <p class="section-intro">Anyone can write here, and anyone can comment. No login needed.</p>
-
-      <div class="quote-feed" id="quote-feed">
-        <!-- seeded + public journal entries inserted by JS -->
-      </div>
-
-      <form id="quote-form" class="quote-form">
-        <textarea id="quote-input" placeholder="Likho kuch... / Write something..." rows="3" required></textarea>
-        <button type="submit" class="btn-ink">Post quote</button>
-      </form>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience" class="pane">
-      <p class="eyebrow">my experience</p>
-      <h2>A life, in chapters</h2>
-      <p class="section-intro">First chapter is free. The rest unlock with a small one-time payment.</p>
-
-      <ol class="timeline">
-        <li class="chapter unlocked">
-          <span class="chapter-tag">Free</span>
-          <h3>When she was in college</h3>
-          <p>The first chapter — read it, no strings attached.</p>
-          <button class="linklike">Read chapter →</button>
-        </li>
-        <li class="chapter locked">
-          <span class="chapter-tag">₹49</span>
-          <h3>When she started her job</h3>
-          <p>Unlock this chapter and the ones after it.</p>
-          <a class="btn-ink" href="#" data-razorpay="experience" target="_blank" rel="noopener">Unlock — ₹49</a>
-        </li>
-        <li class="chapter locked">
-          <span class="chapter-tag">₹49</span>
-          <h3>When she got married</h3>
-        </li>
-        <li class="chapter locked">
-          <span class="chapter-tag">₹49</span>
-          <h3>When she separated</h3>
-        </li>
-        <li class="chapter locked">
-          <span class="chapter-tag">₹49</span>
-          <h3>When she rebuilt her community</h3>
-        </li>
-        <li class="chapter locked">
-          <span class="chapter-tag">₹49</span>
-          <h3>When she went on a solo trip</h3>
-        </li>
-      </ol>
-      <p class="fine-print">Payment is handled securely by Razorpay. After paying, your access link is emailed to you.</p>
-    </section>
-
-    <!-- STORIES -->
-    <section id="stories" class="pane">
-      <p class="eyebrow">paid · ₹99</p>
-      <h2>Stories</h2>
-      <p class="section-intro">Three stories. Unlock all of them for ₹99.</p>
-
-      <div class="story-grid">
-        <div class="story-card"><h3>Story One</h3><p>A short line to tease it, without giving it away.</p></div>
-        <div class="story-card"><h3>Story Two</h3><p>A short line to tease it, without giving it away.</p></div>
-        <div class="story-card"><h3>Story Three</h3><p>A short line to tease it, without giving it away.</p></div>
-      </div>
-      <a class="btn-ink" href="#" data-razorpay="stories" target="_blank" rel="noopener">Unlock all 3 — ₹99</a>
-    </section>
-
-    <!-- EBOOK -->
-    <section id="ebook" class="pane">
-      <p class="eyebrow">ebooks · instant download</p>
-      <h2>Ebooks</h2>
-      <p class="section-intro">Two love stories by Surbhi Priya. Read them on any phone, tablet or laptop.</p>
-
-      <article class="ebook">
+      <div class="ebook-grid">
+      <article class="ebook-card">
         <img class="ebook-cover" src="cover-was-that-love.jpg" alt="Cover of Was That Love Or Just…??? by Surbhi Priya" width="519" height="610" loading="lazy">
 
         <div class="ebook-details">
@@ -179,8 +105,7 @@
           <a class="btn-ink" href="#" data-razorpay="ebookWasThatLove" target="_blank" rel="noopener">Buy this ebook — ₹199</a>
         </div>
       </article>
-
-      <article class="ebook">
+      <article class="ebook-card">
         <img class="ebook-cover" src="cover-coincidence.jpg" alt="Cover of When Coincidence Felt Like Love by Surbhi Priya" width="410" height="613" loading="lazy">
 
         <div class="ebook-details">
@@ -195,61 +120,19 @@
           <a class="btn-ink" href="#" data-razorpay="ebookCoincidence" target="_blank" rel="noopener">Buy this ebook — ₹199</a>
         </div>
       </article>
-
-      <p class="fine-print">Payment is handled securely by Razorpay. Your download link is emailed to you right after you pay.</p>
-    </section>
-
-    <!-- YOU -->
-    <section id="you" class="pane">
-      <p class="eyebrow">no one will judge you</p>
-      <h2>You</h2>
-      <p class="section-intro">Type your experience. Anything. Share your name, or don't — it's your call.</p>
-
-      <form name="mokti-experience" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="you-form" id="you-form">
-        <input type="hidden" name="form-name" value="mokti-experience" />
-        <p class="hidden-field"><label>Don't fill this out: <input name="bot-field" /></label></p>
-
-        <label class="anon-toggle">
-          <input type="checkbox" id="anon-check">
-          <span>Post anonymously</span>
-        </label>
-
-        <div id="identity-fields">
-          <input type="text" name="name" placeholder="Name">
-          <input type="text" name="contact" placeholder="Number or email">
-        </div>
-
-        <textarea name="experience" placeholder="Type your experience…" rows="6" required></textarea>
-
-        <label class="consent">
-          <input type="checkbox" name="consent" value="yes">
-          If you want, we can post your story under "Experience"
-        </label>
-
-        <button type="submit" class="btn-ink">Send</button>
-      </form>
-      <p class="form-note" id="you-note" hidden>Thank you — your words are safe with us. 🤍</p>
-    </section>
-
-    <!-- BLOG -->
-    <section id="blog" class="pane">
-      <p class="eyebrow">any topic</p>
-      <h2>Blog Post</h2>
-      <p class="section-intro">Business, finance, health, personal — anything worth writing about.</p>
-
-      <div class="blog-grid" id="blog-grid">
-        <article class="blog-card"><span class="chapter-tag">Personal</span><h3>Placeholder post title</h3><p>A line of preview text goes here.</p></article>
-        <article class="blog-card"><span class="chapter-tag">Finance</span><h3>Placeholder post title</h3><p>A line of preview text goes here.</p></article>
-        <article class="blog-card"><span class="chapter-tag">Health</span><h3>Placeholder post title</h3><p>A line of preview text goes here.</p></article>
       </div>
-    </section>
+      <p class="fine-print">Payment is handled securely by Razorpay. Your download link is emailed to you right after you pay.</p>
+    </div>
+  </section>
 
-    <!-- SERVICES -->
-    <section id="services" class="pane">
-      <p class="eyebrow">work with me</p>
-      <h2>Services</h2>
-      <p class="section-intro">Websites, logos and t-shirt mockups, made with care. Pick a package or just tell me what you need.</p>
-
+  <!-- SERVICES -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">work with me</p>
+        <h2>Services</h2>
+        <p class="section-intro">Websites, logos and t-shirt mockups, made with care. Pick a package or just tell me what you need.</p>
+      </div>
       <article class="service" id="service-website">
         <p class="eyebrow">service 01</p>
         <h3>Website creation</h3>
@@ -281,7 +164,6 @@
           <figure class="portfolio-item"><div class="portfolio-thumb">Add image</div><figcaption>Project name</figcaption></figure>
         </div>
       </article>
-
       <article class="service" id="service-logo">
         <p class="eyebrow">service 02</p>
         <h3>Logo design</h3>
@@ -313,7 +195,6 @@
           <figure class="portfolio-item"><div class="portfolio-thumb">Add image</div><figcaption>Client name</figcaption></figure>
         </div>
       </article>
-
       <article class="service" id="service-tshirt">
         <p class="eyebrow">service 03</p>
         <h3>T-shirt mockups</h3>
@@ -384,21 +265,205 @@
         </form>
         <p class="form-note" id="enquiry-note" hidden>Thank you, I'll get back to you soon. 🤍</p>
       </div>
-    </section>
-    <footer class="site-footer">
-      <nav aria-label="Site information">
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-        <a href="terms.html">Terms</a>
-        <a href="refund-policy.html">Refund Policy</a>
-        <a href="privacy-policy.html">Privacy Policy</a>
-      </nav>
-      <p class="footer-note">© 2026 Mokti · mokti.in</p>
-    </footer>
+    </div>
+  </section>
 
-  </main>
-</div>
+  <!-- WRITING (journal, quotes, experience, stories, share, blog) -->
+  <section class="section section-alt" id="writing">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">mokti · quiet fashion, meaningful words</p>
+        <h2>Writing</h2>
+        <p class="section-intro">A quiet place to read what people were too afraid to say out loud, and a page of your own whenever you need one.</p>
+      </div>
+      <div class="writing-tabs" role="tablist" aria-label="Writing sections">
+        <button class="tab active" data-target="journal">Journal</button>
+        <button class="tab" data-target="quotes">Quotes</button>
+        <button class="tab" data-target="experience">Experience</button>
+        <button class="tab" data-target="stories">Stories</button>
+        <button class="tab" data-target="you">Share yours</button>
+        <button class="tab" data-target="blog">Blog</button>
+      </div>
+      <div class="writing-panel">
+        <!-- JOURNAL -->
+        <section id="journal" class="pane active">
+          <p class="eyebrow">your page, today</p>
+          <h3 class="pane-title">Journal</h3>
+          <p class="section-intro">Write whenever you open the app. Nothing saves anywhere but this device until you choose to share it.</p>
 
+          <div class="ruled-sheet">
+            <textarea id="journal-entry" placeholder="Start writing…" rows="8"></textarea>
+          </div>
+
+          <div class="journal-controls">
+            <label class="toggle">
+              <input type="checkbox" id="public-toggle">
+              <span class="toggle-track"><span class="toggle-thumb"></span></span>
+              <span class="toggle-label" id="toggle-label-text">Private</span>
+            </label>
+            <button id="save-entry" class="btn-ink">Save entry</button>
+          </div>
+
+          <div class="journal-list" id="journal-list">
+            <p class="empty-note">Your saved entries will appear here.</p>
+          </div>
+        </section>
+
+        <!-- QUOTES -->
+        <section id="quotes" class="pane">
+          <p class="eyebrow">free · Hindi + English</p>
+          <h3 class="pane-title">Quotes</h3>
+          <p class="section-intro">Anyone can write here, and anyone can comment. No login needed.</p>
+
+          <div class="quote-feed" id="quote-feed">
+            <!-- seeded + public journal entries inserted by JS -->
+          </div>
+
+          <form id="quote-form" class="quote-form">
+            <textarea id="quote-input" placeholder="Likho kuch... / Write something..." rows="3" required></textarea>
+            <button type="submit" class="btn-ink">Post quote</button>
+          </form>
+        </section>
+
+        <!-- EXPERIENCE -->
+        <section id="experience" class="pane">
+          <p class="eyebrow">my experience</p>
+          <h3 class="pane-title">A life, in chapters</h3>
+          <p class="section-intro">First chapter is free. The rest unlock with a small one-time payment.</p>
+
+          <ol class="timeline">
+            <li class="chapter unlocked">
+              <span class="chapter-tag">Free</span>
+              <h3>When she was in college</h3>
+              <p>The first chapter — read it, no strings attached.</p>
+              <button class="linklike">Read chapter →</button>
+            </li>
+            <li class="chapter locked">
+              <span class="chapter-tag">₹49</span>
+              <h3>When she started her job</h3>
+              <p>Unlock this chapter and the ones after it.</p>
+              <a class="btn-ink" href="#" data-razorpay="experience" target="_blank" rel="noopener">Unlock — ₹49</a>
+            </li>
+            <li class="chapter locked">
+              <span class="chapter-tag">₹49</span>
+              <h3>When she got married</h3>
+            </li>
+            <li class="chapter locked">
+              <span class="chapter-tag">₹49</span>
+              <h3>When she separated</h3>
+            </li>
+            <li class="chapter locked">
+              <span class="chapter-tag">₹49</span>
+              <h3>When she rebuilt her community</h3>
+            </li>
+            <li class="chapter locked">
+              <span class="chapter-tag">₹49</span>
+              <h3>When she went on a solo trip</h3>
+            </li>
+          </ol>
+          <p class="fine-print">Payment is handled securely by Razorpay. After paying, your access link is emailed to you.</p>
+        </section>
+
+        <!-- STORIES -->
+        <section id="stories" class="pane">
+          <p class="eyebrow">paid · ₹99</p>
+          <h3 class="pane-title">Stories</h3>
+          <p class="section-intro">Three stories. Unlock all of them for ₹99.</p>
+
+          <div class="story-grid">
+            <div class="story-card"><h3>Story One</h3><p>A short line to tease it, without giving it away.</p></div>
+            <div class="story-card"><h3>Story Two</h3><p>A short line to tease it, without giving it away.</p></div>
+            <div class="story-card"><h3>Story Three</h3><p>A short line to tease it, without giving it away.</p></div>
+          </div>
+          <a class="btn-ink" href="#" data-razorpay="stories" target="_blank" rel="noopener">Unlock all 3 — ₹99</a>
+        </section>
+
+        <!-- YOU -->
+        <section id="you" class="pane">
+          <p class="eyebrow">no one will judge you</p>
+          <h3 class="pane-title">You</h3>
+          <p class="section-intro">Type your experience. Anything. Share your name, or don't — it's your call.</p>
+
+          <form name="mokti-experience" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="you-form" id="you-form">
+            <input type="hidden" name="form-name" value="mokti-experience" />
+            <p class="hidden-field"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+            <label class="anon-toggle">
+              <input type="checkbox" id="anon-check">
+              <span>Post anonymously</span>
+            </label>
+
+            <div id="identity-fields">
+              <input type="text" name="name" placeholder="Name">
+              <input type="text" name="contact" placeholder="Number or email">
+            </div>
+
+            <textarea name="experience" placeholder="Type your experience…" rows="6" required></textarea>
+
+            <label class="consent">
+              <input type="checkbox" name="consent" value="yes">
+              If you want, we can post your story under "Experience"
+            </label>
+
+            <button type="submit" class="btn-ink">Send</button>
+          </form>
+          <p class="form-note" id="you-note" hidden>Thank you — your words are safe with us. 🤍</p>
+        </section>
+
+        <!-- BLOG -->
+        <section id="blog" class="pane">
+          <p class="eyebrow">any topic</p>
+          <h3 class="pane-title">Blog Post</h3>
+          <p class="section-intro">Business, finance, health, personal — anything worth writing about.</p>
+
+          <div class="blog-grid" id="blog-grid">
+            <article class="blog-card"><span class="chapter-tag">Personal</span><h3>Placeholder post title</h3><p>A line of preview text goes here.</p></article>
+            <article class="blog-card"><span class="chapter-tag">Finance</span><h3>Placeholder post title</h3><p>A line of preview text goes here.</p></article>
+            <article class="blog-card"><span class="chapter-tag">Health</span><h3>Placeholder post title</h3><p>A line of preview text goes here.</p></article>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-band">
+    <div class="container cta-inner">
+      <h2>Have a project in mind?</h2>
+      <p>Tell me what you need and I'll reply with a quote.</p>
+      <a class="btn-light btn-lg" href="#enquiry">Start a project</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <a class="brand" href="#top">Mokti<span class="brand-dot">.</span></a>
+      <p class="footer-tag">Love stories and design by Surbhi Priya.</p>
+    </div>
+    <nav aria-label="Explore">
+      <h4>Explore</h4>
+      <a href="#ebooks">Ebooks</a>
+      <a href="#services">Services</a>
+      <a href="#writing">Writing</a>
+      <a href="#enquiry">Start a project</a>
+    </nav>
+    <nav aria-label="Site information">
+      <h4>Information</h4>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="terms.html">Terms</a>
+      <a href="refund-policy.html">Refund Policy</a>
+      <a href="privacy-policy.html">Privacy Policy</a>
+    </nav>
+  </div>
+  <div class="container footer-bottom">© 2026 Mokti · mokti.in</div>
+</footer>
+
+<script src="menu.js"></script>
 <script src="app.js"></script>
 </body>
 </html>

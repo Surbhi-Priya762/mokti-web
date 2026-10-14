@@ -10,22 +10,16 @@ document.querySelectorAll('[data-razorpay]').forEach(el => {
   if (RAZORPAY_LINKS[key]) el.href = RAZORPAY_LINKS[key];
 });
 
-// ---------- TAB NAVIGATION ----------
-const tabs = document.querySelectorAll('.tab');
-const panes = document.querySelectorAll('.pane');
+// ---------- WRITING TABS (Journal, Quotes, Experience, ...) ----------
+const tabs = document.querySelectorAll('.writing-tabs .tab');
+const panes = document.querySelectorAll('.writing-panel .pane');
 
 function showTab(target){
   tabs.forEach(t => t.classList.toggle('active', t.dataset.target === target));
   panes.forEach(p => p.classList.toggle('active', p.id === target));
-  window.scrollTo({top:0, behavior:'smooth'});
 }
 
 tabs.forEach(tab => tab.addEventListener('click', () => showTab(tab.dataset.target)));
-document.querySelectorAll('[data-target]').forEach(el => {
-  if(!el.classList.contains('tab')){
-    el.addEventListener('click', () => showTab(el.dataset.target));
-  }
-});
 
 // ---------- JOURNAL (localStorage, this device only) ----------
 const STORAGE_KEY = 'mokti_journal_entries';
