@@ -1,29 +1,25 @@
 // ---------- CONFIG: paste your real Razorpay Payment Page/Link URLs here ----------
 const RAZORPAY_LINKS = {
   stories: "https://rzp.io/l/PASTE-YOUR-STORIES-LINK",
-  experience: "https://rzp.io/l/PASTE-YOUR-EXPERIENCE-LINK"
+  experience: "https://rzp.io/l/PASTE-YOUR-EXPERIENCE-LINK",
+  ebookWasThatLove: "https://rzp.io/l/PASTE-YOUR-WAS-THAT-LOVE-LINK",
+  ebookCoincidence: "https://rzp.io/l/PASTE-YOUR-COINCIDENCE-LINK"
 };
 document.querySelectorAll('[data-razorpay]').forEach(el => {
   const key = el.getAttribute('data-razorpay');
   if (RAZORPAY_LINKS[key]) el.href = RAZORPAY_LINKS[key];
 });
 
-// ---------- TAB NAVIGATION ----------
-const tabs = document.querySelectorAll('.tab');
-const panes = document.querySelectorAll('.pane');
+// ---------- WRITING TABS (Journal, Quotes, Experience, ...) ----------
+const tabs = document.querySelectorAll('.writing-tabs .tab');
+const panes = document.querySelectorAll('.writing-panel .pane');
 
 function showTab(target){
   tabs.forEach(t => t.classList.toggle('active', t.dataset.target === target));
   panes.forEach(p => p.classList.toggle('active', p.id === target));
-  window.scrollTo({top:0, behavior:'smooth'});
 }
 
 tabs.forEach(tab => tab.addEventListener('click', () => showTab(tab.dataset.target)));
-document.querySelectorAll('[data-target]').forEach(el => {
-  if(!el.classList.contains('tab')){
-    el.addEventListener('click', () => showTab(el.dataset.target));
-  }
-});
 
 // ---------- JOURNAL (localStorage, this device only) ----------
 const STORAGE_KEY = 'mokti_journal_entries';

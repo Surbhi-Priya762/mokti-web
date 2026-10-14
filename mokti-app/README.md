@@ -1,12 +1,14 @@
 # Mokti — v1 Web App
 
-A working starting point for mokti.in: Home, Journal (private/public), Quotes, Experience (timeline + paywall), Stories (paywall), You (submission form), Blog Post.
+The mokti.in website: a one-page site with a header menu (Home, Ebooks, Services, Writing, About, Contact). The home page covers a hero, the 2 ebooks, Services with an enquiry form, and a Writing area (Journal, Quotes, Experience, Stories, Share yours, Blog). The About, Contact, Terms, Refund and Privacy pages are separate HTML files that share the same header and footer. The header menu lives in `menu.js`, and the rest of the page logic is in `app.js`.
 
-## Before you launch — 3 things to edit
+## Before you launch — 5 things to edit
 
-1. **Razorpay links** — open `app.js`, top of the file, and paste your real Payment Page/Link URLs in place of the placeholders for `stories` and `experience`.
+1. **Razorpay links** — open `app.js`, top of the file, and paste your real Payment Page/Link URLs in place of the placeholders for `stories`, `experience`, `ebookWasThatLove` and `ebookCoincidence`.
 2. **Real content** — swap the placeholder story/blog text in `index.html` for your actual writing.
-3. **Your 3 stories + free chapter** — right now "Read chapter →" doesn't link anywhere real; wire it to wherever that content lives (a PDF, a private page, an email).
+3. **Ebook prices** — both books are listed at ₹199 in `index.html` (the `EBOOK` section). Change the price and the button text if you want something else. Never put the ebook PDFs in this repo: the site is public, so anyone could download them for free.
+4. **Your 3 stories + free chapter** — right now "Read chapter →" doesn't link anywhere real; wire it to wherever that content lives (a PDF, a private page, an email).
+5. **About, Contact, Terms, Refund and Privacy pages** — open `about.html`, `contact.html`, `terms.html`, `refund-policy.html` and `privacy-policy.html` and replace every highlighted `[FILL IN: …]` with your own details. Razorpay checks for these pages when it activates your account.
 
 ## Important limitation — read this
 
@@ -57,7 +59,7 @@ Netlify gives you a live link immediately, like `random-name-123.netlify.app`.
 ### 5. Test before sharing the link
 - Submit a test entry through **You** → confirm it shows in Netlify's Forms tab.
 - Write a journal entry, mark it public, check it appears in Quotes (on the same device).
-- Click both "Unlock" buttons and confirm they go to your real Razorpay links.
+- Click both "Unlock" buttons and both ebook "Buy" buttons and confirm they go to your real Razorpay links.
 
 ---
 
