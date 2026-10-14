@@ -19,6 +19,18 @@
   <input type="text" name="consent" />
 </form>
 
+<!-- Hidden static form so Netlify's build bot can detect the services enquiry form -->
+<form name="mokti-enquiry" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="text" name="name" />
+  <input type="email" name="email" />
+  <input type="text" name="phone" />
+  <input type="text" name="service" />
+  <input type="text" name="package" />
+  <input type="text" name="budget" />
+  <input type="text" name="deadline" />
+  <textarea name="details"></textarea>
+</form>
+
 <div class="notebook">
 
   <!-- Spiral binding / nav rail -->
@@ -32,6 +44,7 @@
       <button class="tab" data-target="stories">Stories</button>
       <button class="tab" data-target="you">You</button>
       <button class="tab" data-target="blog">Blog Post</button>
+      <button class="tab" data-target="services">Services</button>
     </div>
   </nav>
 
@@ -47,6 +60,7 @@
       <div class="home-links">
         <button class="linklike" data-target="journal">Start writing today's page →</button>
         <button class="linklike" data-target="quotes">Read today's quotes →</button>
+        <button class="linklike" data-target="services">Work with me: websites, logos, t-shirt mockups →</button>
       </div>
     </section>
 
@@ -185,6 +199,148 @@
         <article class="blog-card"><span class="chapter-tag">Personal</span><h3>Placeholder post title</h3><p>A line of preview text goes here.</p></article>
         <article class="blog-card"><span class="chapter-tag">Finance</span><h3>Placeholder post title</h3><p>A line of preview text goes here.</p></article>
         <article class="blog-card"><span class="chapter-tag">Health</span><h3>Placeholder post title</h3><p>A line of preview text goes here.</p></article>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="pane">
+      <p class="eyebrow">work with me</p>
+      <h2>Services</h2>
+      <p class="section-intro">Websites, logos and t-shirt mockups, made with care. Pick a package or just tell me what you need.</p>
+
+      <article class="service" id="service-website">
+        <p class="eyebrow">service 01</p>
+        <h3>Website creation</h3>
+        <p class="service-intro">A clean, fast site for your brand, portfolio or small shop.</p>
+        <div class="package-grid">
+          <div class="package">
+            <span class="chapter-tag">Basic</span>
+            <p class="package-price">₹ —</p>
+            <ul><li>One-page site</li><li>Mobile friendly</li><li>Contact form</li></ul>
+            <button class="linklike" data-enquire="Website creation|Basic">Enquire →</button>
+          </div>
+          <div class="package">
+            <span class="chapter-tag">Standard</span>
+            <p class="package-price">₹ —</p>
+            <ul><li>Up to 5 pages</li><li>Basic SEO setup</li><li>Payment link or shop button</li></ul>
+            <button class="linklike" data-enquire="Website creation|Standard">Enquire →</button>
+          </div>
+          <div class="package">
+            <span class="chapter-tag">Premium</span>
+            <p class="package-price">₹ —</p>
+            <ul><li>Custom design</li><li>Blog or store setup</li><li>1 month of support</li></ul>
+            <button class="linklike" data-enquire="Website creation|Premium">Enquire →</button>
+          </div>
+        </div>
+        <h4 class="portfolio-heading">Recent work</h4>
+        <div class="portfolio-grid">
+          <figure class="portfolio-item"><div class="portfolio-thumb">Add image</div><figcaption>Project name</figcaption></figure>
+          <figure class="portfolio-item"><div class="portfolio-thumb">Add image</div><figcaption>Project name</figcaption></figure>
+          <figure class="portfolio-item"><div class="portfolio-thumb">Add image</div><figcaption>Project name</figcaption></figure>
+        </div>
+      </article>
+
+      <article class="service" id="service-logo">
+        <p class="eyebrow">service 02</p>
+        <h3>Logo design</h3>
+        <p class="service-intro">A logo that feels like you, delivered in every format you need.</p>
+        <div class="package-grid">
+          <div class="package">
+            <span class="chapter-tag">Basic</span>
+            <p class="package-price">₹ —</p>
+            <ul><li>2 concepts</li><li>2 revisions</li><li>PNG + JPG</li></ul>
+            <button class="linklike" data-enquire="Logo design|Basic">Enquire →</button>
+          </div>
+          <div class="package">
+            <span class="chapter-tag">Standard</span>
+            <p class="package-price">₹ —</p>
+            <ul><li>3 concepts</li><li>Unlimited revisions</li><li>Vector files (SVG, PDF)</li></ul>
+            <button class="linklike" data-enquire="Logo design|Standard">Enquire →</button>
+          </div>
+          <div class="package">
+            <span class="chapter-tag">Premium</span>
+            <p class="package-price">₹ —</p>
+            <ul><li>Full brand kit</li><li>Colours + fonts guide</li><li>Social media versions</li></ul>
+            <button class="linklike" data-enquire="Logo design|Premium">Enquire →</button>
+          </div>
+        </div>
+        <h4 class="portfolio-heading">Recent work</h4>
+        <div class="portfolio-grid">
+          <figure class="portfolio-item"><div class="portfolio-thumb">Add image</div><figcaption>Client name</figcaption></figure>
+          <figure class="portfolio-item"><div class="portfolio-thumb">Add image</div><figcaption>Client name</figcaption></figure>
+          <figure class="portfolio-item"><div class="portfolio-thumb">Add image</div><figcaption>Client name</figcaption></figure>
+        </div>
+      </article>
+
+      <article class="service" id="service-tshirt">
+        <p class="eyebrow">service 03</p>
+        <h3>T-shirt mockups</h3>
+        <p class="service-intro">Realistic mockups of your design for your store, launch or pitch.</p>
+        <div class="package-grid">
+          <div class="package">
+            <span class="chapter-tag">Basic</span>
+            <p class="package-price">₹ —</p>
+            <ul><li>1 design</li><li>3 mockup views</li><li>High-res PNG</li></ul>
+            <button class="linklike" data-enquire="T-shirt mockups|Basic">Enquire →</button>
+          </div>
+          <div class="package">
+            <span class="chapter-tag">Standard</span>
+            <p class="package-price">₹ —</p>
+            <ul><li>Up to 3 designs</li><li>Multiple colours</li><li>Front + back views</li></ul>
+            <button class="linklike" data-enquire="T-shirt mockups|Standard">Enquire →</button>
+          </div>
+          <div class="package">
+            <span class="chapter-tag">Premium</span>
+            <p class="package-price">₹ —</p>
+            <ul><li>Full collection</li><li>Lifestyle scenes</li><li>Store-ready images</li></ul>
+            <button class="linklike" data-enquire="T-shirt mockups|Premium">Enquire →</button>
+          </div>
+        </div>
+        <h4 class="portfolio-heading">Recent work</h4>
+        <div class="portfolio-grid">
+          <figure class="portfolio-item"><div class="portfolio-thumb">Add image</div><figcaption>Design name</figcaption></figure>
+          <figure class="portfolio-item"><div class="portfolio-thumb">Add image</div><figcaption>Design name</figcaption></figure>
+          <figure class="portfolio-item"><div class="portfolio-thumb">Add image</div><figcaption>Design name</figcaption></figure>
+        </div>
+      </article>
+
+      <div class="enquiry" id="enquiry">
+        <p class="eyebrow">let's talk</p>
+        <h3>Send an enquiry</h3>
+        <p class="service-intro">Tell me a little about your project and I'll reply with a quote within a couple of days.</p>
+
+        <form name="mokti-enquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="you-form enquiry-form" id="enquiry-form">
+          <input type="hidden" name="form-name" value="mokti-enquiry" />
+          <p class="hidden-field"><label>Don't fill this out: <input name="bot-field" /></label></p>
+
+          <input type="text" name="name" placeholder="Name" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <input type="text" name="phone" placeholder="Phone or WhatsApp (optional)">
+
+          <label class="field-label" for="enquiry-service">Service</label>
+          <select name="service" id="enquiry-service" required>
+            <option value="">Choose a service</option>
+            <option>Website creation</option>
+            <option>Logo design</option>
+            <option>T-shirt mockups</option>
+            <option>Something else</option>
+          </select>
+
+          <label class="field-label" for="enquiry-package">Package</label>
+          <select name="package" id="enquiry-package">
+            <option value="">Not sure yet</option>
+            <option>Basic</option>
+            <option>Standard</option>
+            <option>Premium</option>
+          </select>
+
+          <input type="text" name="budget" placeholder="Budget (optional)">
+          <input type="text" name="deadline" placeholder="When do you need it? (optional)">
+          <textarea name="details" placeholder="Tell me about your project…" rows="6" required></textarea>
+
+          <button type="submit" class="btn-ink">Send enquiry</button>
+        </form>
+        <p class="form-note" id="enquiry-note" hidden>Thank you, I'll get back to you soon. 🤍</p>
       </div>
     </section>
 

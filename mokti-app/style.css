@@ -302,6 +302,27 @@ h1, h2, h3{
 .blog-card{ background:#fffdf7; border:1px solid var(--thread); border-radius:var(--radius); padding:18px; }
 .blog-card p{ font-size:13.5px; color:var(--text-soft); }
 
+/* Services */
+.service{ border-top:1px solid var(--thread); padding-top:28px; margin-top:28px; }
+.service-intro{ color: var(--text-soft); font-size:14.5px; line-height:1.6; margin:0 0 18px; }
+.package-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap:14px; margin-bottom:24px; }
+.package{ background:#fffdf7; border:1px solid var(--thread); border-radius:var(--radius); padding:18px; display:flex; flex-direction:column; }
+.package-price{ font-family:'Fraunces', serif; font-size:18px; color:var(--ink); margin:0 0 8px; }
+.package ul{ margin:0 0 14px; padding-left:18px; font-size:13.5px; color:var(--text-soft); line-height:1.7; flex:1; }
+.package .linklike{ align-self:flex-start; font-size:14px; }
+.portfolio-heading{ font-family:'Work Sans', sans-serif; font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:.08em; color:var(--text-soft); margin:0 0 10px; }
+.portfolio-grid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(140px,1fr)); gap:12px; }
+.portfolio-item{ margin:0; }
+.portfolio-thumb{ aspect-ratio:4/3; border:1px dashed var(--thread); border-radius:var(--radius); background:var(--paper-deep); display:flex; align-items:center; justify-content:center; font-size:12px; color:var(--text-soft); }
+.portfolio-item figcaption{ font-size:12.5px; color:var(--text-soft); margin-top:6px; }
+.enquiry{ border-top:1px solid var(--thread); padding-top:28px; margin-top:32px; }
+.enquiry-form select{
+  width:100%; font-family:'Work Sans', sans-serif; font-size:15px; padding:12px 14px;
+  border:1px solid var(--thread); border-radius:var(--radius); background:#fffdf7; color:var(--text); margin-bottom:12px;
+}
+.field-label{ font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:.06em; color:var(--text-soft); margin-bottom:6px; }
+select:focus-visible{ outline:2px solid var(--oxblood); outline-offset:2px; }
+
 /* Mobile */
 @media (max-width: 720px){
   .notebook{ flex-direction:column; }
