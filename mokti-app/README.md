@@ -1,12 +1,12 @@
 # Mokti — v1 Web App
 
-A working starting point for mokti.in: Home, Journal (private/public), Quotes, Experience (timeline + paywall), Stories (paywall), Ebook (sales page), You (submission form), Blog Post.
+A working starting point for mokti.in: Home, Journal (private/public), Quotes, Experience (timeline + paywall), Stories (paywall), Ebooks (sales page for 2 books), You (submission form), Blog Post.
 
 ## Before you launch — 4 things to edit
 
-1. **Razorpay links** — open `app.js`, top of the file, and paste your real Payment Page/Link URLs in place of the placeholders for `stories`, `experience` and `ebook`.
+1. **Razorpay links** — open `app.js`, top of the file, and paste your real Payment Page/Link URLs in place of the placeholders for `stories`, `experience`, `ebookWasThatLove` and `ebookCoincidence`.
 2. **Real content** — swap the placeholder story/blog text in `index.html` for your actual writing.
-3. **Ebook details** — in `index.html` (the `EBOOK` section), replace the book title, description, bullet points and ₹199 price. To use a real cover, add the image to `mokti-app/` and swap the placeholder `div` for the `<img>` tag noted in the comment.
+3. **Ebook prices** — both books are listed at ₹199 in `index.html` (the `EBOOK` section). Change the price and the button text if you want something else. Never put the ebook PDFs in this repo: the site is public, so anyone could download them for free.
 4. **Your 3 stories + free chapter** — right now "Read chapter →" doesn't link anywhere real; wire it to wherever that content lives (a PDF, a private page, an email).
 
 ## Important limitation — read this
@@ -58,7 +58,7 @@ Netlify gives you a live link immediately, like `random-name-123.netlify.app`.
 ### 5. Test before sharing the link
 - Submit a test entry through **You** → confirm it shows in Netlify's Forms tab.
 - Write a journal entry, mark it public, check it appears in Quotes (on the same device).
-- Click both "Unlock" buttons and the ebook "Buy" button and confirm they go to your real Razorpay links.
+- Click both "Unlock" buttons and both ebook "Buy" buttons and confirm they go to your real Razorpay links.
 
 ---
 

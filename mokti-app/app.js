@@ -2,7 +2,8 @@
 const RAZORPAY_LINKS = {
   stories: "https://rzp.io/l/PASTE-YOUR-STORIES-LINK",
   experience: "https://rzp.io/l/PASTE-YOUR-EXPERIENCE-LINK",
-  ebook: "https://rzp.io/l/PASTE-YOUR-EBOOK-LINK"
+  ebookWasThatLove: "https://rzp.io/l/PASTE-YOUR-WAS-THAT-LOVE-LINK",
+  ebookCoincidence: "https://rzp.io/l/PASTE-YOUR-COINCIDENCE-LINK"
 };
 document.querySelectorAll('[data-razorpay]').forEach(el => {
   const key = el.getAttribute('data-razorpay');
