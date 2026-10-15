@@ -2,8 +2,17 @@
 const RAZORPAY_LINKS = {
   stories: "https://rzp.io/l/PASTE-YOUR-STORIES-LINK",
   experience: "https://rzp.io/l/PASTE-YOUR-EXPERIENCE-LINK",
-  ebookWasThatLove: "https://rzp.io/l/PASTE-YOUR-WAS-THAT-LOVE-LINK",
-  ebookCoincidence: "https://rzp.io/l/PASTE-YOUR-COINCIDENCE-LINK"
+  ebookWasThatLove: "https://rzp.io/rzp/xuC5BcP",
+  ebookCoincidence: "https://rzp.io/rzp/dh78raYc",
+  ebookLoveYourselfFirst: "https://rzp.io/rzp/Ra1Myen",
+  ebookHealingAfterHeartbreak: "https://rzp.io/rzp/k4L1DvGT",
+  ebookDearMe: "https://rzp.io/rzp/CnVMKw7I",
+  ebookTextMeBack: "https://rzp.io/rzp/7bQdoLCD",
+  ebookRedFlagsGreenFlags: "https://rzp.io/rzp/KUMn3GV",
+  ebookLettersINeverSent: "https://rzp.io/rzp/L5AUD4Mg",
+  ebookMilesApart: "https://rzp.io/rzp/mikOQkT",
+  ebookStoriesWeNeverTold: "https://rzp.io/rzp/wNLnwfk",
+  bundleAll: "https://rzp.io/rzp/yl5ewD1N"
 };
 document.querySelectorAll('[data-razorpay]').forEach(el => {
   const key = el.getAttribute('data-razorpay');

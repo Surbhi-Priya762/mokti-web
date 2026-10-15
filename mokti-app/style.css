@@ -166,6 +166,27 @@ a:focus-visible, button:focus-visible, textarea:focus-visible, input:focus-visib
 .ebook-price-now{ font-family:'Fraunces', serif; font-size:28px; font-weight:600; color: var(--ink); }
 .ebook-price-note{ font-size:12px; text-transform:uppercase; letter-spacing:.08em; color: var(--text-soft); }
 
+.bundle{
+  display:flex; justify-content:space-between; align-items:center; gap: 24px;
+  background: var(--ink); color: #e9e4d8; border-radius: var(--radius); padding: 28px 32px; margin: 8px 0 48px;
+}
+.bundle h3{ color:#fff; font-size: 26px; }
+.bundle p{ margin: 0; }
+.bundle .eyebrow{ color: #e8b8a8; }
+.bundle .ebook-price-now{ color:#fff; }
+.bundle .ebook-price-note{ color: #c9c2b4; }
+.bundle-buy{ flex-shrink:0; text-align:right; }
+.bundle .btn-ink{ background:#fff; color: var(--ink); border-color:#fff; }
+.bundle .btn-ink:hover{ background: var(--oxblood); color:#fff; border-color: var(--oxblood); }
+.guide-head{ font-size: 26px; margin-bottom: 20px; }
+.guide-grid{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 20px; }
+.guide-card{ display:flex; flex-direction:column; background: var(--card); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow); }
+.guide-card .ebook-cover{ margin-bottom: 14px; }
+.guide-card h4{ font-size: 18px; margin-bottom: 6px; }
+.guide-card p{ font-size: 14px; line-height: 1.55; margin: 0 0 10px; color: var(--text); }
+.guide-card .guide-price{ margin-top:auto; font-family:'Fraunces', serif; font-size: 22px; font-weight:600; color: var(--ink); }
+.guide-card .btn-ink{ text-align:center; padding: 10px 14px; }
+
 /* ---------- Services ---------- */
 .service{ padding: 40px 0; border-top: 1px solid var(--thread); }
 .service:first-of-type{ border-top: none; padding-top: 16px; }
@@ -334,6 +355,9 @@ a:focus-visible, button:focus-visible, textarea:focus-visible, input:focus-visib
 @media (max-width: 960px){
   .offer-grid{ grid-template-columns: repeat(2, 1fr); }
   .ebook-grid{ grid-template-columns: 1fr; }
+  .guide-grid{ grid-template-columns: repeat(2, 1fr); }
+  .bundle{ flex-direction: column; align-items: flex-start; }
+  .bundle-buy{ text-align:left; }
   .enquiry{ grid-template-columns: 1fr; grid-template-rows: none; gap: 0; padding: 28px; }
   .enquiry > *, .enquiry-form, .enquiry > .form-note{ grid-column: 1; grid-row: auto; }
 }
@@ -368,6 +392,11 @@ a:focus-visible, button:focus-visible, textarea:focus-visible, input:focus-visib
   .offer-grid{ grid-template-columns: 1fr; }
   .ebook-card{ grid-template-columns: 1fr; }
   .ebook-cover{ max-width: 180px; }
+  .guide-grid{ gap: 12px; }
+  .guide-card{ padding: 12px; }
+  .guide-card .ebook-cover{ max-width: none; }
+  .guide-card .btn-ink{ padding: 9px 8px; font-size: 13.5px; }
+  .bundle{ padding: 24px 20px; }
   .writing-panel{ padding: 24px 18px; }
   .contact-details{ grid-template-columns: 1fr; gap: 2px; }
   .contact-details dd{ margin-bottom: 10px; }

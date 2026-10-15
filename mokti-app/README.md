@@ -4,9 +4,9 @@ The mokti.in website: a one-page site with a header menu (Home, Ebooks, Services
 
 ## Before you launch — 5 things to edit
 
-1. **Razorpay links** — open `app.js`, top of the file, and paste your real Payment Page/Link URLs in place of the placeholders for `stories`, `experience`, `ebookWasThatLove` and `ebookCoincidence`.
+1. **Razorpay links** — all 10 ebooks and the bundle already have their real links at the top of `app.js`. Paste your links for `stories` and `experience` in place of the placeholders.
 2. **Real content** — swap the placeholder story/blog text in `index.html` for your actual writing.
-3. **Ebook prices** — both books are listed at ₹199 in `index.html` (the `EBOOK` section). Change the price and the button text if you want something else. Never put the ebook PDFs in this repo: the site is public, so anyone could download them for free.
+3. **Ebook prices** — prices and button text live in the `EBOOKS` section of `index.html`. If you change a price, change it in Razorpay too. Never put the ebook PDFs in this repo: the site is public, so anyone could download them for free.
 4. **Your 3 stories + free chapter** — right now "Read chapter →" doesn't link anywhere real; wire it to wherever that content lives (a PDF, a private page, an email).
 5. **About, Contact, Terms, Refund and Privacy pages** — open `about.html`, `contact.html`, `terms.html`, `refund-policy.html` and `privacy-policy.html` and replace every highlighted `[FILL IN: …]` with your own details. Razorpay checks for these pages when it activates your account.
 
