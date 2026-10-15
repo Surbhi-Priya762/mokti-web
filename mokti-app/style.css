@@ -140,7 +140,7 @@ a:focus-visible, button:focus-visible, textarea:focus-visible, input:focus-visib
 .section-head{ margin-bottom: 8px; }
 
 /* What I do */
-.offer-grid{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.offer-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .offer{
   display:block; text-decoration:none; color: inherit;
   background: var(--card); border:1px solid var(--thread); border-radius: var(--radius);
@@ -199,7 +199,9 @@ a:focus-visible, button:focus-visible, textarea:focus-visible, input:focus-visib
 }
 .package:hover{ box-shadow: var(--shadow); transform: translateY(-2px); }
 .package:nth-child(2){ border-color: var(--ink); }
-.package-price{ font-family:'Fraunces', serif; font-size:26px; color:var(--ink); margin:6px 0 10px; }
+.package-from{ font-size:12px; text-transform:uppercase; letter-spacing:.08em; color:var(--text-soft); margin:12px 0 0; }
+.package-price{ font-family:'Fraunces', serif; font-size:26px; color:var(--ink); margin:2px 0 10px; }
+.package-per{ font-family:'Work Sans', sans-serif; font-size:14px; color:var(--text-soft); margin-left:4px; }
 .package ul{ margin:0 0 18px; padding-left:18px; font-size:14.5px; color:var(--text-soft); line-height:1.8; flex:1; }
 .package .linklike, .package .chapter-tag{ align-self:flex-start; }
 .portfolio-heading{ font-family:'Work Sans', sans-serif; font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:.1em; color:var(--text-soft); margin:0 0 12px; }
