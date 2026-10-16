@@ -186,6 +186,12 @@ a:focus-visible, button:focus-visible, textarea:focus-visible, input:focus-visib
 .guide-card p{ font-size: 14px; line-height: 1.55; margin: 0 0 10px; color: var(--text); }
 .guide-card .guide-price{ margin-top:auto; font-family:'Fraunces', serif; font-size: 22px; font-weight:600; color: var(--ink); }
 .guide-card .btn-ink{ text-align:center; padding: 10px 14px; }
+.guide-intro{ color: var(--text-soft); font-size: 15.5px; line-height: 1.6; margin: -8px 0 20px; max-width: 720px; }
+#ai-guides{ margin-top: 40px; }
+.bundle-ai{ background: linear-gradient(120deg, #24124f, #5b2a78); margin-bottom: 28px; }
+.bundle-ai .eyebrow{ color: #ffd08a; }
+.bundle-cover{ width: 110px; height: auto; border-radius: 6px; flex-shrink: 0; box-shadow: 0 6px 18px rgba(0,0,0,.35); }
+.bundle-text{ flex: 1; }
 
 /* ---------- Services ---------- */
 .service{ padding: 40px 0; border-top: 1px solid var(--thread); }
