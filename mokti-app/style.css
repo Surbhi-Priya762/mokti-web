@@ -140,7 +140,7 @@ a:focus-visible, button:focus-visible, textarea:focus-visible, input:focus-visib
 .section-head{ margin-bottom: 8px; }
 
 /* What I do */
-.offer-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.offer-grid{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
 .offer{
   display:block; text-decoration:none; color: inherit;
   background: var(--card); border:1px solid var(--thread); border-radius: var(--radius);
@@ -186,11 +186,25 @@ a:focus-visible, button:focus-visible, textarea:focus-visible, input:focus-visib
 .guide-card p{ font-size: 14px; line-height: 1.55; margin: 0 0 10px; color: var(--text); }
 .guide-card .guide-price{ margin-top:auto; font-family:'Fraunces', serif; font-size: 22px; font-weight:600; color: var(--ink); }
 .guide-card .btn-ink{ text-align:center; padding: 10px 14px; }
+.guide-intro{ color: var(--text-soft); font-size: 15.5px; line-height: 1.6; margin: -8px 0 20px; max-width: 720px; }
+#ai-guides{ margin-top: 40px; }
+.bundle-ai{ background: linear-gradient(120deg, #24124f, #5b2a78); margin-bottom: 28px; }
+.bundle-ai .eyebrow{ color: #ffd08a; }
+.bundle-cover{ width: 110px; height: auto; border-radius: 6px; flex-shrink: 0; box-shadow: 0 6px 18px rgba(0,0,0,.35); }
+.bundle-text{ flex: 1; }
 
 /* ---------- Services ---------- */
 .service{ padding: 40px 0; border-top: 1px solid var(--thread); }
 .service:first-of-type{ border-top: none; padding-top: 16px; }
-.service h3{ font-size: 28px; }
+.service-group{ font-size: 32px; margin: 48px 0 0; padding-top: 32px; border-top: 2px solid var(--ink); }
+.service-group + .service{ border-top: none; padding-top: 8px; }
+.service-name{ font-family:'Fraunces', serif; font-size: 26px; font-weight: 500; margin: 4px 0 8px; }
+.work{ margin-top: 48px; padding-top: 32px; border-top: 2px solid var(--ink); }
+.work h3{ font-size: 32px; }
+.work-grid{ display:grid; grid-template-columns: repeat(2, 1fr); gap:18px; margin: 20px 0 24px; }
+.work-item{ background: var(--card); border:1px solid var(--thread); border-radius: var(--radius); padding: 22px; }
+.work-item h4{ font-family:'Fraunces', serif; font-size:20px; font-weight:500; margin:10px 0 6px; }
+.work-item p{ margin:0; font-size:14.5px; color: var(--text-soft); line-height:1.6; }
 .service-intro{ color: var(--text-soft); font-size:16px; line-height:1.6; margin:0 0 24px; }
 .package-grid{ display:grid; grid-template-columns: repeat(3, 1fr); gap:18px; margin-bottom:28px; }
 .package{
@@ -384,6 +398,7 @@ a:focus-visible, button:focus-visible, textarea:focus-visible, input:focus-visib
   .hero-books{ height: 300px; max-width: 360px; width:100%; margin: 0 auto; }
   .section{ padding: 64px 0; }
   .package-grid{ grid-template-columns: 1fr; }
+  .work-grid{ grid-template-columns: 1fr; }
   .portfolio-grid{ grid-template-columns: repeat(2, 1fr); }
   .footer-grid{ grid-template-columns: 1fr 1fr; }
   .footer-grid > div:first-child{ grid-column: 1 / -1; }
