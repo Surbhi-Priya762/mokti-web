@@ -8,6 +8,50 @@ A working starting point for mokti.in: Home, Journal (private/public), Quotes, E
 2. **Real content** — swap the placeholder story/blog text in `index.html` for your actual writing.
 3. **Your 3 stories + free chapter** — right now "Read chapter →" doesn't link anywhere real; wire it to wherever that content lives (a PDF, a private page, an email).
 
+## Automatic ebook emails
+
+When someone pays on a Razorpay Payment Page, Razorpay tells the website (a "webhook"), and `netlify/functions/razorpay-webhook.mjs` emails the buyer their PDF as an attachment through [Resend](https://resend.com). Bundles get every PDF in one email. The buyer's email comes from the Email field Razorpay already asks for.
+
+- Which page sends which PDF is in `netlify/lib/products.mjs`. It matches on the page title, and on the price for the two bundles.
+- The PDFs stay in your Google Drive. Each one's share link goes in a Netlify environment variable (list below), so they never appear in this public repo.
+- If the website can't tell which ebook was bought, or an email fails, you get an "Action needed" email at surbhi7priya@gmail.com with the buyer's details so you can send it by hand.
+- Buyers who reply to the ebook email reach surbhi7priya@gmail.com.
+
+### One-time setup
+
+1. **Resend:** sign up free at resend.com (3,000 emails a month). Go to **Domains → Add domain → mokti.in** and add the DNS records it shows wherever mokti.in's DNS lives (Netlify DNS or your domain registrar). Wait for it to say Verified. Then **API Keys → Create API key** and copy it.
+2. **Google Drive:** for each PDF, right-click → Share → General access → **Anyone with the link**, then Copy link.
+3. **Netlify:** Site configuration → Environment variables → Add a variable → **Import from a .env file**, paste the block below with your values filled in, and save.
+
+   ```
+   RESEND_API_KEY=
+   RAZORPAY_WEBHOOK_SECRET=
+   PDF_WAS_THAT_LOVE=
+   PDF_COINCIDENCE=
+   PDF_LOVE_YOURSELF_FIRST=
+   PDF_HEALING_AFTER_HEARTBREAK=
+   PDF_DEAR_ME=
+   PDF_TEXT_ME_BACK=
+   PDF_RED_FLAGS_GREEN_FLAGS=
+   PDF_LETTERS_I_NEVER_SENT=
+   PDF_MILES_APART=
+   PDF_STORIES_WE_NEVER_TOLD=
+   PDF_CLAUDE_MADE_SIMPLE=
+   PDF_PROMPT_LIKE_A_PRO=
+   PDF_AI_EVERYDAY_LIFE=
+   PDF_AUTOMATE_IT=
+   PDF_TEACH_CLAUDE_SKILLS=
+   PDF_AI_STUDENTS_JOBS=
+   PDF_AI_INSTAGRAM_BUSINESS=
+   ```
+
+   `RAZORPAY_WEBHOOK_SECRET` is any long password you make up; you'll type the same one into Razorpay next. Then **Deploys → Trigger deploy** so the site picks up the new values.
+4. **Razorpay:** Account & Settings → Webhooks → **Add New Webhook**. Webhook URL `https://mokti.in/api/razorpay-webhook`, Secret = the same password as above, Active events: tick only **payment.captured**. Save.
+5. **Success message:** on each Payment Page, change the message after payment to something like "Thank you! Your ebook is on its way to your email inbox. If you don't see it in a few minutes, check Spam or email surbhi7priya@gmail.com." and remove the Drive link.
+6. **Test:** buy the cheapest ebook once yourself with your own email, check it arrives, then refund it from the Razorpay dashboard.
+
+Keep each PDF under about 25 MB so it can be attached. A bigger file is sent as its Drive link instead.
+
 ## Important limitation — read this
 
 The Journal's private/public toggle currently saves to **this browser only** (localStorage). That means:
