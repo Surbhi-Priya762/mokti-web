@@ -274,6 +274,8 @@ a:focus-visible, button:focus-visible, textarea:focus-visible, input:focus-visib
 .you-form{ display:flex; flex-direction:column; max-width:520px; }
 .enquiry .you-form{ max-width:none; }
 .form-note{ margin-top:16px; color: var(--sage); font-weight:600; }
+.form-note.form-error{ color: #b23a3a; }
+.form-note.form-error a{ color: inherit; }
 
 /* ---------- Writing area ---------- */
 .writing-tabs{ display:flex; flex-wrap:wrap; gap: 8px; margin-bottom: 24px; }

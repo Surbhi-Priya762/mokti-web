@@ -154,13 +154,6 @@ anonCheck.addEventListener('change', () => {
   identityFields.style.flexDirection = 'column';
 });
 
-const youForm = document.getElementById('you-form');
-youForm.addEventListener('submit', () => {
-  // Netlify handles the actual submission + redirect via its own form endpoint.
-  // This just shows a friendly inline note if JS runs before redirect.
-  document.getElementById('you-note').hidden = false;
-});
-
 // ---------- SERVICES: "Enquire" pre-fills the enquiry form ----------
 const enquiryService = document.getElementById('enquiry-service');
 const enquiryPackage = document.getElementById('enquiry-package');
@@ -171,10 +164,6 @@ document.querySelectorAll('[data-enquire]').forEach(btn => {
     enquiryPackage.value = pkg;
     document.getElementById('enquiry').scrollIntoView({behavior:'smooth'});
   });
-});
-
-document.getElementById('enquiry-form').addEventListener('submit', () => {
-  document.getElementById('enquiry-note').hidden = false;
 });
 
 // ---------- INIT ----------
