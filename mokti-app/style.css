@@ -199,6 +199,19 @@ a:focus-visible, button:focus-visible, textarea:focus-visible, input:focus-visib
 .service-group{ font-size: 32px; margin: 48px 0 0; padding-top: 32px; border-top: 2px solid var(--ink); }
 .service-group + .service{ border-top: none; padding-top: 8px; }
 .service-name{ font-family:'Fraunces', serif; font-size: 26px; font-weight: 500; margin: 4px 0 8px; }
+.work-title{ font-size: clamp(36px, 5vw, 52px); margin: 6px 0 10px; }
+.work-stats{ list-style:none; padding:0; margin: 24px 0 8px; display:grid; grid-template-columns: repeat(4, 1fr); gap:16px; }
+.work-stats li{ background: var(--card); border:1px solid var(--thread); border-radius: var(--radius); padding:16px 18px; font-size:14px; color: var(--text-soft); }
+.work-stats strong{ display:block; font-family:'Fraunces', serif; font-size:28px; font-weight:500; color: var(--ink); }
+.work-gallery{ display:grid; grid-template-columns: repeat(2, 1fr); gap:24px; margin-top: 20px; }
+.shot{ margin:0; background: var(--card); border:1px solid var(--thread); border-radius: var(--radius); overflow:hidden; }
+.shot img{ display:block; width:100%; aspect-ratio: 16/9; object-fit: cover; object-position: top; background: var(--paper-deep); border-bottom:1px solid var(--thread); }
+.shot a:hover img{ opacity:.92; }
+.shot figcaption{ padding: 18px 20px 20px; }
+.shot h3{ font-family:'Fraunces', serif; font-size:20px; font-weight:500; margin:10px 0 6px; }
+.shot p{ margin:0; font-size:14.5px; color: var(--text-soft); line-height:1.6; }
+.work-links{ margin-top: 56px; padding-top: 32px; border-top: 2px solid var(--ink); }
+.link-grid{ display:grid; grid-template-columns: repeat(5, 1fr); gap:16px; margin: 8px 0 28px; }
 .work{ margin-top: 48px; padding-top: 32px; border-top: 2px solid var(--ink); }
 .work h3{ font-size: 32px; }
 .work-grid{ display:grid; grid-template-columns: repeat(2, 1fr); gap:18px; margin: 20px 0 24px; }
@@ -370,6 +383,7 @@ a:focus-visible, button:focus-visible, textarea:focus-visible, input:focus-visib
 /* ---------- Responsive ---------- */
 @media (max-width: 960px){
   .offer-grid{ grid-template-columns: repeat(2, 1fr); }
+  .link-grid{ grid-template-columns: repeat(3, 1fr); }
   .ebook-grid{ grid-template-columns: 1fr; }
   .guide-grid{ grid-template-columns: repeat(2, 1fr); }
   .bundle{ flex-direction: column; align-items: flex-start; }
@@ -398,7 +412,9 @@ a:focus-visible, button:focus-visible, textarea:focus-visible, input:focus-visib
   .hero-books{ height: 300px; max-width: 360px; width:100%; margin: 0 auto; }
   .section{ padding: 64px 0; }
   .package-grid{ grid-template-columns: 1fr; }
-  .work-grid{ grid-template-columns: 1fr; }
+  .work-grid, .work-gallery{ grid-template-columns: 1fr; }
+  .work-stats{ grid-template-columns: repeat(2, 1fr); }
+  .link-grid{ grid-template-columns: repeat(2, 1fr); }
   .portfolio-grid{ grid-template-columns: repeat(2, 1fr); }
   .footer-grid{ grid-template-columns: 1fr 1fr; }
   .footer-grid > div:first-child{ grid-column: 1 / -1; }
