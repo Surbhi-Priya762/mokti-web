@@ -108,6 +108,12 @@ a:focus-visible, button:focus-visible, textarea:focus-visible, input:focus-visib
 }
 .site-nav a:not(.btn-ink):hover, .site-nav a[aria-current="page"]{ color: var(--oxblood); border-bottom-color: var(--oxblood); }
 .nav-cta{ padding: 9px 18px; font-size: 14px; }
+.site-nav a{ white-space: nowrap; }
+@media (max-width: 1100px) and (min-width: 821px){
+  .site-nav{ gap: 16px; }
+  .site-nav a:not(.btn-ink){ font-size: 14px; }
+  .nav-cta{ padding: 8px 14px; font-size: 13px; }
+}
 
 .menu-toggle{
   display:none; background:none; border:none; cursor:pointer;
@@ -502,3 +508,33 @@ body{ font-variant-numeric: lining-nums; }
 .hero-work-link{ text-align: right; }
 .hero-work{ margin-bottom: 26px; }
 @media (max-width: 820px){ .hero-photo.hero-work{ width: calc(100% - 16px); } }
+
+/* ---------- Custom T-shirts page ---------- */
+.tee-hero{ display:grid; grid-template-columns: 1.2fr 1fr; gap: 48px; align-items:center; }
+.tee-hero-photo img{ display:block; width:100%; max-height: 560px; object-fit: cover; object-position: top; border-radius: var(--radius); box-shadow: var(--shadow); }
+.tee-note{ margin: 18px 0 0; font-size: 14.5px; color: var(--text-soft); }
+.tee-gallery{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.tee{ margin:0; background: var(--card); border:1px solid var(--thread); border-radius: var(--radius); overflow:hidden; }
+.tee img{ display:block; width:100%; aspect-ratio: 4/5; object-fit: cover; object-position: top; background: var(--paper-deep); border-bottom:1px solid var(--thread); }
+.tee a:hover img{ opacity:.92; }
+.tee figcaption{ padding: 16px 18px 18px; }
+.tee h3{ font-size:17px; margin:10px 0 6px; }
+.tee p{ margin:0; font-size:14px; color: var(--text-soft); line-height:1.6; }
+.package a.linklike{ align-self:flex-start; text-decoration:none; }
+.tee-terms{ list-style:none; padding:0; margin: 8px 0 0; display:grid; gap: 10px; font-size: 14.5px; color: var(--text-soft); }
+.tee-terms strong{ color: var(--ink); }
+.tee-cta{ text-align:center; }
+.tee-cta .section-intro{ margin-left:auto; margin-right:auto; }
+.tee-link{ font-size: 14.5px; margin: -8px 0 24px; }
+@media (max-width: 960px){
+  .tee-gallery{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 820px){
+  .tee-hero{ grid-template-columns: 1fr; gap: 28px; }
+  .tee-hero-photo img{ max-height: 440px; }
+}
+@media (max-width: 560px){
+  .tee-gallery{ grid-template-columns: 1fr 1fr; gap: 12px; }
+  .tee figcaption{ padding: 12px; }
+  .tee h3{ font-size:15px; }
+}
