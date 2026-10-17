@@ -70,12 +70,12 @@ export const FILE_NAMES = {
   PDF_AI_INSTAGRAM_BUSINESS: "AI for Instagram and Small Business - Surbhi Priya.pdf"
 };
 
-export function findProduct(payment, rawBody) {
+export function findProduct(payment, rawBody, order = {}) {
   for (const [key, id] of Object.entries(PAGE_IDS)) {
     if (id && rawBody.includes(id)) return PRODUCTS.find(p => p.key === key);
   }
-  const notes = payment.notes && typeof payment.notes === "object" ? Object.values(payment.notes) : [];
-  const text = [payment.description, ...notes].filter(v => typeof v === "string").join(" ").toLowerCase();
+  const values = obj => (obj && typeof obj === "object" ? Object.values(obj) : []);
+  const text = [payment.description, ...values(payment.notes), order.receipt, ...values(order.notes)].filter(v => typeof v === "string").join(" ").toLowerCase();
   // Bundles first, so "all 7 AI guides: Claude Made Simple, ..." is not read as one guide.
   const ordered = [...PRODUCTS.filter(p => p.amount), ...PRODUCTS.filter(p => !p.amount)];
   const byTitle = ordered.find(p => p.match.some(m => text.includes(m)));
