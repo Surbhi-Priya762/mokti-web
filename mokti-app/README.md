@@ -48,7 +48,7 @@ When someone pays on a Razorpay Payment Page, Razorpay tells the website (a "web
    ```
 
    `RAZORPAY_WEBHOOK_SECRET` is any long password you make up; you'll type the same one into Razorpay next. Then **Deploys → Trigger deploy** so the site picks up the new values.
-4. **Razorpay:** Account & Settings → Webhooks → **Add New Webhook**. Webhook URL `https://mokti.in/api/razorpay-webhook`, Secret = the same password as above, Active events: tick only **payment.captured**. Save.
+4. **Razorpay:** Account & Settings → Webhooks → **Add New Webhook**. Webhook URL `https://mokti.in/api/razorpay-webhook`, Secret = the same password as above, Active events: tick only **payment_page.paid** (the only event that says which Payment Page was bought). Save.
 5. **Success message:** on each Payment Page, change the message after payment to something like "Thank you! Your ebook is on its way to your email inbox. If you don't see it in a few minutes, check Spam or email surbhi7priya@gmail.com." and remove the Drive link.
 6. **Test:** buy the cheapest ebook once yourself with your own email, check it arrives, then refund it from the Razorpay dashboard.
 
