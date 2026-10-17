@@ -45,9 +45,28 @@ export const PRODUCTS = [
   }
 ];
 
-// Optional: the "pl_..." id of each Payment Page, from Razorpay Dashboard > Payment Pages.
-// Only needed if a title match ever picks the wrong book. Example: { ebookDearMe: "pl_AbCdEf123456" }
-export const PAGE_IDS = {};
+// The "pl_..." id of each Razorpay Payment Page (Dashboard > Payment Pages), collected 2026-10-17.
+export const PAGE_IDS = {
+  bundleAI: "pl_ToYeD20yYI5Byo",
+  ebookAIInstagramBusiness: "pl_ToYcFwRGedeNEW",
+  ebookAIStudentsJobs: "pl_ToYZrJ0jzzvC6m",
+  ebookTeachClaudeSkills: "pl_ToYYYbEqC5tIul",
+  ebookAutomateIt: "pl_ToYXGrOyVuk2mR",
+  ebookAIEverydayLife: "pl_ToYVyiTAg3ySTN",
+  ebookPromptLikeAPro: "pl_ToYUX98P3hyJsU",
+  ebookClaudeMadeSimple: "pl_ToYRRlew7jBQnl",
+  bundleAll: "pl_ToCPP94hRPQeQM",
+  ebookStoriesWeNeverTold: "pl_ToCOXjycngsiL8",
+  ebookMilesApart: "pl_ToCNsOOJibzk4W",
+  ebookLettersINeverSent: "pl_ToCN3zbSpgjynR",
+  ebookRedFlagsGreenFlags: "pl_ToCMF6C0kinMik",
+  ebookTextMeBack: "pl_ToCLQ5lqkLadPl",
+  ebookDearMe: "pl_ToCKc21qejpLmj",
+  ebookHealingAfterHeartbreak: "pl_ToCJneKsKeR8KK",
+  ebookLoveYourselfFirst: "pl_ToCIgANPNByYON",
+  ebookCoincidence: "pl_ToCHXaV4cM6tmS",
+  ebookWasThatLove: "pl_ToCFlnMFXNqOBg"
+};
 
 // File name each PDF gets in the buyer's inbox.
 export const FILE_NAMES = {
