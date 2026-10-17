@@ -1,4 +1,5 @@
-// Razorpay calls this after every successful payment (event: payment.captured).
+// Razorpay calls this after every successful payment (event: order.paid, or payment.captured).
+// order.paid is preferred: it carries the order too, which is where Payment Page details live.
 // It works out which ebook was bought and emails the PDF to the buyer through Resend.
 //
 // Netlify environment variables it needs:
@@ -28,14 +29,17 @@ export default async (req) => {
   }
 
   const event = JSON.parse(rawBody);
-  if (event.event !== "payment.captured") return new Response("ignored");
+  if (event.event !== "order.paid" && event.event !== "payment.captured") return new Response("ignored");
 
   const payment = event.payload?.payment?.entity || {};
+  const order = event.payload?.order?.entity || {};
   const buyer = payment.email;
   const name = firstName(payment.notes);
-  const product = findProduct(payment, rawBody);
-  console.log("payment", payment.id, "amount", payment.amount, "description", payment.description,
+  const product = findProduct(payment, rawBody, order);
+  console.log(event.event, "payment", payment.id, "amount", payment.amount, "description", payment.description,
     "notes", JSON.stringify(payment.notes), "->", product ? product.key : "NO MATCH");
+  // Shows which fields Razorpay sends for Payment Page orders, so matching can be tuned.
+  console.log("order", JSON.stringify(order));
 
   try {
     if (!buyer || !product) {
@@ -43,7 +47,7 @@ export default async (req) => {
         to: OWNER_EMAIL,
         subject: `Action needed: send an ebook by hand (${payment.id})`,
         html: `<p>A payment came in but the website couldn't tell ${buyer ? "which ebook it was for" : "the buyer's email"}, so nothing was sent to the buyer.</p>
-<p>Payment: ${esc(payment.id)}<br>Amount: ₹${(payment.amount || 0) / 100}<br>Buyer email: ${esc(buyer || "missing")}<br>Phone: ${esc(payment.contact || "")}<br>Description: ${esc(payment.description || "")}<br>Notes: ${esc(JSON.stringify(payment.notes || {}))}</p>
+<p>Payment: ${esc(payment.id)}<br>Amount: ₹${(payment.amount || 0) / 100}<br>Buyer email: ${esc(buyer || "missing")}<br>Phone: ${esc(payment.contact || "")}<br>Description: ${esc(payment.description || "")}<br>Notes: ${esc(JSON.stringify(payment.notes || {}))}<br>Order: ${esc(JSON.stringify(order))}</p>
 <p>Please email them the PDF yourself, and tell Claude this payment so the matching can be fixed.</p>`
       });
       return new Response("owner notified");
