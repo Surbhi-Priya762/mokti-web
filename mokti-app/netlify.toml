@@ -9,3 +9,34 @@
   [headers.values]
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
+
+# Short links for the Instagram bio, and old Shopify-era paths
+[[redirects]]
+  from = "/services"
+  to = "/#services"
+  status = 301
+
+[[redirects]]
+  from = "/%23services"
+  to = "/#services"
+  status = 301
+
+[[redirects]]
+  from = "/ai"
+  to = "/#ai-guides"
+  status = 301
+
+[[redirects]]
+  from = "/blogs/*"
+  to = "/about.html"
+  status = 301
+
+[[redirects]]
+  from = "/collections/mokti-stories"
+  to = "/#writing"
+  status = 301
+
+[[redirects]]
+  from = "/collections/*"
+  to = "/#ebooks"
+  status = 301
