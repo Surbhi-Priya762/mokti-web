@@ -538,3 +538,12 @@ body{ font-variant-numeric: lining-nums; }
   .tee figcaption{ padding: 12px; }
   .tee h3{ font-size:15px; }
 }
+
+/* Home hero card (replaces the old project screenshot) */
+.hero-card{ padding: 26px 28px 8px; }
+.hero-card .eyebrow{ margin: 0 0 14px; }
+.hero-card-list{ list-style:none; margin:0; padding:0; }
+.hero-card-list li{ padding: 14px 0; border-bottom:1px solid var(--thread); font-size: 14px; color: var(--text-soft); }
+.hero-card-list li:last-child{ border-bottom:0; }
+.hero-card-list strong{ display:block; font-family:'Cormorant Garamond', Georgia, serif; font-size: 21px; color: var(--ink); line-height:1.2; margin-bottom: 2px; }
+@media (max-width: 820px){ .hero-card{ padding: 20px 20px 4px; } }
