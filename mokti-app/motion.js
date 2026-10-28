@@ -1,4 +1,4 @@
-// ---------- HOME MOTION: phone tilt, before/after, card tilt, count-up, reveal ----------
+// ---------- SITE MOTION: phone tilt, before/after, card tilt, count-up, reveal ----------
 // Plain JS, no libraries. Everything here is optional polish: the page reads the
 // same without it, and visitors who ask for reduced motion get none of it.
 (function(){
@@ -68,9 +68,10 @@
     }
   }
 
-  // ---------- Service cards: slight 3D tilt on hover (mouse only) ----------
+  // ---------- Cards: slight 3D tilt on hover (mouse only) ----------
+  const CARDS = '.offer, .package, .guide-card, .ebook-card, .process-grid li, .work-stats li, .work-item, .tee, .story-card, .blog-card';
   if (finePointer) {
-    document.querySelectorAll('.offer, .package').forEach(card => {
+    document.querySelectorAll(CARDS).forEach(card => {
       card.classList.add('tilt');
       card.addEventListener('pointermove', e => {
         const r = card.getBoundingClientRect();
@@ -111,7 +112,7 @@
   // ---------- Sections fade up gently on scroll ----------
   const targets = document.querySelectorAll(
     'main > section:not(.hero) .section-head, .offer, .ba, .process-grid li, .service-group, .service, ' +
-    '.bundle, .guide-card, .ebook-card, .cta-inner'
+    '.bundle, .guide-card, .ebook-card, .cta-inner, .shot, .tee, .work-stats li, .work-item, .story-card, .blog-card'
   );
   const revealObs = new IntersectionObserver(entries => entries.forEach(en => {
     if (!en.isIntersecting) return;
@@ -124,7 +125,7 @@
   targets.forEach(el => {
     // stagger cards that sit side by side
     const i = Array.prototype.indexOf.call(el.parentElement.children, el);
-    if (el.matches('.offer, .process-grid li, .guide-card, .ebook-card')) el.style.setProperty('--d', (i % 4) * 0.08 + 's');
+    if (el.matches('.offer, .process-grid li, .guide-card, .ebook-card, .shot, .tee, .work-stats li')) el.style.setProperty('--d', (i % 4) * 0.08 + 's');
     el.classList.add('reveal');
     revealObs.observe(el);
   });

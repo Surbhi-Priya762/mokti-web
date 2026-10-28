@@ -10,6 +10,37 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!-- Sample clothing for the demo shop (inline so it needs no image downloads) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="g-dress" viewBox="0 0 100 120"><path d="M48 5a3 3 0 1 1 3 3v4M32 21l19-9 17 9" fill="none" stroke="#b9ab9f" stroke-width="2" stroke-linecap="round"/>
+    <path d="M38 20q12 10 24 0l3 28q-15 6-30 0z" fill="#e8576b"/>
+    <path d="M35 48q15 6 30 0l21 60q-36 10-72 0z" fill="#f06d7f"/>
+    <path d="M40 60 30 110M50 56v58M60 60l10 50" stroke="#d9465c" stroke-width="1.2" opacity=".6"/>
+    <path d="M35 48q15 6 30 0" fill="none" stroke="#fde2e4" stroke-width="3"/>
+    <g fill="#fff" opacity=".75"><circle cx="30" cy="92" r="2"/><circle cx="44" cy="74" r="2"/><circle cx="58" cy="96" r="2"/><circle cx="68" cy="72" r="2"/><circle cx="50" cy="104" r="2"/><circle cx="38" cy="100" r="1.5"/><circle cx="72" cy="98" r="1.5"/></g>
+  </symbol>
+  <symbol id="g-anarkali" viewBox="0 0 100 120"><path d="M48 5a3 3 0 1 1 3 3v4M32 21l19-9 17 9" fill="none" stroke="#b9ab9f" stroke-width="2" stroke-linecap="round"/>
+    <path d="M38 20q12 8 24 0l8 4 8 28-8 2-6-18v10l24 62q-38 10-76 0l24-62V36l-6 18-8-2 8-28z" fill="#8e1c3e"/>
+    <path d="M42 21q8 9 16 0" fill="none" stroke="#e6b85c" stroke-width="2"/>
+    <path d="M36 46q14 5 28 0" fill="none" stroke="#e6b85c" stroke-width="2.5"/>
+    <path d="M15 104q35 10 70 0" fill="none" stroke="#e6b85c" stroke-width="4"/>
+    <path d="M60 22q14 38-4 90h8q18-50 2-90z" fill="#f4c9a6" opacity=".75"/>
+  </symbol>
+  <symbol id="g-blazer" viewBox="0 0 100 120"><path d="M48 5a3 3 0 1 1 3 3v4M32 21l19-9 17 9" fill="none" stroke="#b9ab9f" stroke-width="2" stroke-linecap="round"/>
+    <path d="M34 82h32l-2 34H53l-3-22-3 22H36z" fill="#1d2766"/>
+    <path d="M30 22l12-4 8 16 8-16 12 4 6 46-8 2-1-22 1 38H32l1-38-1 22-8-2z" fill="#26307a"/>
+    <path d="M42 18l8 16 8-16z" fill="#fff"/>
+    <path d="M50 22l-2.5 3 2.5 14 2.5-14z" fill="#c4662a"/>
+    <path d="M42 18l4 22 4-6m8-16-4 22-4-6M58 64h8" fill="none" stroke="#4350b0" stroke-width="1.5"/>
+    <circle cx="50" cy="52" r="1.6" fill="#e6b85c"/><circle cx="50" cy="61" r="1.6" fill="#e6b85c"/>
+  </symbol>
+  <symbol id="g-kurta" viewBox="0 0 100 120"><path d="M48 5a3 3 0 1 1 3 3v4M32 21l19-9 17 9" fill="none" stroke="#b9ab9f" stroke-width="2" stroke-linecap="round"/>
+    <path d="M35 74h30l9 42H53l-3-24-3 24H26z" fill="#2a8c82"/>
+    <path d="M38 20q12 7 24 0l8 4 6 24-7 2-5-16 3 44H33l3-44-5 16-7-2 6-24z" fill="#e3a72f"/>
+    <path d="M50 26v18" stroke="#b97f12" stroke-width="1.5"/>
+    <path d="M34 72h32" stroke="#fff" stroke-width="2" stroke-dasharray="2 3"/>
+  </symbol>
+</svg>
 
 <!-- Hidden static form so Netlify's build bot can detect the real one below -->
 <form name="mokti-experience" data-netlify="true" netlify-honeypot="bot-field" hidden>
@@ -74,29 +105,53 @@
       </div>
       <div class="hero-stage" id="hero-stage">
         <div class="phone-tilt" id="phone-tilt">
-          <div class="phone-float">
-            <div class="phone" role="img" aria-label="Sample website for a saree boutique, shown on a phone">
-              <div class="phone-screen" aria-hidden="true">
-                <div class="ps-status"><span>9:41</span><span>●●● ▮</span></div>
-                <div class="ps-nav"><span class="ps-logo">Rangoli<em>Sarees</em></span><span class="ps-cart">🛍 2</span></div>
-                <div class="ps-banner">
-                  <span class="ps-kicker">Festive edit</span>
-                  <strong>Handwoven Banarasi</strong>
-                  <span class="ps-btn">Shop now</span>
+          <div class="device device-back">
+            <div class="phone-float">
+              <div class="phone" role="img" aria-label="Sample clinic website where patients book appointments">
+                <div class="phone-screen clinic" aria-hidden="true">
+                  <div class="ps-status"><span>9:41</span><span>●●● ▮</span></div>
+                  <div class="ps-nav"><span class="ps-logo">Glow<em>Clinic</em></span><span class="ps-cart">☰</span></div>
+                  <div class="ps-banner">
+                    <span class="ps-kicker">Skin &amp; hair care</span>
+                    <strong>Book a visit in 30 seconds</strong>
+                  </div>
+                  <div class="cl-doc"><span class="cl-avatar">👩‍⚕️</span><div><b>Dr. Neha Sharma</b><span>Dermatologist · ⭐ 4.9</span></div></div>
+                  <ul class="cl-list"><li>Consultation<b>₹500</b></li><li>Hydrafacial<b>₹2,499</b></li><li>Hair PRP<b>₹3,999</b></li></ul>
+                  <div class="ps-chips"><span>Mon 2</span><span class="on">Tue 3</span><span>Wed 4</span></div>
+                  <div class="cl-slots"><span>10:30</span><span>12:00</span><span class="on">4:30</span></div>
+                  <div class="ps-wa">Book appointment</div>
                 </div>
-                <div class="ps-chips"><span class="on">Silk</span><span>Banarasi</span><span>Cotton</span></div>
-                <div class="ps-grid">
-                  <div class="ps-item"><i class="sw sw-1"></i><b>Kanjivaram Silk</b><span>₹1,299</span></div>
-                  <div class="ps-item"><i class="sw sw-2"></i><b>Banarasi Red</b><span>₹2,499</span></div>
-                  <div class="ps-item"><i class="sw sw-3"></i><b>Chanderi Mint</b><span>₹899</span></div>
-                  <div class="ps-item"><i class="sw sw-4"></i><b>Cotton Indigo</b><span>₹649</span></div>
-                </div>
-                <div class="ps-wa">Order on WhatsApp</div>
               </div>
             </div>
+            <span class="device-tag">Service business</span>
+          </div>
+          <div class="device device-front">
+            <div class="phone-float">
+              <div class="phone" role="img" aria-label="Sample clothing shop website with dresses and suits">
+                <div class="phone-screen" aria-hidden="true">
+                  <div class="ps-status"><span>9:41</span><span>●●● ▮</span></div>
+                  <div class="ps-nav"><span class="ps-logo">Glamm<em>Clothing</em></span><span class="ps-cart">🛍 2</span></div>
+                  <div class="ps-banner">
+                    <span class="ps-kicker">New season · up to 30% off</span>
+                    <strong>Dresses &amp; Suits</strong>
+                    <span class="ps-btn">Shop now</span>
+                  </div>
+                  <div class="ps-chips"><span class="on">Dresses</span><span>Suits</span><span>Kurta sets</span></div>
+                  <div class="ps-grid">
+                  <div class="ps-item"><i class="sw sw-pink"><svg viewBox="0 0 100 120"><use href="#g-dress"/></svg></i><b>Floral Midi Dress</b><span>₹1,299</span></div>
+                  <div class="ps-item"><i class="sw sw-maroon"><svg viewBox="0 0 100 120"><use href="#g-anarkali"/></svg></i><b>Anarkali Suit</b><span>₹2,499</span></div>
+                  <div class="ps-item"><i class="sw sw-navy"><svg viewBox="0 0 100 120"><use href="#g-blazer"/></svg></i><b>Men's Blazer Suit</b><span>₹3,999</span></div>
+                  <div class="ps-item"><i class="sw sw-mustard"><svg viewBox="0 0 100 120"><use href="#g-kurta"/></svg></i><b>Kurta Palazzo Set</b><span>₹1,099</span></div>
+                  </div>
+                  <div class="ps-wa">Order on WhatsApp</div>
+                </div>
+              </div>
+            </div>
+            <span class="device-tag">Product shop</span>
           </div>
         </div>
         <p class="glass-card gc-order"><span aria-hidden="true">🛒</span> New order <strong>₹1,299</strong></p>
+        <p class="glass-card gc-book"><span aria-hidden="true">📅</span> Appointment booked <strong>4:30 pm</strong></p>
         <p class="glass-card gc-wa"><span aria-hidden="true">💬</span> 3 WhatsApp enquiries</p>
         <p class="glass-card gc-star"><span aria-hidden="true">⭐</span> 4.9 on Google</p>
         <a class="hero-work-link" href="work.html">See more of my work →</a>
@@ -107,10 +162,10 @@
   <!-- BUSINESS TYPES STRIP -->
   <div class="biz-strip" aria-label="Businesses I build websites for">
     <ul class="biz-track">
-      <li>Saree Shop</li><li>Bakery</li><li>Kirana</li><li>Boutique</li><li>Salon</li><li>Coaching Centre</li><li>Jewellery</li><li>Café</li>
+      <li>Saree Shop</li><li>Bakery</li><li>Kirana</li><li>Boutique</li><li>Salon</li><li>Clinic</li><li>Coaching Centre</li><li>Jewellery</li><li>Café</li>
     </ul>
     <ul class="biz-track" aria-hidden="true">
-      <li>Saree Shop</li><li>Bakery</li><li>Kirana</li><li>Boutique</li><li>Salon</li><li>Coaching Centre</li><li>Jewellery</li><li>Café</li>
+      <li>Saree Shop</li><li>Bakery</li><li>Kirana</li><li>Boutique</li><li>Salon</li><li>Clinic</li><li>Coaching Centre</li><li>Jewellery</li><li>Café</li>
     </ul>
   </div>
 
@@ -132,34 +187,34 @@
       <div class="section-head">
         <p class="eyebrow">before / after</p>
         <h2>From a WhatsApp catalogue to a real website</h2>
-        <p class="section-intro">Drag the slider. Same shop, same sarees: one is a long chat full of forwarded photos, the other is a site customers can browse, trust and order from.</p>
+        <p class="section-intro">Drag the slider. Same shop, same clothes: one is a long chat full of forwarded photos, the other is a site customers can browse, trust and order from.</p>
       </div>
       <div class="ba" id="ba" style="--pos:50%">
         <div class="ba-layer ba-after" aria-hidden="true">
           <div class="ba-site">
-            <div class="bs-nav"><span class="ps-logo">Rangoli<em>Sarees</em></span><span class="bs-links"><span>Shop</span><span>New</span><span>About</span></span><span class="bs-cart">🛍 Cart</span></div>
+            <div class="bs-nav"><span class="ps-logo">Glamm<em>Clothing</em></span><span class="bs-links"><span>Shop</span><span>New</span><span>About</span></span><span class="bs-cart">🛍 Cart</span></div>
             <div class="bs-hero">
-              <div><span class="ps-kicker">Festive edit · free shipping</span><strong>Handwoven sarees, delivered to your door</strong><span class="ps-btn">Shop the collection</span></div>
+              <div><span class="ps-kicker">New season · free shipping</span><strong>Dresses and suits, delivered to your door</strong><span class="ps-btn">Shop the collection</span></div>
               <span class="bs-rating">⭐ 4.9 · 212 Google reviews</span>
             </div>
             <div class="bs-grid">
-              <div class="ps-item"><i class="sw sw-1"></i><b>Kanjivaram Silk</b><span>₹1,299</span></div>
-              <div class="ps-item"><i class="sw sw-2"></i><b>Banarasi Red</b><span>₹2,499</span></div>
-              <div class="ps-item"><i class="sw sw-3"></i><b>Chanderi Mint</b><span>₹899</span></div>
-              <div class="ps-item"><i class="sw sw-4"></i><b>Cotton Indigo</b><span>₹649</span></div>
+              <div class="ps-item"><i class="sw sw-pink"><svg viewBox="0 0 100 120"><use href="#g-dress"/></svg></i><b>Floral Midi Dress</b><span>₹1,299</span></div>
+              <div class="ps-item"><i class="sw sw-maroon"><svg viewBox="0 0 100 120"><use href="#g-anarkali"/></svg></i><b>Anarkali Suit</b><span>₹2,499</span></div>
+              <div class="ps-item"><i class="sw sw-navy"><svg viewBox="0 0 100 120"><use href="#g-blazer"/></svg></i><b>Men's Blazer Suit</b><span>₹3,999</span></div>
+              <div class="ps-item"><i class="sw sw-mustard"><svg viewBox="0 0 100 120"><use href="#g-kurta"/></svg></i><b>Kurta Palazzo Set</b><span>₹1,099</span></div>
             </div>
           </div>
           <span class="ba-label ba-label-after">After</span>
         </div>
         <div class="ba-layer ba-before" aria-hidden="true">
           <div class="ba-chat">
-            <div class="wc-head"><i></i><div><b>Rangoli Sarees</b><span>online</span></div></div>
+            <div class="wc-head"><i></i><div><b>Glamm Clothing</b><span>online</span></div></div>
             <div class="wc-body">
-              <p class="wc-in">Hi, saree ka catalogue bhejo</p>
+              <p class="wc-in">Hi, dress ka catalogue bhejo</p>
               <div class="wc-out wc-pics"><i></i><i></i><i></i><i></i><span>IMG-20241012-WA0031.jpg +46</span></div>
-              <p class="wc-in">Red wali ka price?</p>
-              <p class="wc-out">Kaun si red? Photo number bhejo 🙏</p>
-              <p class="wc-in">3rd wali. COD hai?</p>
+              <p class="wc-in">Pink wali ka price?</p>
+              <p class="wc-out">Kaun si pink? Photo number bhejo 🙏</p>
+              <p class="wc-in">4th wali. Size M hai?</p>
               <p class="wc-out">Call karo, bata dete hain</p>
             </div>
           </div>
