@@ -627,44 +627,35 @@
     </div>
   </section>
 
-  <!-- WRITING (journal, quotes, experience, stories, share, blog) -->
+  <!-- WRITING (blog, quotes, experience, stories, share). The Journal lives on journal.html -->
   <section class="section section-alt" id="writing">
     <div class="container">
       <div class="section-head">
-        <p class="eyebrow">mokti · quiet fashion, meaningful words</p>
+        <p class="eyebrow">Mokti · ideas made tangible</p>
         <h2>Writing</h2>
         <p class="section-intro">A quiet place to read what people were too afraid to say out loud, and a page of your own whenever you need one.</p>
+        <p class="writing-more"><a href="journal.html">Open your journal page →</a></p>
       </div>
       <div class="writing-tabs" role="tablist" aria-label="Writing sections">
-        <button class="tab active" data-target="journal">Journal</button>
-        <button class="tab" data-target="quotes">Quotes</button>
-        <button class="tab" data-target="experience">Experience</button>
-        <button class="tab" data-target="stories">Stories</button>
-        <button class="tab" data-target="you">Share yours</button>
-        <button class="tab" data-target="blog">Blog</button>
+        <button class="tab active" role="tab" aria-selected="true" data-target="blog">Blog</button>
+        <button class="tab" role="tab" aria-selected="false" data-target="quotes">Quotes</button>
+        <button class="tab" role="tab" aria-selected="false" data-target="experience">Experience</button>
+        <button class="tab" role="tab" aria-selected="false" data-target="stories">Stories</button>
+        <button class="tab" role="tab" aria-selected="false" data-target="you">Share yours</button>
       </div>
       <div class="writing-panel">
-        <!-- JOURNAL -->
-        <section id="journal" class="pane active">
-          <p class="eyebrow">your page, today</p>
-          <h3 class="pane-title">Journal</h3>
-          <p class="section-intro">Write whenever you open the app. Nothing saves anywhere but this device until you choose to share it.</p>
+        <!-- BLOG -->
+        <section id="blog" class="pane active">
+          <p class="eyebrow">any topic</p>
+          <h3 class="pane-title">Blog</h3>
+          <p class="section-intro">Business, finance, health, personal — anything worth writing about.</p>
 
-          <div class="ruled-sheet">
-            <textarea id="journal-entry" placeholder="Start writing…" rows="8"></textarea>
-          </div>
-
-          <div class="journal-controls">
-            <label class="toggle">
-              <input type="checkbox" id="public-toggle">
-              <span class="toggle-track"><span class="toggle-thumb"></span></span>
-              <span class="toggle-label" id="toggle-label-text">Private</span>
-            </label>
-            <button id="save-entry" class="btn-ink">Save entry</button>
-          </div>
-
-          <div class="journal-list" id="journal-list">
-            <p class="empty-note">Your saved entries will appear here.</p>
+          <!-- To publish a post, add it inside blog-grid, newest first, and delete the blog-empty block:
+               <article class="blog-card"><span class="chapter-tag">Topic</span><h3>Post title</h3><p>One-line preview.</p></article> -->
+          <div class="blog-grid" id="blog-grid"></div>
+          <div class="blog-empty" id="blog-empty">
+            <span class="blog-empty-mark" aria-hidden="true">✳</span>
+            <p>No posts yet. New posts will appear here.</p>
           </div>
         </section>
 
@@ -769,19 +760,6 @@
           <p class="form-note" id="you-note" hidden>Thank you — your words are safe with us. 🤍</p>
         </section>
 
-        <!-- BLOG -->
-        <section id="blog" class="pane">
-          <p class="eyebrow">any topic</p>
-          <h3 class="pane-title">Blog Post</h3>
-          <p class="section-intro">Business, finance, health, personal — anything worth writing about.</p>
-
-          <div class="blog-grid" id="blog-grid">
-            <article class="blog-card"><span class="chapter-tag">Personal</span><h3>Placeholder post title</h3><p>A line of preview text goes here.</p></article>
-            <article class="blog-card"><span class="chapter-tag">Finance</span><h3>Placeholder post title</h3><p>A line of preview text goes here.</p></article>
-            <article class="blog-card"><span class="chapter-tag">Health</span><h3>Placeholder post title</h3><p>A line of preview text goes here.</p></article>
-          </div>
-        </section>
-
       </div>
     </div>
   </section>
@@ -802,6 +780,7 @@
     <div>
       <a class="brand" href="#top">Mokti<span class="brand-dot">.</span></a>
       <p class="footer-tag">Websites, ecommerce, design and AI guides by Surbhi Priya.</p>
+      <p class="footer-motto">Mokti · ideas made tangible</p>
     </div>
     <nav aria-label="Explore">
       <h4>Explore</h4>
@@ -811,6 +790,7 @@
       <a href="work.html">My Work</a>
       <a href="#ebooks">Books</a>
       <a href="#writing">Writing</a>
+      <a href="journal.html">Journal</a>
       <a href="#enquiry">Start a project</a>
     </nav>
     <nav aria-label="Site information">
@@ -827,5 +807,6 @@
 
 <script src="menu.js"></script>
 <script src="app.js"></script>
+<script src="cinematic.js"></script>
 </body>
 </html>
