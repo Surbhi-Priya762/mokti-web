@@ -27,18 +27,26 @@ document.querySelectorAll('[data-razorpay]').forEach(el => {
   if (RAZORPAY_LINKS[key]) el.href = RAZORPAY_LINKS[key];
 });
 
-// ---------- WRITING TABS (Journal, Quotes, Experience, ...) ----------
+// ---------- WRITING TABS (Blog, Quotes, Experience, ...) ----------
 const tabs = document.querySelectorAll('.writing-tabs .tab');
 const panes = document.querySelectorAll('.writing-panel .pane');
 
 function showTab(target){
-  tabs.forEach(t => t.classList.toggle('active', t.dataset.target === target));
+  tabs.forEach(t => {
+    t.classList.toggle('active', t.dataset.target === target);
+    t.setAttribute('aria-selected', String(t.dataset.target === target));
+  });
   panes.forEach(p => p.classList.toggle('active', p.id === target));
 }
 
 tabs.forEach(tab => tab.addEventListener('click', () => showTab(tab.dataset.target)));
 
-// ---------- JOURNAL (localStorage, this device only) ----------
+// The Journal moved to its own page; keep old #journal links working.
+const journalMoved = () => { if (location.hash === '#journal' && !document.getElementById('journal')) location.replace('journal.html'); };
+journalMoved();
+window.addEventListener('hashchange', journalMoved);
+
+// ---------- JOURNAL (localStorage, this device only; lives on journal.html) ----------
 const STORAGE_KEY = 'mokti_journal_entries';
 const journalList = document.getElementById('journal-list');
 const publicToggle = document.getElementById('public-toggle');
@@ -46,7 +54,7 @@ const toggleLabel = document.getElementById('toggle-label-text');
 const saveBtn = document.getElementById('save-entry');
 const entryBox = document.getElementById('journal-entry');
 
-publicToggle.addEventListener('change', () => {
+publicToggle?.addEventListener('change', () => {
   toggleLabel.textContent = publicToggle.checked ? 'Public' : 'Private';
 });
 
@@ -59,6 +67,7 @@ function saveEntries(entries){
 }
 
 function renderEntries(){
+  if(!journalList) return;
   const entries = loadEntries();
   if(entries.length === 0){
     journalList.innerHTML = '<p class="empty-note">Your saved entries will appear here.</p>';
@@ -81,7 +90,7 @@ function escapeHtml(str){
   return div.innerHTML;
 }
 
-saveBtn.addEventListener('click', () => {
+saveBtn?.addEventListener('click', () => {
   const text = entryBox.value.trim();
   if(!text) return;
   const entries = loadEntries();
@@ -103,6 +112,7 @@ const seedQuotes = [
 
 function renderQuoteFeed(){
   const feed = document.getElementById('quote-feed');
+  if(!feed) return;
   const publicEntries = loadEntries().filter(e => e.isPublic).map(e => ({ text: e.text, source: 'from a journal page' }));
   const userQuotes = loadEntries().__quotes || [];
   const all = [...seedQuotes, ...publicEntries];
@@ -121,7 +131,7 @@ function loadUserQuotes(){
 }
 function saveUserQuotes(list){ localStorage.setItem(QUOTE_KEY, JSON.stringify(list)); }
 
-document.getElementById('quote-form').addEventListener('submit', (e) => {
+document.getElementById('quote-form')?.addEventListener('submit', (e) => {
   e.preventDefault();
   const input = document.getElementById('quote-input');
   const text = input.value.trim();
@@ -135,6 +145,7 @@ document.getElementById('quote-form').addEventListener('submit', (e) => {
 
 function renderQuoteFeedFull(){
   const feed = document.getElementById('quote-feed');
+  if(!feed) return;
   const publicEntries = loadEntries().filter(e => e.isPublic).map(e => ({ text: e.text, source: 'from a journal page' }));
   const userQuotes = loadUserQuotes();
   const all = [...seedQuotes, ...publicEntries, ...userQuotes];
@@ -149,7 +160,7 @@ function renderQuoteFeedFull(){
 // ---------- YOU FORM: anonymous toggle ----------
 const anonCheck = document.getElementById('anon-check');
 const identityFields = document.getElementById('identity-fields');
-anonCheck.addEventListener('change', () => {
+anonCheck?.addEventListener('change', () => {
   identityFields.style.display = anonCheck.checked ? 'none' : 'flex';
   identityFields.style.flexDirection = 'column';
 });

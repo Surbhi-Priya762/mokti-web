@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sukoon Family Clinic (fictional demo) — Mokti</title>
+<meta name="description" content="A fictional clinic website made by Mokti to show doctor profiles, services, opening hours and appointment requests.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Lexend:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../kit/demo.css">
+<style>
+  :root{
+    --bg: #f5faf9; --surface: #ffffff; --surface-2: #e7f2f0; --ink: #12302f; --muted: #46605f; --line: #d5e6e3;
+    --accent: #0d6b66; --accent-ink: #ffffff; --accent-soft: #dcefec;
+    --font-head: 'Fraunces', Georgia, serif; --font-body: 'Lexend', system-ui, sans-serif;
+    --radius: 16px; --radius-lg: 22px;
+  }
+  .today-card{ background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 28px; box-shadow: var(--shadow); }
+  .today-card h2{ font-size: 26px; }
+  .today-card .actions{ display:flex; flex-wrap:wrap; gap: 10px; margin-top: 18px; }
+  .icon{ width: 48px; height: 48px; border-radius: 14px; background: var(--accent-soft); color: var(--accent); display:grid; place-items:center; margin-bottom: 14px; }
+  .icon svg{ width: 26px; height: 26px; }
+  .person .meta{ margin: 0 0 4px; }
+  .faq details{ background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 20px; margin-bottom: 12px; }
+  .faq summary{ font-weight: 600; cursor: pointer; }
+  .faq details p{ margin: 10px 0 0; color: var(--muted); }
+  .alert{ border-left: 4px solid #b3412b; background: #fbeeea; padding: 12px 16px; border-radius: 8px; font-size: 15px; margin-top: 18px; }
+  .check{ display:flex !important; grid-template-columns: none; align-items:flex-start; gap: 10px !important; font-weight: 400 !important; }
+  .check input{ width: auto; margin-top: 4px; }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo-bar"><div class="wrap"><span><strong>Fictional demo.</strong> Sukoon is a sample clinic made by Mokti. The doctors and details are not real.</span><span><a href="../">All demos</a> · <a href="../../index.html#enquiry">Get a site like this →</a></span></div></div>
+
+<header class="d-header">
+  <div class="wrap">
+    <a class="d-brand" href="#top">Sukoon<small>Family Clinic</small></a>
+    <button class="d-menu" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav class="d-nav" id="nav" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#doctors">Doctors</a>
+      <a href="#visit">Timings</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn btn-sm" href="#appointment">Request appointment</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="d-hero" id="top">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">General practice · Children · Women's health</p>
+        <h1>Unhurried care for the whole family.</h1>
+        <p class="lead">Four doctors, one neighbourhood clinic. Request a slot online and we'll confirm it by SMS or WhatsApp.</p>
+        <div class="actions"><a class="btn" href="#appointment">Request an appointment</a><a class="btn btn-ghost" href="#doctors">Meet the doctors</a></div>
+      </div>
+      <aside class="today-card reveal" aria-label="Today at the clinic">
+        <h2>Today at Sukoon</h2>
+        <p class="open-now" id="open-now">Clinic timings</p>
+        <table class="hours" data-hours='{"0":["10:00","13:00"],"1":[["09:00","13:00"],["17:00","21:00"]],"2":[["09:00","13:00"],["17:00","21:00"]],"3":[["09:00","13:00"],["17:00","21:00"]],"4":[["09:00","13:00"],["17:00","21:00"]],"5":[["09:00","13:00"],["17:00","21:00"]],"6":[["09:00","13:00"],["17:00","21:00"]]}' data-status="#open-now">
+          <caption class="skip">Clinic timings</caption>
+          <tr data-day="1 2 3 4 5 6"><th scope="row">Mon to Sat</th><td>9 am – 1 pm · 5 – 9 pm</td></tr>
+          <tr data-day="0"><th scope="row">Sunday</th><td>10 am – 1 pm</td></tr>
+        </table>
+        <div class="actions"><a class="btn btn-sm" href="#appointment">Book a slot</a><a class="btn btn-sm btn-ghost" href="#visit">Directions</a></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="d-section alt" id="services">
+    <div class="wrap">
+      <div class="d-head reveal">
+        <p class="eyebrow">Services</p>
+        <h2>What we can help with</h2>
+        <p>Consultation fee ₹500. Follow-up within 7 days is free.</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="card reveal"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 3v6a6 6 0 0 0 12 0V3"/><path d="M12 15v2a4 4 0 0 0 8 0v-3"/><circle cx="20" cy="12" r="2"/></svg></div><h3>General medicine</h3><p>Fever, infections, aches and everyday health worries.</p></article>
+        <article class="card reveal"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="7" r="3.5"/><path d="M5 21c0-4 3-7 7-7s7 3 7 7"/></svg></div><h3>Children's health</h3><p>Growth checks, illness visits and advice for new parents.</p></article>
+        <article class="card reveal"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="9" r="5"/><path d="M12 14v7M9 18h6"/></svg></div><h3>Women's health</h3><p>Periods, pregnancy care and routine check-ups.</p></article>
+        <article class="card reveal"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 12h4l2-5 4 10 2-5h6"/></svg></div><h3>Diabetes &amp; BP care</h3><p>Regular reviews, medicine plans and diet guidance.</p></article>
+        <article class="card reveal"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M14 4l6 6M17 7l-9 9-3 1 1-3 9-9M4 20l3-3"/></svg></div><h3>Vaccinations</h3><p>Childhood and adult vaccines, with a reminder card.</p></article>
+        <article class="card reveal"><div class="icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 2 3h10a2 2 0 0 0 2-3l-5-9V3"/><path d="M7 15h10"/></svg></div><h3>Lab tests</h3><p>Blood sample collection at the clinic, reports on WhatsApp.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="d-section" id="doctors">
+    <div class="wrap">
+      <div class="d-head reveal">
+        <p class="eyebrow">Doctors</p>
+        <h2>Who you'll see</h2>
+        <p>All names here are fictional, for this demo only.</p>
+      </div>
+      <div class="chips" data-filter="#doctors .person" role="group" aria-label="Filter doctors">
+        <button type="button" data-value="all" aria-pressed="true">All</button>
+        <button type="button" data-value="general" aria-pressed="false">General</button>
+        <button type="button" data-value="children" aria-pressed="false">Children</button>
+        <button type="button" data-value="women" aria-pressed="false">Women</button>
+        <button type="button" data-value="diabetes" aria-pressed="false">Diabetes</button>
+      </div>
+      <div class="grid grid-4">
+        <article class="card person" data-tags="general"><div class="avatar" aria-hidden="true">AR</div><h3>Dr. Ananya Rao</h3><p class="role">General physician</p><p class="meta">Mon to Sat, mornings</p><p class="meta">English, Hindi, Kannada</p><button class="btn btn-sm btn-ghost" type="button" data-fill="doctor=Dr. Ananya Rao (General physician)" data-go="#appointment">Request with Dr. Rao</button></article>
+        <article class="card person" data-tags="children"><div class="avatar" aria-hidden="true">KM</div><h3>Dr. Kabir Mehta</h3><p class="role">Paediatrician</p><p class="meta">Mon to Sat, evenings</p><p class="meta">English, Hindi, Gujarati</p><button class="btn btn-sm btn-ghost" type="button" data-fill="doctor=Dr. Kabir Mehta (Paediatrician)" data-go="#appointment">Request with Dr. Mehta</button></article>
+        <article class="card person" data-tags="women"><div class="avatar" aria-hidden="true">SQ</div><h3>Dr. Sana Qureshi</h3><p class="role">Gynaecologist</p><p class="meta">Tue, Thu and Sat</p><p class="meta">English, Hindi, Urdu</p><button class="btn btn-sm btn-ghost" type="button" data-fill="doctor=Dr. Sana Qureshi (Gynaecologist)" data-go="#appointment">Request with Dr. Qureshi</button></article>
+        <article class="card person" data-tags="diabetes general"><div class="avatar" aria-hidden="true">VI</div><h3>Dr. Vikram Iyer</h3><p class="role">Diabetes &amp; BP</p><p class="meta">Mon, Wed and Fri evenings</p><p class="meta">English, Tamil, Hindi</p><button class="btn btn-sm btn-ghost" type="button" data-fill="doctor=Dr. Vikram Iyer (Diabetes &amp; BP)" data-go="#appointment">Request with Dr. Iyer</button></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="d-section alt" id="appointment">
+    <div class="wrap booking">
+      <div id="visit">
+        <p class="eyebrow">Appointments</p>
+        <h2>Request an appointment</h2>
+        <p>Tell us when suits you. The front desk confirms the exact time by SMS or WhatsApp.</p>
+        <p><strong>Sukoon Family Clinic</strong><br>First floor, 8 Demo Lane, Your City<br>Phone: +91 00000 00000 (sample)</p>
+        <p>Parking in front of the building. Lift available.</p>
+        <p class="alert"><strong>Emergency?</strong> Don't wait for a slot. Call 112 or go to the nearest hospital.</p>
+      </div>
+      <div>
+        <form class="d-form card" data-demo-form data-confirm="#appt-confirm" data-thanks="Appointment request received">
+          <div class="row">
+            <label>Patient's name <input name="name" autocomplete="name" required></label>
+            <label>Age <input name="age" type="number" min="0" max="120" inputmode="numeric" required></label>
+          </div>
+          <label>Phone or WhatsApp <input name="phone" type="tel" autocomplete="tel" inputmode="tel" pattern="[0-9+ ]{10,15}" required></label>
+          <label>Doctor
+            <select name="doctor">
+              <option>Any available doctor</option>
+              <option>Dr. Ananya Rao (General physician)</option>
+              <option>Dr. Kabir Mehta (Paediatrician)</option>
+              <option>Dr. Sana Qureshi (Gynaecologist)</option>
+              <option>Dr. Vikram Iyer (Diabetes &amp; BP)</option>
+            </select>
+          </label>
+          <div class="row">
+            <label>Preferred date <input name="date" type="date" required></label>
+            <label>Session
+              <select name="session" required><option value="">Choose</option><option>Morning (9 am – 1 pm)</option><option>Evening (5 – 9 pm)</option></select>
+            </label>
+          </div>
+          <label>Reason for visit (optional)
+            <input name="reason" maxlength="120">
+            <span class="hint">A few words is enough. Please don't share detailed medical history here.</span>
+          </label>
+          <label class="check"><input type="checkbox" name="consent" value="Yes" required> <span>I agree to be contacted about this appointment.</span></label>
+          <button class="btn" type="submit">Send request</button>
+          <p class="hint">Demo form: nothing is sent.</p>
+        </form>
+        <div class="confirm" id="appt-confirm" hidden aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="d-section faq" id="faq">
+    <div class="wrap">
+      <div class="d-head reveal">
+        <p class="eyebrow">FAQ</p>
+        <h2>Before you come in</h2>
+      </div>
+      <details><summary>Can I walk in without an appointment?</summary><p>Yes. Patients with appointments are seen first, so walk-ins may wait a little longer.</p></details>
+      <details><summary>What should I bring?</summary><p>Your old prescriptions and reports, a list of medicines you take, and an ID for lab tests.</p></details>
+      <details><summary>How do I pay?</summary><p>Cash, card or UPI at the front desk.</p></details>
+      <details><summary>Do you do home visits?</summary><p>For elderly patients nearby, on request. Call the front desk to arrange one.</p></details>
+    </div>
+  </section>
+</main>
+
+<footer class="d-footer">
+  <div class="wrap">
+    <div><h2>Sukoon</h2><p>Family Clinic</p><p>8 Demo Lane, Your City</p></div>
+    <div><h3>Timings</h3><p>Mon to Sat: 9 am – 1 pm, 5 – 9 pm</p><p>Sun: 10 am – 1 pm</p></div>
+    <div><h3>Explore</h3><p><a href="#services">Services</a></p><p><a href="#doctors">Doctors</a></p><p><a href="#appointment">Appointments</a></p></div>
+    <p class="small">Sukoon Family Clinic is a fictional business. Doctors, fees and address are sample content, not medical advice. Website demo by <a href="../../index.html">Mokti</a>.</p>
+  </div>
+</footer>
+<script src="../kit/demo.js"></script>
+</body>
+</html>

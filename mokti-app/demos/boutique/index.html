@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Neelkamal Boutique (fictional demo) — Mokti</title>
+<meta name="description" content="A fictional boutique website made by Mokti to show collections, product details, size selection, a shopping bag and WhatsApp ordering.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../kit/demo.css">
+<style>
+  :root{
+    --bg: #f7f3ec; --surface: #ffffff; --surface-2: #efe7dc; --ink: #1c2340; --muted: #4f566c; --line: #e2d9cb;
+    --accent: #9c2f2f; --accent-ink: #ffffff; --accent-soft: #f4e2dc;
+    --font-head: 'DM Serif Display', Georgia, serif; --font-body: 'Manrope', system-ui, sans-serif;
+    --radius: 6px; --radius-lg: 10px;
+  }
+  h1, h2, h3{ font-weight: 400; }
+  .btn{ border-radius: 4px; }
+  .strip{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 16px; padding: 22px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); font-size: 15px; }
+  .strip strong{ display:block; }
+  .strip span{ color: var(--muted); }
+  @media (max-width: 560px){ .strip{ grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo-bar"><div class="wrap"><span><strong>Fictional demo.</strong> Neelkamal is a sample boutique made by Mokti. Nothing here is for sale.</span><span><a href="../">All demos</a> · <a href="../../index.html#enquiry">Get a site like this →</a></span></div></div>
+
+<header class="d-header">
+  <div class="wrap">
+    <a class="d-brand" href="#top">Neelkamal<small>Handblock boutique</small></a>
+    <nav class="d-nav" id="nav" aria-label="Main">
+      <a href="#shop">Shop</a>
+      <a href="#tailoring">Custom tailoring</a>
+      <a href="#visit">Visit</a>
+    </nav>
+    <div class="d-tools"><button class="d-menu" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span></span><span></span><span></span></button><button class="btn btn-sm cart-btn" type="button" data-open-cart>Bag <span class="cart-count" data-n="0" aria-label="items in bag">0</span></button></div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="d-hero" id="top">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">New · Winter block prints</p>
+        <h1>Handblock prints, made to be worn every day.</h1>
+        <p class="lead">Kurtas, sarees and easy co-ord sets in soft cotton and mul, printed by hand in small batches.</p>
+        <div class="actions"><a class="btn" href="#shop">Shop the collection</a><a class="btn btn-ghost" href="#tailoring">Get it tailored</a></div>
+      </div>
+      <div class="hero-art reveal"><img src="img/hero.svg" alt="" width="800" height="520"></div>
+    </div>
+  </section>
+
+  <div class="wrap">
+    <div class="strip">
+      <div><strong>Free shipping over ₹1,999</strong><span>Sample policy for this demo</span></div>
+      <div><strong>Easy 7-day exchange</strong><span>On unworn pieces with tags</span></div>
+      <div><strong>Cash on delivery</strong><span>Or pay by UPI</span></div>
+    </div>
+  </div>
+
+  <section class="d-section" id="shop">
+    <div class="wrap">
+      <div class="d-head reveal">
+        <p class="eyebrow">Shop</p>
+        <h2>The collection</h2>
+        <p>Tap a piece to see details, pick your size and add it to your bag.</p>
+      </div>
+      <div class="chips" data-filter="#products .product" role="group" aria-label="Filter by collection">
+        <button type="button" data-value="all" aria-pressed="true">All</button>
+        <button type="button" data-value="kurtas" aria-pressed="false">Kurtas &amp; sets</button>
+        <button type="button" data-value="sarees" aria-pressed="false">Sarees &amp; dupattas</button>
+        <button type="button" data-value="dresses" aria-pressed="false">Dresses</button>
+        <button type="button" data-value="accessories" aria-pressed="false">Accessories</button>
+      </div>
+      <div class="products" id="products"><p>Loading the collection…</p></div>
+      <noscript><p>Turn on JavaScript to browse the collection.</p></noscript>
+    </div>
+  </section>
+
+  <section class="d-section alt" id="tailoring">
+    <div class="wrap booking">
+      <div>
+        <p class="eyebrow">Custom tailoring</p>
+        <h2>Made to your measurements</h2>
+        <p>Pick any fabric from the collection and we'll stitch it to fit. Book a fitting at the store or send your measurements.</p>
+        <ul>
+          <li>Stitching from ₹799 per piece</li>
+          <li>Ready in 7 to 10 days</li>
+          <li>One free alteration</li>
+        </ul>
+        <div id="visit" style="margin-top:28px">
+          <p class="open-now" id="open-now">Store hours</p>
+          <table class="hours" data-hours='{"0":["12:00","19:00"],"1":["11:00","20:30"],"2":["11:00","20:30"],"3":["11:00","20:30"],"4":["11:00","20:30"],"5":["11:00","20:30"],"6":["11:00","20:30"]}' data-status="#open-now">
+            <caption class="skip">Store hours</caption>
+            <tr data-day="1 2 3 4 5 6"><th scope="row">Monday to Saturday</th><td>11 am – 8:30 pm</td></tr>
+            <tr data-day="0"><th scope="row">Sunday</th><td>12 pm – 7 pm</td></tr>
+          </table>
+          <p style="margin-top:14px">45 Example Market, Your City · +91 00000 00000 (sample)</p>
+        </div>
+      </div>
+      <div>
+        <form class="d-form card" data-demo-form data-confirm="#tailor-confirm" data-thanks="Tailoring request received">
+          <label>Your name <input name="name" autocomplete="name" required></label>
+          <div class="row">
+            <label>Phone or WhatsApp <input name="phone" type="tel" autocomplete="tel" inputmode="tel" pattern="[0-9+ ]{10,15}" required></label>
+            <label>What would you like?
+              <select name="piece" required><option value="">Choose</option><option>Kurta</option><option>Kurta set</option><option>Blouse</option><option>Dress</option><option>Something else</option></select>
+            </label>
+          </div>
+          <div class="row">
+            <label>How shall we measure?
+              <select name="measure"><option>Fitting at the store</option><option>I'll send my measurements</option><option>Copy a garment I have</option></select>
+            </label>
+            <label>Preferred date <input name="date" type="date"></label>
+          </div>
+          <label>Notes <textarea name="notes" rows="3" placeholder="Fabric you liked, sleeve length, neckline…"></textarea></label>
+          <button class="btn" type="submit">Send request</button>
+          <p class="hint">Demo form: nothing is sent.</p>
+        </form>
+        <div class="confirm" id="tailor-confirm" hidden aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<dialog id="product-dialog" aria-labelledby="pd-name">
+  <button class="close-x" type="button" aria-label="Close">×</button>
+  <div class="pd">
+    <img id="pd-img" src="img/indigo-kurta.svg" alt="" width="400" height="500">
+    <div class="body">
+      <span class="chip" id="pd-tag"></span>
+      <h2 id="pd-name"></h2>
+      <p class="price" id="pd-price"></p>
+      <p id="pd-desc"></p>
+      <fieldset class="sizes" id="pd-sizes"></fieldset>
+      <p class="meta" id="pd-note"></p>
+      <div><span class="qty"><button type="button" id="pd-minus" aria-label="One less">−</button><output id="pd-qty" aria-live="polite">1</output><button type="button" id="pd-plus" aria-label="One more">+</button></span></div>
+      <button class="btn" type="button" id="pd-add">Add to bag</button>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="cart" class="drawer" aria-labelledby="cart-title">
+  <div class="inner">
+    <button class="close-x" type="button" aria-label="Close bag">×</button>
+    <h2 id="cart-title">Your bag</h2>
+    <ul class="cart-items" id="cart-items"></ul>
+    <p class="cart-total"><span>Total</span><span id="cart-total">₹0</span></p>
+    <button class="btn" type="button" id="checkout">Order on WhatsApp</button>
+    <pre class="order-preview" id="order-preview" hidden aria-live="polite"></pre>
+  </div>
+</dialog>
+
+<footer class="d-footer">
+  <div class="wrap">
+    <div><h2>Neelkamal</h2><p>Handblock boutique</p><p>45 Example Market, Your City</p></div>
+    <div><h3>Shop</h3><p><a href="#shop">The collection</a></p><p><a href="#tailoring">Custom tailoring</a></p></div>
+    <div><h3>Help</h3><p>Shipping in 3 to 6 days</p><p>7-day exchange</p></div>
+    <p class="small">Neelkamal is a fictional business. Products, prices and address are sample content and nothing can be bought here. Website demo by <a href="../../index.html">Mokti</a>.</p>
+  </div>
+</footer>
+<script>
+window.DEMO_SHOP = {
+  id: 'neelkamal',
+  name: 'Neelkamal',
+  products: [
+    { id: 'indigo-kurta', name: 'Indigo buti kurta', collection: 'Kurtas & sets', tags: ['kurtas'], price: 1899, img: 'img/indigo-kurta.svg', alt: 'Indigo kurta with small cream motifs', desc: 'Straight-cut cotton kurta, hand block-printed with tiny cream buti. Side slits and pockets.', sizes: ['XS','S','M','L','XL','XXL'], soldOut: ['XS'] },
+    { id: 'madder-anarkali', name: 'Madder red anarkali', collection: 'Kurtas & sets', tags: ['kurtas'], price: 2799, img: 'img/madder-anarkali.svg', alt: 'Flared red anarkali with gold dots', desc: 'Flared, twelve-panel anarkali in soft cotton with a gold dot print. Lined.', sizes: ['S','M','L','XL'] },
+    { id: 'ajrakh-coord', name: 'Ajrakh co-ord set', collection: 'Kurtas & sets', tags: ['kurtas'], price: 3299, img: 'img/ajrakh-coord.svg', alt: 'Brown and rust check co-ord set', desc: 'Relaxed shirt and straight pants in an earthy check, for travel and long days.', sizes: ['S','M','L','XL','XXL'], soldOut: ['XXL'] },
+    { id: 'linen-dress', name: 'Striped linen dress', collection: 'Dresses', tags: ['dresses'], price: 2499, img: 'img/linen-dress.svg', alt: 'Long sand-striped linen dress', desc: 'Breezy A-line dress in linen blend with fine sand stripes. Falls to the ankle.', sizes: ['XS','S','M','L','XL'] },
+    { id: 'mul-saree', name: 'Haldi mul saree', collection: 'Sarees & dupattas', tags: ['sarees'], price: 3999, img: 'img/mul-saree.svg', alt: 'Yellow saree with red motifs', desc: 'Feather-light mul cotton saree in haldi yellow with red motifs. Comes with an unstitched blouse piece.', sizes: ['Free size'], sizeLabel: 'Size' },
+    { id: 'bandhani-dupatta', name: 'Bandhani dupatta', collection: 'Sarees & dupattas', tags: ['sarees', 'accessories'], price: 1499, img: 'img/bandhani-dupatta.svg', alt: 'Pink dupatta with tie-dye dots', desc: 'Hand-tied bandhani dupatta in rose pink. 2.4 metres.', sizes: ['Free size'] },
+    { id: 'block-tote', name: 'Block print tote', collection: 'Accessories', tags: ['accessories'], price: 699, img: 'img/block-tote.svg', alt: 'Cream tote bag with indigo motifs', desc: 'Sturdy canvas tote with an indigo block print and an inside pocket.', sizes: ['One size'] },
+    { id: 'brass-jhumka', name: 'Brass jhumkas', collection: 'Accessories', tags: ['accessories'], price: 899, img: 'img/brass-jhumka.svg', alt: 'Pair of brass jhumka earrings', desc: 'Light brass jhumkas with a matte finish, made to pair with everything above.', sizes: ['One size'] }
+  ]
+};
+</script>
+<script src="../kit/demo.js"></script>
+</body>
+</html>

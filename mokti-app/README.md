@@ -1,6 +1,12 @@
 # Mokti — v1 Web App
 
-The mokti.in website: a one-page site with a header menu (Home, Ebooks, Services, Writing, About, Contact). The home page covers a hero, the 2 ebooks, Services with an enquiry form, and a Writing area (Journal, Quotes, Experience, Stories, Share yours, Blog). The About, Contact, Terms, Refund and Privacy pages are separate HTML files that share the same header and footer. The header menu lives in `menu.js`, and the rest of the page logic is in `app.js`.
+The mokti.in website: a one-page site with a header menu (Home, Ebooks, Services, Writing, About, Contact). The home page covers a hero, the 2 ebooks, Services with an enquiry form, and a Writing area (Blog, Quotes, Experience, Stories, Share yours). The Journal has its own page, `journal.html`, and uses the same code in `app.js`. The About, Contact, Terms, Refund and Privacy pages are separate HTML files that share the same header and footer. The header menu lives in `menu.js`, the rest of the page logic is in `app.js`, and the optional motion and 3D effects (scroll reveals, 3D books, layered project panels, count-up stats) are in `cinematic.js`, which switches itself off for visitors who prefer reduced motion.
+
+My Work (`work.html`) is a project gallery: one featured project in a layered 3D stage, three project cards, then every screenshot by group. Each featured project has a case study page in `work/` (`mokti-site.html`, `storeily.html`, `dashboards.html`, `python-apps.html`) with the job, what I did, the features visible in the screenshots, and a screenshot gallery. To add a case study, copy one of those pages, change the text and images, and add a card for it in `work.html` and in the `work-strip` on the home page. Only describe features you can see in the screenshots or in the code.
+
+Under the hero, the home page tells a three-chapter scroll story (`.story` in `index.html`): 1 Shape the idea, 2 Make it real, 3 Let it grow. While motion is allowed, `cinematic.js` pins each chapter and sets `--e` (scrolling in) and `--p` (progress while pinned), and the CSS in `style.css` moves the logo halves, mockups, laptop, phone and cards and draws the gold thread from those two numbers. Without JS or with reduced motion every piece sits in its final place.
+
+To publish a blog post, open `index.html`, find `blog-grid`, add an `<article class="blog-card">` inside it (the comment above it shows the markup), and delete the `blog-empty` block.
 
 ## Before you launch — 5 things to edit
 
