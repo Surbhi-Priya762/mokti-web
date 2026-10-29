@@ -21,7 +21,7 @@
   document.documentElement.classList.add('motion-ok');
 
   // ---------- Scroll reveals (one shared observer) ----------
-  const revealTargets = '.section-head, .offer, .process-grid li, .service, .package, .guide-card, .ebook-card, .bundle, .work-item, .work-stats li, .tee, .writing-panel, .cta-inner, .info-inner > *';
+  const revealTargets = '.section-head, .offer, .process-grid li, .service, .package, .guide-card, .ebook-card, .bundle, .work-item, .work-stats li, .tee, .writing-panel, .cta-inner, .info-inner > *, .feature-text, .work-strip a, .cs-body section, .cs-next';
   const revealer = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) { entry.target.classList.add('is-visible'); revealer.unobserve(entry.target); }
@@ -59,8 +59,9 @@
   const heroCard = document.querySelector('.hero-work');
   const hero = heroCard && heroCard.closest('.hero');
   if (heroCard) heroCard.classList.add('depth-stage');
-  const panels = [...document.querySelectorAll('.work-gallery .shot')];
-  panels.forEach(p => p.classList.add('panel3d'));
+  const panels = [...document.querySelectorAll('.work-gallery .shot, .project-card')];
+  document.querySelectorAll('.work-gallery .shot').forEach(p => p.classList.add('panel3d'));
+  const stages = [...document.querySelectorAll('.feature-stage')];
 
   let ticking = false;
   const onScroll = () => {
@@ -76,6 +77,12 @@
       // 0 when the panel's top is at the bottom of the screen, 1 once it reaches 70% height.
       const p = Math.min(1, Math.max(0, (vh - r.top) / (vh * 0.3)));
       panel.style.setProperty('--p', p.toFixed(3));
+    });
+    stages.forEach(stage => {
+      const r = stage.getBoundingClientRect();
+      // The featured stage opens out over a longer stretch of scrolling.
+      const p = Math.min(1, Math.max(0, (vh - r.top) / (vh * 0.75)));
+      stage.style.setProperty('--p', p.toFixed(3));
     });
   };
   const requestTick = () => { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } };
@@ -102,5 +109,6 @@
   };
   document.querySelectorAll('.js-tilt').forEach(el => tilt(el, 2.4, 3));
   panels.forEach(el => tilt(el, 4, 5));
+  stages.forEach(el => tilt(el, 6, 8));
   if (heroCard) tilt(heroCard, 5, 7);
 })();

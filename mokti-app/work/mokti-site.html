@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mokti website case study — Mokti</title>
+<meta name="description" content="How Surbhi Priya designed and built mokti.in: services, ebooks and AI guides with Razorpay payments and automatic ebook delivery by email.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="../index.html">Mokti<span class="brand-dot">.</span></a>
+    <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <a href="../index.html">Home</a>
+      <a href="../index.html#services">Services</a>
+      <a href="../tshirts.html">T-shirts</a>
+      <a href="../index.html#ai-guides">AI Guides</a>
+      <a href="../work.html" aria-current="page">My Work</a>
+      <a href="../index.html#ebooks">Books</a>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+      <a class="btn-ink nav-cta" href="../index.html#enquiry">Start a project</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="section">
+    <div class="container">
+      <p class="cs-back"><a class="text-link" href="../work.html">← All work</a></p>
+      <div class="cs-hero">
+        <div>
+          <span class="chapter-tag">Website</span>
+          <h1>Mokti (this website)</h1>
+          <p class="cs-lead">My own studio website: services, ebooks, AI guides and writing in one place, with payments and ebook delivery that run on their own.</p>
+          <dl class="cs-facts">
+          <dt>Role</dt><dd>Design, build and content</dd>
+          <dt>Type</dt><dd>Business website and ebook shop</dd>
+          <dt>Live</dt><dd><a class="text-link" href="../index.html">mokti.in</a></dd>
+          </dl>
+          
+        </div>
+        <div class="cs-visual"><img src="mokti-site.jpg" alt="Home page of the Mokti website" width="1400" height="788"></div>
+      </div>
+
+      <div class="cs-body">
+        <section>
+          <h2>The job</h2>
+          <p>Mokti began as a Shopify store. I rebuilt it as a hand-coded website so that my services, ebooks, AI guides and writing could live in one place that I fully control.</p><p>It had to take payments, deliver ebooks without me doing it by hand, and collect project enquiries.</p>
+        </section>
+        <section>
+          <h2>What I did</h2>
+          <ul>
+            <li>Designed the warm ivory and gold look, including the 3D book covers and layered panels</li>
+            <li>Wrote and built every page by hand, without a template or page builder</li>
+            <li>Connected a Razorpay Payment Page to each of the 19 ebooks and bundles</li>
+            <li>Wrote a Netlify Function that receives each Razorpay payment and emails the right PDF through Resend</li>
+            <li>Set up Netlify Forms for project enquiries, contact and reader submissions</li>
+            <li>Redirected the old Shopify links so existing links keep working</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Features you can see</h2>
+          <ul>
+            <li>Services with clear packages, and an enquiry form that fills in the package you clicked</li>
+            <li>AI guides and books with instant checkout</li>
+            <li>Automatic ebook delivery by email after payment</li>
+            <li>A writing section with blog, quotes and stories, plus a private journal saved only on your own device</li>
+            <li>Works on phones, and turns off motion for people who prefer less of it</li>
+          </ul>
+        </section>
+        <section>
+          <h2>Built with</h2>
+          <p>HTML, CSS and JavaScript with no framework. Hosted on Netlify with Netlify Functions and Netlify Forms. Payments by Razorpay, email by Resend.</p>
+        </section>
+      </div>
+
+      <h2 class="service-group cs-shots">Screenshots</h2>
+      <div class="work-gallery">
+        <figure class="shot">
+          <a href="mokti-site.jpg" target="_blank" rel="noopener"><img src="mokti-site.jpg" alt="Home page of the Mokti website" loading="lazy"></a>
+          <figcaption><h3>Home</h3><p>A first-person introduction and the services I offer.</p></figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="mokti-ai-guides.jpg" target="_blank" rel="noopener"><img src="mokti-ai-guides.jpg" alt="AI guides section of the Mokti website" loading="lazy"></a>
+          <figcaption><h3>AI guides</h3><p>Seven guides and a combo, each with its own checkout.</p></figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="mokti-books.jpg" target="_blank" rel="noopener"><img src="mokti-books.jpg" alt="Books section of the Mokti website" loading="lazy"></a>
+          <figcaption><h3>Books</h3><p>Novellas, guides and bundles with 3D covers.</p></figcaption>
+        </figure>
+        <figure class="shot">
+          <a href="mokti-site-mobile.jpg" target="_blank" rel="noopener"><img src="mokti-site-mobile.jpg" alt="Mokti home page on a phone" loading="lazy"></a>
+          <figcaption><h3>On a phone</h3><p>The same site on a 390px-wide phone screen.</p></figcaption>
+        </figure>
+      </div>
+
+      <div class="cs-next">
+        <h2>Want something like this?</h2>
+        <p class="feature-links"><a class="btn-ink" href="../index.html#enquiry">Start a project</a><a class="text-link" href="storeily.html">Next: Storeily Shopify store →</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <a class="brand" href="../index.html">Mokti<span class="brand-dot">.</span></a>
+      <p class="footer-tag">Websites, ecommerce, design and AI guides by Surbhi Priya.</p>
+      <p class="footer-motto">Mokti · ideas made tangible</p>
+    </div>
+    <nav aria-label="Explore">
+      <h4>Explore</h4>
+      <a href="../index.html#services">Services</a>
+      <a href="../tshirts.html">Custom T-shirts</a>
+      <a href="../index.html#ai-guides">AI Guides</a>
+      <a href="../work.html">My Work</a>
+      <a href="../index.html#ebooks">Books</a>
+      <a href="../index.html#writing">Writing</a>
+      <a href="../journal.html">Journal</a>
+      <a href="../index.html#enquiry">Start a project</a>
+    </nav>
+    <nav aria-label="Site information">
+      <h4>Information</h4>
+      <a href="../about.html">About</a>
+      <a href="../contact.html">Contact</a>
+      <a href="../terms.html">Terms</a>
+      <a href="../refund-policy.html">Refund Policy</a>
+      <a href="../privacy-policy.html">Privacy Policy</a>
+    </nav>
+  </div>
+  <div class="container footer-bottom">© 2026 Mokti · mokti.in</div>
+</footer>
+
+<script src="../menu.js"></script>
+<script src="../cinematic.js"></script>
+
+</body>
+</html>

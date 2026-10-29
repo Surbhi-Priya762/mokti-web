@@ -693,3 +693,105 @@ body{ font-variant-numeric: lining-nums; }
 .writing-back a:hover{ text-decoration: underline; }
 #journal h1.pane-title{ font-size: clamp(36px, 5vw, 52px); }
 .blog-grid:empty{ display:none; }
+
+/* ---------- My Work: 3D project gallery ---------- */
+.gallery-head{ margin-top: 56px; }
+.gallery-head .section-intro{ margin-bottom: 8px; }
+.archive-head{ margin-top: 72px; padding-top: 32px; border-top: 1px solid var(--thread); }
+.archive-head .section-intro{ margin-bottom: 0; }
+.text-link{ color: var(--oxblood); font-weight: 600; text-decoration: none; }
+.text-link:hover{ text-decoration: underline; }
+
+/* Featured project: four real screens layered in depth. The rig tilts with
+   scroll progress (--p, set by cinematic.js) and the pointer (--rx / --ry). */
+.feature{ display:grid; grid-template-columns: 1.2fr 1fr; gap: 56px; align-items:center; margin: 28px 0 64px; }
+.feature-stage{ display:block; position:relative; aspect-ratio: 16 / 11; perspective: 1600px; }
+.stage-rig{
+  position:absolute; inset:0; transform-style: preserve-3d;
+  transform: rotateX(calc(9deg - var(--p, 1) * 4deg + var(--rx, 0deg))) rotateY(calc(-14deg + var(--p, 1) * 6deg + var(--ry, 0deg)));
+  transition: transform .5s var(--ease-soft);
+}
+.stage-rig .layer{
+  position:absolute; display:block; border-radius: 12px; background: var(--card);
+  border: 1px solid rgba(199,164,107,0.4); box-shadow: var(--shadow-deep);
+  transition: transform .6s var(--ease-soft);
+}
+.stage-rig img.layer{ height:auto; }
+.layer-front img{ width:100%; height:auto; }
+.layer-back{ width: 60%; left: 0; top: 0; transform: translateZ(calc(-70px - (1 - var(--p, 1)) * 40px)); filter: saturate(.85); }
+.layer-mid{ width: 60%; right: 0; top: 7%; transform: translateZ(calc(-30px - (1 - var(--p, 1)) * 20px)); }
+.layer-front{ width: 78%; left: 8%; top: 25%; overflow:hidden; transform: translateZ(30px); }
+.layer-front img{ display:block; }
+.layer-front .browser-bar{ display:flex; gap:6px; padding: 9px 12px; background: linear-gradient(135deg, #f3e5d0, #fff9ef); border-bottom: 1px solid var(--thread); }
+.layer-front .browser-bar span{ width:8px; height:8px; border-radius:50%; background:#e3cda6; }
+.stage-rig .layer-phone{ width: 21%; right: 3%; bottom: 0; border-radius: 18px; border: 5px solid #3a2f24; transform: translateZ(calc(80px + (1 - var(--p, 1)) * 30px)); }
+.feature-stage:hover .layer-back{ transform: translateZ(-110px) translateX(-10px); }
+.feature-stage:hover .layer-phone{ transform: translateZ(120px); }
+.feature-stage:focus-visible{ outline: 3px solid var(--oxblood); outline-offset: 8px; border-radius: 12px; }
+.feature-text h3{ font-family:'Cormorant Garamond', Georgia, serif; font-size: clamp(30px, 3.4vw, 40px); margin: 12px 0 10px; }
+.feature-text > p{ color: var(--text-soft); margin: 0 0 16px; }
+.feature-list{ list-style:none; padding:0; margin: 0 0 24px; display:grid; gap: 8px; }
+.feature-list li{ position:relative; padding-left: 22px; font-size: 15px; }
+.feature-list li::before{ content:"✦"; position:absolute; left:0; top:1px; color: var(--champagne); font-size: 12px; }
+.feature-links{ display:flex; flex-wrap:wrap; gap: 14px 22px; align-items:center; margin:0; }
+
+/* Smaller projects: two screens stacked like prints on a desk */
+.project-rail{ display:grid; grid-template-columns: repeat(3, 1fr); gap: 24px; perspective: 1400px; }
+.project-card{
+  display:block; text-decoration:none; color: inherit; background: var(--card); border:1px solid rgba(199,164,107,0.28);
+  border-radius: var(--radius); padding: 18px 18px 22px; box-shadow: var(--shadow-soft); position:relative;
+  transform: perspective(1200px) translateY(calc((1 - var(--p, 1)) * 40px + var(--lift, 0px))) rotateX(calc((1 - var(--p, 1)) * 12deg + var(--rx, 0deg))) rotateY(var(--ry, 0deg));
+  transition: transform .45s var(--ease-soft), box-shadow .45s ease, border-color .35s ease;
+}
+.project-card:hover, .project-card:focus-visible{ --lift: -6px; box-shadow: var(--shadow-lift); border-color:#d7bd94; }
+.project-card:focus-visible{ outline: 3px solid var(--oxblood); outline-offset: 4px; }
+.card-stack{ display:block; position:relative; aspect-ratio: 16 / 10; margin-bottom: 16px; transform-style: preserve-3d; }
+.card-stack img{ position:absolute; width: 88%; aspect-ratio: 16 / 9; object-fit: cover; object-position: top; border-radius: 9px; border: 1px solid var(--thread); background: var(--paper-deep); transition: transform .55s var(--ease-soft); }
+.card-back{ right: 0; top: 0; transform: translateZ(-20px) rotate(3deg); opacity: .9; box-shadow: var(--shadow-soft); }
+.card-front{ left: 0; bottom: 0; transform: translateZ(14px); box-shadow: 0 10px 24px rgba(91,66,35,0.16); }
+.project-card:hover .card-back{ transform: translateZ(-30px) translate(6px, -6px) rotate(5deg); }
+.project-card:hover .card-front{ transform: translateZ(30px) translate(-4px, 2px); }
+.project-card h3{ font-size: 19px; margin: 10px 0 6px; }
+.project-card p{ margin: 0 0 12px; font-size: 14.5px; color: var(--text-soft); line-height: 1.6; }
+.card-more{ font-size: 14px; font-weight: 600; color: var(--oxblood); }
+
+/* Home: case study strip inside "See what I've built" */
+.work-strip{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 20px 0 24px; perspective: 1200px; }
+.work-strip a{ display:block; text-decoration:none; color: var(--ink); background: var(--card); border: 1px solid rgba(199,164,107,0.28); border-radius: 12px; overflow:hidden; box-shadow: var(--shadow-soft); transition: transform .45s var(--ease-soft), box-shadow .45s ease; }
+.work-strip a:hover{ transform: translateY(-4px) rotateX(3deg); box-shadow: var(--shadow-lift); }
+.work-strip img{ display:block; width:100%; height:auto; aspect-ratio: 16 / 9; object-fit: cover; object-position: top; border-bottom: 1px solid var(--thread); }
+.work-strip span{ display:block; padding: 10px 12px 12px; font-size: 14px; font-weight: 600; }
+
+/* Case study pages */
+.cs-back{ margin: 0 0 18px; font-size: 14.5px; }
+.cs-hero{ display:grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items:center; }
+.cs-hero h1{ font-size: clamp(40px, 5.4vw, 64px); margin: 12px 0 14px; }
+.cs-lead{ font-size: 18px; color: var(--text-soft); margin: 0 0 22px; }
+.cs-facts{ display:grid; grid-template-columns: auto 1fr; gap: 6px 18px; margin: 0; font-size: 15px; }
+.cs-facts dt{ font-weight: 700; color: var(--ink); }
+.cs-facts dd{ margin: 0; color: var(--text-soft); }
+.cs-visual{ perspective: 1400px; }
+.cs-visual img{ display:block; width:100%; height:auto; border-radius: 12px; border: 1px solid rgba(199,164,107,0.4); box-shadow: var(--shadow-deep); transform: rotateY(-8deg) rotateX(4deg); }
+.cs-body{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 28px 48px; margin-top: 64px; }
+.cs-body section h2{ font-size: clamp(28px, 3vw, 36px); }
+.cs-body ul{ padding-left: 20px; margin: 0; }
+.cs-body li{ margin-bottom: 8px; }
+.cs-body p{ margin: 0 0 12px; }
+.cs-note{ grid-column: 1 / -1; font-size: 14px; color: var(--text-soft); margin: 0; }
+.cs-shots{ margin-top: 56px; }
+.cs-next{ margin-top: 64px; padding: 32px; border-radius: var(--radius); background: var(--card); border: 1px solid rgba(199,164,107,0.28); box-shadow: var(--shadow-soft); display:flex; flex-wrap:wrap; gap: 16px 32px; align-items:center; justify-content:space-between; }
+.cs-next h2{ font-size: clamp(26px, 3vw, 34px); margin: 0; }
+.cs-next .feature-links{ gap: 14px 22px; }
+
+@media (max-width: 960px){
+  .feature, .cs-hero{ grid-template-columns: 1fr; gap: 36px; }
+  .project-rail{ grid-template-columns: 1fr 1fr; }
+  .work-strip{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px){
+  .project-rail, .cs-body{ grid-template-columns: 1fr; }
+  .feature-stage{ aspect-ratio: 16 / 12; }
+  .stage-rig{ transform: rotateX(calc(6deg - var(--p, 1) * 3deg)) rotateY(calc(-8deg + var(--p, 1) * 4deg)); }
+  .cs-visual img{ transform: none; }
+}
+.cs-links{ margin-top: 20px; }
