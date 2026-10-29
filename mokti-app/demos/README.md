@@ -15,12 +15,16 @@ is the Mokti page that presents them. Every demo page has `noindex`, a
   opening hours with an "Open now" status (`data-hours` on `table.hours`), and
   the boutique's product dialog, sizes, bag and WhatsApp order text
   (`window.DEMO_SHOP`).
+- The boutique's "Turn the rack" 3D carousel uses the site's shared
+  `../../carousel.js` and `../../carousel.css`, coloured from the theme
+  variables. Copy those two files too when you copy the boutique.
 - Illustrations are small SVG files in each `img/` folder. `previews/` holds the
   screenshots used on the demos page.
 
 ## Turning a demo into a client site
 
-1. Copy the demo folder into a new project, with `kit/`.
+1. Copy the demo folder into a new project, with `kit/` (and `carousel.js` and
+   `carousel.css` for the boutique).
 2. Change the theme variables, business name, text, prices and photos.
 3. Remove the demo bar and the fictional-business footer line, and drop `noindex`.
 4. Make the forms real: remove `data-demo-form`, add `name="..."` and

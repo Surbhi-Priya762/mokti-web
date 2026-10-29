@@ -4,6 +4,8 @@ The mokti.in website: a one-page site with a header menu (Home, Ebooks, Services
 
 My Work (`work.html`) is a project gallery: one featured project in a layered 3D stage, three project cards, then every screenshot by group. Each featured project has a case study page in `work/` (`mokti-site.html`, `storeily.html`, `dashboards.html`, `python-apps.html`) with the job, what I did, the features visible in the screenshots, and a screenshot gallery. To add a case study, copy one of those pages, change the text and images, and add a card for it in `work.html` and in the `work-strip` on the home page. Only describe features you can see in the screenshots or in the code.
 
+The home page's "Explore Mokti" section shows services and books as 3D rotating carousels (`carousel.js` and `carousel.css`). Each card is an `li.c3d-item` inside a `[data-c3d]` block; add or remove cards there and the ring resizes itself. The carousel turns on its own, stops on hover, focus or touch, and does not turn on its own for people who ask for reduced motion. The boutique demo uses the same files.
+
 To publish a blog post, open `index.html`, find `blog-grid`, add an `<article class="blog-card">` inside it (the comment above it shows the markup), and delete the `blog-empty` block.
 
 ## Before you launch — 5 things to edit
