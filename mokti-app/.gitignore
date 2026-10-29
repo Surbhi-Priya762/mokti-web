@@ -1,0 +1,5 @@
+# Built by scripts/build-blog.mjs on every deploy
+/blog/*
+!/blog/posts/
+!/blog/images/
+!/blog/blog.js

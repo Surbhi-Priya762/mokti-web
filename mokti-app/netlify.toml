@@ -1,5 +1,7 @@
 [build]
   publish = "."
+  # Turns blog/posts/*.md into blog pages. Plain Node, no packages.
+  command = "node scripts/build-blog.mjs"
 
 [functions]
   directory = "netlify/functions"
@@ -25,10 +27,16 @@
 
 [[redirects]]
   from = "/collections/mokti-stories"
-  to = "/#writing"
+  to = "/blog/"
   status = 301
 
 [[redirects]]
   from = "/collections/*"
   to = "/#ebooks"
+  status = 301
+
+# The Writing section and Journal page were replaced by the blog.
+[[redirects]]
+  from = "/journal.html"
+  to = "/blog/"
   status = 301

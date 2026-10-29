@@ -1105,3 +1105,50 @@ input::placeholder, textarea::placeholder{ color: #9c8b74; }
   .st-tile figcaption{ font-size: 7.5px; padding: 2px 6px; left: 4px; bottom: 4px; letter-spacing: .08em; }
   .st-win b{ font-size: 9px; padding: 3px 8px; }
 }
+
+/* ---------- Blog: list, cards and post pages (built by scripts/build-blog.mjs) ---------- */
+.post-grid{ display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 22px; margin-top: 8px; }
+.post-card{
+  display: flex; flex-direction: column; gap: 6px; text-decoration: none; color: var(--text);
+  background: var(--card); border: 1px solid rgba(232,198,127,.16); border-radius: var(--radius); overflow: hidden; padding-bottom: 20px;
+  box-shadow: var(--shadow-soft); transition: transform .35s var(--ease-soft, ease), border-color .3s ease, box-shadow .35s ease;
+}
+.post-card:hover, .post-card:focus-visible{ transform: translateY(-4px); border-color: rgba(232,198,127,.5); box-shadow: var(--shadow-lift); }
+.post-card > span:not(.post-cover){ padding: 0 20px; }
+.post-cover{ display: block; aspect-ratio: 16 / 9; background: var(--paper-deep); margin-bottom: 10px; overflow: hidden; }
+.post-cover img{ width: 100%; height: 100%; object-fit: cover; display: block; }
+.post-cover-none{ display: grid; place-items: center; font-family: 'Cormorant Garamond', Georgia, serif; font-size: 64px; font-weight: 700; color: var(--honey); background: radial-gradient(ellipse at 30% 20%, rgba(232,198,127,.2), transparent 60%), var(--dark); }
+.post-meta{ font-size: 13px; color: var(--text-soft); }
+.post-title{ font-family: 'Cormorant Garamond', Georgia, serif; font-size: 26px; font-weight: 700; line-height: 1.15; color: var(--ink); }
+.post-summary{ font-size: 15px; color: var(--text-soft); }
+.post-read{ margin-top: auto; padding-top: 6px; font-weight: 700; color: var(--oxblood); }
+.post-empty{ color: var(--text-soft); font-size: 17px; padding: 28px; border: 1px dashed rgba(232,198,127,.35); border-radius: var(--radius); text-align: center; }
+.post-empty[hidden]{ display: none; }
+.blog-more{ margin-top: 28px; }
+.blog-index{ padding-top: 24px; padding-bottom: 72px; }
+.blog-index h1{ font-size: clamp(38px, 6vw, 64px); max-width: 18ch; }
+
+.post{ max-width: 760px; padding-top: 24px; padding-bottom: 72px; }
+.post-back a{ color: var(--oxblood); font-weight: 600; text-decoration: none; }
+.post-head h1{ font-size: clamp(38px, 6vw, 60px); line-height: 1.05; margin: 6px 0 14px; }
+.post-lede{ font-size: 20px; color: var(--ink-soft); line-height: 1.5; }
+.post-hero{ margin: 28px 0; }
+.post-hero img{ width: 100%; height: auto; border-radius: var(--radius); display: block; }
+.post-body{ font-size: 18px; line-height: 1.8; color: var(--text); }
+.post-body h2{ font-size: clamp(28px, 4vw, 36px); margin: 40px 0 12px; }
+.post-body h3{ font-size: 22px; margin: 30px 0 10px; }
+.post-body p, .post-body ul, .post-body ol{ margin: 0 0 20px; }
+.post-body a{ color: var(--oxblood); }
+.post-body img{ max-width: 100%; height: auto; border-radius: 12px; display: block; margin: 8px 0; }
+.post-body blockquote{ margin: 28px 0; padding: 4px 0 4px 22px; border-left: 3px solid var(--honey); font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px; font-style: italic; color: var(--ink); }
+.post-body blockquote p{ margin: 0 0 8px; }
+.post-body code{ background: var(--card); padding: 2px 6px; border-radius: 4px; font-size: .9em; }
+.post-body pre{ background: var(--dark); padding: 16px; border-radius: 10px; overflow-x: auto; }
+.post-body pre code{ background: none; padding: 0; }
+.post-body hr{ border: 0; border-top: 1px solid var(--thread); margin: 36px 0; }
+.post-foot{ display: flex; flex-wrap: wrap; gap: 12px; margin: 40px 0 0; padding-top: 28px; border-top: 1px solid var(--thread); }
+.post-nav{ display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+.post-nav a{ display: block; padding: 16px 18px; border: 1px solid var(--thread); border-radius: 12px; text-decoration: none; color: var(--ink); font-weight: 600; }
+.post-nav a span{ display: block; font-size: 12px; text-transform: uppercase; letter-spacing: .1em; color: var(--oxblood); margin-bottom: 4px; }
+.post-nav-newer{ text-align: right; grid-column: 2; }
+@media (max-width: 560px){ .post-nav{ grid-template-columns: 1fr; } .post-nav-newer{ grid-column: auto; text-align: left; } .post-body{ font-size: 17px; } }
