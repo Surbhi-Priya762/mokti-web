@@ -795,3 +795,14 @@ body{ font-variant-numeric: lining-nums; }
   .cs-visual img{ transform: none; }
 }
 .cs-links{ margin-top: 20px; }
+
+/* Website demos page: each demo as a desktop and phone pair in 3D */
+.demo-feature{ margin: 40px 0 72px; }
+.demo-feature.flip .feature-stage{ order: 2; }
+.feature-stage.two{ aspect-ratio: 16 / 10.5; }
+.feature-stage.two .layer-front{ width: 86%; left: 0; top: 6%; }
+.feature-stage.two .layer-phone{ width: 22%; right: 0; bottom: 0; }
+.demo-note{ margin-top: 24px; padding: 32px; border-radius: var(--radius); background: var(--card); border: 1px solid rgba(199,164,107,0.28); box-shadow: var(--shadow-soft); max-width: 760px; }
+.demo-note p{ color: var(--text-soft); }
+@media (max-width: 960px){ .demo-feature.flip .feature-stage{ order: 0; } }
+.demo-callout{ margin: 36px 0 0; padding: 18px 22px; border-radius: 12px; background: var(--soft-yellow); border: 1px solid rgba(199,164,107,0.35); font-size: 16px; }

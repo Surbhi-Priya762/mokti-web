@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gulmohar Hair &amp; Beauty (fictional demo) — Mokti</title>
+<meta name="description" content="A fictional salon website made by Mokti to show services, prices, stylists, a gallery and appointment requests.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Jost:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../kit/demo.css">
+<style>
+  :root{
+    --bg: #fbf5f2; --surface: #ffffff; --surface-2: #f6e6e1; --ink: #2a1720; --muted: #67525c; --line: #ecd9d3;
+    --accent: #7a2e4a; --accent-ink: #ffffff; --accent-soft: #f7e1e7;
+    --font-head: 'Marcellus', Georgia, serif; --font-body: 'Jost', system-ui, sans-serif;
+    --radius: 18px; --radius-lg: 28px;
+  }
+  h1, h2, h3{ font-weight: 400; }
+  .d-hero h1 em{ font-style: normal; color: var(--accent); }
+  .hero-art img{ border-radius: 240px 240px var(--radius-lg) var(--radius-lg); }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="demo-bar"><div class="wrap"><span><strong>Fictional demo.</strong> Gulmohar is a sample salon made by Mokti to show what your website could look like.</span><span><a href="../">All demos</a> · <a href="../../index.html#enquiry">Get a site like this →</a></span></div></div>
+
+<header class="d-header">
+  <div class="wrap">
+    <a class="d-brand" href="#top">Gulmohar<small>Hair &amp; Beauty Studio</small></a>
+    <button class="d-menu" aria-expanded="false" aria-controls="nav" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav class="d-nav" id="nav" aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#stylists">Stylists</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#visit">Visit</a>
+      <a class="btn btn-sm" href="#book">Book now</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="d-hero" id="top">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Hair · Skin · Nails · Bridal</p>
+        <h1>Feel like yourself, <em>only more.</em></h1>
+        <p class="lead">Cuts, colour, facials and bridal looks in a calm, unhurried studio. Every visit starts with a short chat about what you want.</p>
+        <div class="actions"><a class="btn" href="#book">Book an appointment</a><a class="btn btn-ghost" href="#services">See prices</a></div>
+        <ul class="facts">
+          <li><strong>Tue to Sun</strong>10 am to 8 pm</li>
+          <li><strong>12 Sample Road</strong>Your City</li>
+          <li><strong>4 stylists</strong>Hair, skin, nails, bridal</li>
+        </ul>
+      </div>
+      <div class="hero-art reveal"><img src="img/hero.svg" alt="" width="800" height="640"></div>
+    </div>
+  </section>
+
+  <section class="d-section alt" id="services">
+    <div class="wrap">
+      <div class="d-head reveal">
+        <p class="eyebrow">Services &amp; prices</p>
+        <h2>Clear prices, no surprises</h2>
+        <p>Prices start from the amount shown and depend on hair length. We confirm the final price before we begin.</p>
+      </div>
+      <div class="chips" data-filter=".price-list li" role="group" aria-label="Filter services">
+        <button type="button" data-value="all" aria-pressed="true">All</button>
+        <button type="button" data-value="hair" aria-pressed="false">Hair</button>
+        <button type="button" data-value="skin" aria-pressed="false">Skin</button>
+        <button type="button" data-value="nails" aria-pressed="false">Nails</button>
+        <button type="button" data-value="bridal" aria-pressed="false">Bridal &amp; party</button>
+      </div>
+      <ul class="price-list">
+        <li data-tags="hair"><span class="name">Haircut &amp; style</span><span class="desc">Wash, cut and blow-dry</span><span class="price">₹499</span><button class="btn btn-sm btn-ghost book" type="button" data-fill="service=Haircut &amp; style" data-go="#book">Book</button></li>
+        <li data-tags="hair"><span class="name">Blow-dry</span><span class="desc">Smooth, volume or soft waves</span><span class="price">₹399</span><button class="btn btn-sm btn-ghost book" type="button" data-fill="service=Blow-dry" data-go="#book">Book</button></li>
+        <li data-tags="hair"><span class="name">Global colour</span><span class="desc">One shade, root to tip, ammonia-free option</span><span class="price">from ₹2,499</span><button class="btn btn-sm btn-ghost book" type="button" data-fill="service=Global colour" data-go="#book">Book</button></li>
+        <li data-tags="hair"><span class="name">Balayage</span><span class="desc">Hand-painted, soft grown-out lightness</span><span class="price">from ₹4,499</span><button class="btn btn-sm btn-ghost book" type="button" data-fill="service=Balayage" data-go="#book">Book</button></li>
+        <li data-tags="hair"><span class="name">Keratin smoothing</span><span class="desc">Less frizz for up to 3 months</span><span class="price">from ₹3,999</span><button class="btn btn-sm btn-ghost book" type="button" data-fill="service=Keratin smoothing" data-go="#book">Book</button></li>
+        <li data-tags="hair skin"><span class="name">Hair spa</span><span class="desc">Deep conditioning and scalp massage</span><span class="price">₹999</span><button class="btn btn-sm btn-ghost book" type="button" data-fill="service=Hair spa" data-go="#book">Book</button></li>
+        <li data-tags="skin"><span class="name">Clean-up facial</span><span class="desc">Cleanse, exfoliate and hydrate, 45 minutes</span><span class="price">₹799</span><button class="btn btn-sm btn-ghost book" type="button" data-fill="service=Clean-up facial" data-go="#book">Book</button></li>
+        <li data-tags="skin"><span class="name">Hydra facial</span><span class="desc">Deep cleanse with serum infusion, 60 minutes</span><span class="price">₹2,499</span><button class="btn btn-sm btn-ghost book" type="button" data-fill="service=Hydra facial" data-go="#book">Book</button></li>
+        <li data-tags="nails"><span class="name">Manicure</span><span class="desc">Shape, cuticle care and polish</span><span class="price">₹599</span><button class="btn btn-sm btn-ghost book" type="button" data-fill="service=Manicure" data-go="#book">Book</button></li>
+        <li data-tags="nails"><span class="name">Pedicure</span><span class="desc">Soak, scrub, massage and polish</span><span class="price">₹699</span><button class="btn btn-sm btn-ghost book" type="button" data-fill="service=Pedicure" data-go="#book">Book</button></li>
+        <li data-tags="nails"><span class="name">Gel nails</span><span class="desc">Long-lasting gel colour on natural nails</span><span class="price">₹1,199</span><button class="btn btn-sm btn-ghost book" type="button" data-fill="service=Gel nails" data-go="#book">Book</button></li>
+        <li data-tags="bridal"><span class="name">Party makeup</span><span class="desc">Makeup and hairstyling for one look</span><span class="price">₹2,999</span><button class="btn btn-sm btn-ghost book" type="button" data-fill="service=Party makeup" data-go="#book">Book</button></li>
+        <li data-tags="bridal"><span class="name">Bridal makeup</span><span class="desc">Trial, makeup, hair and draping on the day</span><span class="price">from ₹14,999</span><button class="btn btn-sm btn-ghost book" type="button" data-fill="service=Bridal makeup" data-go="#book">Book</button></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="d-section" id="stylists">
+    <div class="wrap">
+      <div class="d-head reveal">
+        <p class="eyebrow">Our team</p>
+        <h2>Meet your stylists</h2>
+        <p>Choose a stylist, or leave it to us and we'll match you with the right person.</p>
+      </div>
+      <div class="grid grid-4">
+        <article class="card person reveal"><div class="avatar" aria-hidden="true">M</div><h3>Meera</h3><p class="role">Senior stylist · Colour</p><p>Balayage, global colour and colour correction.</p><button class="btn btn-sm btn-ghost" type="button" data-fill="stylist=Meera" data-go="#book">Book with Meera</button></article>
+        <article class="card person reveal"><div class="avatar" aria-hidden="true">A</div><h3>Arjun</h3><p class="role">Stylist · Cuts</p><p>Precision cuts, beard styling and keratin.</p><button class="btn btn-sm btn-ghost" type="button" data-fill="stylist=Arjun" data-go="#book">Book with Arjun</button></article>
+        <article class="card person reveal"><div class="avatar" aria-hidden="true">F</div><h3>Fatima</h3><p class="role">Skin therapist</p><p>Facials, clean-ups and hair spa.</p><button class="btn btn-sm btn-ghost" type="button" data-fill="stylist=Fatima" data-go="#book">Book with Fatima</button></article>
+        <article class="card person reveal"><div class="avatar" aria-hidden="true">R</div><h3>Riya</h3><p class="role">Makeup &amp; nails</p><p>Bridal and party makeup, gel nails and nail art.</p><button class="btn btn-sm btn-ghost" type="button" data-fill="stylist=Riya" data-go="#book">Book with Riya</button></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="d-section alt" id="gallery">
+    <div class="wrap">
+      <div class="d-head reveal">
+        <p class="eyebrow">Gallery</p>
+        <h2>Inside the studio</h2>
+        <p>On a real salon site, this is where your own photos of finished looks go.</p>
+      </div>
+      <div class="gallery">
+        <figure class="reveal"><img src="img/balayage.svg" alt="Illustration for balayage colour" width="400" height="500" loading="lazy"><figcaption>Balayage</figcaption></figure>
+        <figure class="reveal"><img src="img/bridal.svg" alt="Illustration for bridal looks" width="400" height="500" loading="lazy"><figcaption>Bridal</figcaption></figure>
+        <figure class="reveal"><img src="img/nails.svg" alt="Illustration for nail art" width="400" height="500" loading="lazy"><figcaption>Nail art</figcaption></figure>
+        <figure class="reveal"><img src="img/skin.svg" alt="Illustration for skin care" width="400" height="500" loading="lazy"><figcaption>Skin care</figcaption></figure>
+        <figure class="reveal"><img src="img/spa.svg" alt="Illustration for hair spa" width="400" height="500" loading="lazy"><figcaption>Hair spa</figcaption></figure>
+        <figure class="reveal"><img src="img/studio.svg" alt="Illustration of the studio mirror" width="400" height="500" loading="lazy"><figcaption>The studio</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="d-section" id="book">
+    <div class="wrap booking">
+      <div id="visit">
+        <p class="eyebrow">Book &amp; visit</p>
+        <h2>Request an appointment</h2>
+        <p>Send a request and we'll confirm your slot on WhatsApp within a few hours.</p>
+        <p class="open-now" id="open-now">Opening hours</p>
+        <table class="hours" data-hours='{"0":["10:00","18:00"],"1":null,"2":["10:00","20:00"],"3":["10:00","20:00"],"4":["10:00","20:00"],"5":["10:00","20:00"],"6":["10:00","20:00"]}' data-status="#open-now">
+          <caption class="skip">Opening hours</caption>
+          <tr data-day="1"><th scope="row">Monday</th><td>Closed</td></tr>
+          <tr data-day="2"><th scope="row">Tuesday</th><td>10 am – 8 pm</td></tr>
+          <tr data-day="3"><th scope="row">Wednesday</th><td>10 am – 8 pm</td></tr>
+          <tr data-day="4"><th scope="row">Thursday</th><td>10 am – 8 pm</td></tr>
+          <tr data-day="5"><th scope="row">Friday</th><td>10 am – 8 pm</td></tr>
+          <tr data-day="6"><th scope="row">Saturday</th><td>10 am – 8 pm</td></tr>
+          <tr data-day="0"><th scope="row">Sunday</th><td>10 am – 6 pm</td></tr>
+        </table>
+        <p style="margin-top:18px"><strong>Gulmohar Hair &amp; Beauty Studio</strong><br>12 Sample Road, Your City<br>Phone: +91 00000 00000 (sample)</p>
+      </div>
+      <div>
+        <form class="d-form card" data-demo-form data-confirm="#book-confirm" data-thanks="Appointment request received">
+          <label>Your name <input name="name" autocomplete="name" required></label>
+          <div class="row">
+            <label>Phone or WhatsApp <input name="phone" type="tel" autocomplete="tel" inputmode="tel" pattern="[0-9+ ]{10,15}" required></label>
+            <label>Service
+              <select name="service" required>
+                <option value="">Choose a service</option>
+                <option>Haircut &amp; style</option><option>Blow-dry</option><option>Global colour</option><option>Balayage</option><option>Keratin smoothing</option><option>Hair spa</option>
+                <option>Clean-up facial</option><option>Hydra facial</option><option>Manicure</option><option>Pedicure</option><option>Gel nails</option><option>Party makeup</option><option>Bridal makeup</option>
+              </select>
+            </label>
+          </div>
+          <div class="row">
+            <label>Stylist
+              <select name="stylist"><option>Any stylist</option><option>Meera</option><option>Arjun</option><option>Fatima</option><option>Riya</option></select>
+            </label>
+            <label>Date <input name="date" type="date" required></label>
+          </div>
+          <label>Preferred time
+            <select name="time" required>
+              <option value="">Choose a time</option>
+              <option>10:00 am</option><option>11:30 am</option><option>1:00 pm</option><option>2:30 pm</option><option>4:00 pm</option><option>5:30 pm</option><option>7:00 pm</option>
+            </select>
+          </label>
+          <label>Anything we should know? <textarea name="notes" rows="3" placeholder="Hair length, reference look, allergies…"></textarea></label>
+          <button class="btn" type="submit">Request appointment</button>
+          <p class="hint">Demo form: nothing is sent.</p>
+        </form>
+        <div class="confirm" id="book-confirm" hidden aria-live="polite"></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="d-footer">
+  <div class="wrap">
+    <div><h2>Gulmohar</h2><p>Hair &amp; Beauty Studio</p><p>12 Sample Road, Your City</p></div>
+    <div><h3>Visit</h3><p>Tue to Sat: 10 am – 8 pm</p><p>Sun: 10 am – 6 pm</p><p>Mon: closed</p></div>
+    <div><h3>Explore</h3><p><a href="#services">Services &amp; prices</a></p><p><a href="#stylists">Stylists</a></p><p><a href="#book">Book now</a></p></div>
+    <p class="small">Gulmohar Hair &amp; Beauty Studio is a fictional business. Names, prices and address are sample content. Website demo by <a href="../../index.html">Mokti</a>.</p>
+  </div>
+</footer>
+<script src="../kit/demo.js"></script>
+</body>
+</html>
