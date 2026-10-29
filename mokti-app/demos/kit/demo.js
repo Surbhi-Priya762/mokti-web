@@ -113,17 +113,6 @@
       <span class="pprice">${money(p.price)}</span>
     </button>`).join('');
 
-  // 3D "turn the rack" ring (carousel.js turns it); each card opens the same product dialog.
-  const picks = $('#picks-ring');
-  if (picks) {
-    picks.innerHTML = shop.products.map(p => `
-      <li class="c3d-item" data-name="${esc(p.name)}"><button class="c3d-card" type="button" data-id="${p.id}" aria-haspopup="dialog">
-        <img src="${p.img}" alt="" width="400" height="500" loading="lazy" draggable="false">
-        <span class="c3d-body"><span class="c3d-kicker">${esc(p.collection)}</span><span class="c3d-name">${esc(p.name)}</span><span class="c3d-price">${money(p.price)}</span></span>
-      </button></li>`).join('');
-    $$('.c3d-card', picks).forEach(b => b.addEventListener('click', () => $(`.product[data-id="${b.dataset.id}"]`, grid).click()));
-  }
-
   const dlg = $('#product-dialog');
   let current = null, qty = 1;
   const renderQty = () => { $('#pd-qty').value = qty; $('#pd-qty').textContent = qty; };

@@ -855,25 +855,3 @@ body{ font-variant-numeric: lining-nums; }
   .play-icon{ width: 40px; height: 40px; }
   .play-icon::after{ left: 15px; top: 12px; border-left-width: 12px; border-top-width: 8px; border-bottom-width: 8px; }
 }
-
-/* ---------- Explore: 3D carousels on the home page (carousel.css has the ring) ---------- */
-.section-explore{ background: radial-gradient(ellipse at 50% 60%, #fbf3e4 0%, var(--paper) 70%); overflow: hidden; }
-.explore-tabs{ display: flex; justify-content: center; gap: 8px; margin: 0 0 6px; }
-.explore-tabs [role=tab]{
-  font: inherit; font-weight: 600; font-size: 15px; padding: 10px 20px; min-height: 44px;
-  border-radius: 999px; border: 1.5px solid var(--ink); background: transparent; color: var(--ink); cursor: pointer;
-}
-.explore-tabs [role=tab][aria-selected=true]{ background: var(--ink); color: var(--card); }
-.explore-tabs [role=tab]:focus-visible{ outline: 3px solid var(--oxblood); outline-offset: 2px; }
-.c3d-services{ --cw: 240px; --ch: calc(var(--cw) * .6 + 172px); }
-.c3d-services .c3d-card img{ height: calc(var(--cw) * .6); object-position: top center; border-bottom: 1px solid var(--thread); }
-.c3d-services .c3d-desc{ font-size: 13px; color: var(--text-soft); line-height: 1.4; }
-.c3d-products{ --cw: 200px; --ch: calc(var(--cw) * 1.418 + 142px); }
-.c3d-products .c3d-card img{ height: calc(var(--cw) * 1.418); }
-.c3d-products .c3d-name{ font-size: 15px; }
-.c3d .c3d-name{ font-family: 'Plus Jakarta Sans', sans-serif; }
-.c3d .c3d-price{ font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; line-height: 1.1; }
-@media (max-width: 640px){
-  .c3d-services{ --cw: 190px; }
-  .c3d-products{ --cw: 160px; }
-}
