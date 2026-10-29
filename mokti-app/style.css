@@ -1101,3 +1101,7 @@ input::placeholder, textarea::placeholder{ color: #9c8b74; }
 /* Journal ruled sheet on dark: a dark page with faint gold rules. */
 .ruled-sheet{ background: repeating-linear-gradient(to bottom, transparent, transparent 31px, rgba(232,198,127,.18) 32px), linear-gradient(#1d1712, #1d1712); }
 .ruled-sheet textarea, .ruled-sheet input{ background: transparent; color: var(--ink); }
+@media (max-width: 640px){
+  .st-tile figcaption{ font-size: 7.5px; padding: 2px 6px; left: 4px; bottom: 4px; letter-spacing: .08em; }
+  .st-win b{ font-size: 9px; padding: 3px 8px; }
+}
