@@ -798,12 +798,60 @@ body{ font-variant-numeric: lining-nums; }
 
 /* Website demos page: each demo as a desktop and phone pair in 3D */
 .demo-feature{ margin: 40px 0 72px; }
-.demo-feature.flip .feature-stage{ order: 2; }
-.feature-stage.two{ aspect-ratio: 16 / 10.5; }
-.feature-stage.two .layer-front{ width: 86%; left: 0; top: 6%; }
-.feature-stage.two .layer-phone{ width: 22%; right: 0; bottom: 0; }
+.demo-feature.flip .demo-stage{ order: 2; }
 .demo-note{ margin-top: 24px; padding: 32px; border-radius: var(--radius); background: var(--card); border: 1px solid rgba(199,164,107,0.28); box-shadow: var(--shadow-soft); max-width: 760px; }
 .demo-note p{ color: var(--text-soft); }
-@media (max-width: 960px){ .demo-feature.flip .feature-stage{ order: 0; } }
+@media (max-width: 960px){ .demo-feature.flip .demo-stage{ order: 0; } }
 .demo-callout{ margin: 36px 0 0; padding: 18px 22px; border-radius: 12px; background: var(--soft-yellow); border: 1px solid rgba(199,164,107,0.35); font-size: 16px; }
 .package-note{ margin: 16px 0 0; }
+
+/* Demos page: each demo plays like a short film inside a 3D laptop and
+   phone. The videos load only when on screen (cinematic.js); without
+   motion they stay on their still poster frame. */
+.demo-stage{ position:relative; display:block; aspect-ratio: 16 / 11.5; perspective: 1700px; text-decoration:none; }
+.demo-rig{
+  position:absolute; inset: 0; transform-style: preserve-3d;
+  transform: rotateX(calc(7deg + var(--rx, 0deg))) rotateY(calc(-16deg + var(--ry, 0deg)));
+  transition: transform .7s var(--ease-soft);
+}
+.demo-feature.flip .demo-rig{ transform: rotateX(calc(7deg + var(--rx, 0deg))) rotateY(calc(16deg + var(--ry, 0deg))); }
+.demo-stage:hover .demo-rig, .demo-stage:focus-visible .demo-rig{ transform: rotateX(calc(2deg + var(--rx, 0deg))) rotateY(calc(-4deg + var(--ry, 0deg))) translateZ(20px); }
+.demo-feature.flip .demo-stage:hover .demo-rig{ transform: rotateX(calc(2deg + var(--rx, 0deg))) rotateY(calc(4deg + var(--ry, 0deg))) translateZ(20px); }
+.motion-ok .demo-rig{ animation: demo-float 7s ease-in-out infinite; }
+.motion-ok .demo-stage:hover .demo-rig{ animation-play-state: paused; }
+@keyframes demo-float{ 0%, 100%{ translate: 0 0; } 50%{ translate: 0 -10px; } }
+.laptop{ position:absolute; left: 0; top: 2%; width: 84%; transform: translateZ(0); }
+.laptop-screen{
+  display:block; padding: 2.2% 2.2% 3%; background: #2a231d; border-radius: 16px 16px 6px 6px;
+  box-shadow: 0 2px 0 #4a3f35 inset, 0 30px 60px rgba(60,40,20,0.28), 0 10px 20px rgba(60,40,20,0.18);
+}
+.laptop-screen video, .phone video{ display:block; width:100%; height:auto; background: var(--paper-deep); }
+.laptop-screen video{ border-radius: 4px; aspect-ratio: 16 / 10; }
+.laptop-base{
+  display:block; height: 0; margin: 0 -7%; border-top: 14px solid #cdbba0; border-left: 22px solid transparent; border-right: 22px solid transparent;
+  border-radius: 0 0 14px 14px; filter: drop-shadow(0 14px 18px rgba(60,40,20,0.25));
+}
+.phone{
+  position:absolute; right: 0; bottom: 2%; width: 23%; padding: 2.2% 1.6%; background: #2a231d; border-radius: 26px;
+  transform: translateZ(70px); box-shadow: 0 30px 50px rgba(60,40,20,0.35);
+}
+.phone video{ border-radius: 16px; aspect-ratio: 1 / 2; }
+.play{
+  position:absolute; left: 42%; top: 44%; transform: translate(-50%, -50%) translateZ(120px);
+  display:flex; align-items:center; gap: 12px; padding: 10px 20px 10px 10px; border-radius: 999px;
+  background: rgba(255,250,242,0.94); color: var(--ink); font-weight: 700; font-size: 15px;
+  box-shadow: 0 12px 30px rgba(60,40,20,0.25); transition: transform .4s var(--ease-soft), background .3s ease;
+}
+.play-icon{ position:relative; width: 46px; height: 46px; border-radius: 50%; background: var(--ink); flex: none; }
+.play-icon::after{ content:""; position:absolute; left: 18px; top: 14px; border-left: 14px solid #fffaf2; border-top: 9px solid transparent; border-bottom: 9px solid transparent; }
+.motion-ok .play-icon::before{ content:""; position:absolute; inset: -6px; border-radius: 50%; border: 2px solid var(--champagne); animation: play-pulse 2.2s ease-out infinite; }
+@keyframes play-pulse{ from{ transform: scale(.85); opacity: 1; } to{ transform: scale(1.45); opacity: 0; } }
+.demo-stage:hover .play, .demo-stage:focus-visible .play{ transform: translate(-50%, -50%) scale(1.06); background: #fffaf2; }
+.demo-stage:focus-visible{ outline: 3px solid var(--oxblood); outline-offset: 8px; border-radius: 16px; }
+@media (max-width: 640px){
+  .demo-stage{ aspect-ratio: 16 / 12.5; }
+  .demo-rig, .demo-feature.flip .demo-rig{ transform: rotateX(5deg) rotateY(-8deg); }
+  .play{ left: 50%; top: 40%; font-size: 14px; padding: 8px 16px 8px 8px; }
+  .play-icon{ width: 40px; height: 40px; }
+  .play-icon::after{ left: 15px; top: 12px; border-left-width: 12px; border-top-width: 8px; border-bottom-width: 8px; }
+}

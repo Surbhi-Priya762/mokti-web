@@ -20,6 +20,19 @@
   if (reduceMotion) return;
   document.documentElement.classList.add('motion-ok');
 
+  // ---------- Demo videos: load and play only while on screen ----------
+  const videos = [...document.querySelectorAll('video[data-autoplay]')];
+  const player = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
+    entries.forEach(({ target: v, isIntersecting }) => {
+      if (isIntersecting) {
+        const source = v.querySelector('source[data-src]');
+        if (source) { source.src = source.dataset.src; source.removeAttribute('data-src'); v.load(); }
+        v.play().catch(() => {});
+      } else if (!v.paused) v.pause();
+    });
+  }, { threshold: 0.25 }) : null;
+  if (player) videos.forEach(v => player.observe(v));
+
   // ---------- Scroll reveals (one shared observer) ----------
   const revealTargets = '.section-head, .offer, .process-grid li, .service, .package, .guide-card, .ebook-card, .bundle, .work-item, .work-stats li, .tee, .writing-panel, .cta-inner, .info-inner > *, .feature-text, .work-strip a, .cs-body section, .cs-next';
   const revealer = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
@@ -110,5 +123,6 @@
   document.querySelectorAll('.js-tilt').forEach(el => tilt(el, 2.4, 3));
   panels.forEach(el => tilt(el, 4, 5));
   stages.forEach(el => tilt(el, 6, 8));
+  document.querySelectorAll('.demo-stage').forEach(el => tilt(el, 4, 6));
   if (heroCard) tilt(heroCard, 5, 7);
 })();
