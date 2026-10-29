@@ -33,6 +33,34 @@
   }, { threshold: 0.25 }) : null;
   if (player) videos.forEach(v => player.observe(v));
 
+  // ---------- Typewriter: the hero's highlighted words type, pause and change ----------
+  // The heading keeps its first wording for screen readers (aria-label).
+  const typer = document.querySelector('.typer[data-words]');
+  if (typer) {
+    const h = typer.closest('h1, h2');
+    if (h) h.setAttribute('aria-label', h.textContent.trim());
+    const words = typer.dataset.words.split('|');
+    const out = document.createElement('span');
+    out.setAttribute('aria-hidden', 'true');
+    out.textContent = words[0];
+    typer.textContent = '';
+    typer.append(out);
+    typer.classList.add('typing');
+    let w = 0, n = words[0].length, deleting = true;
+    const tick = () => {
+      if (deleting) {
+        n--;
+        if (n <= 0) { deleting = false; w = (w + 1) % words.length; }
+      } else {
+        n++;
+        if (n >= words[w].length) { deleting = true; out.textContent = words[w]; return setTimeout(tick, 2200); }
+      }
+      out.textContent = words[w].slice(0, Math.max(0, n));
+      setTimeout(tick, deleting ? 38 : 75);
+    };
+    setTimeout(tick, 2600);
+  }
+
   // ---------- Story chapters: pin each one and drive its pieces by scroll ----------
   // --e goes 0 to 1 as a chapter scrolls into view, --p 0 to 1 while it is pinned.
   const story = document.querySelector('.story');

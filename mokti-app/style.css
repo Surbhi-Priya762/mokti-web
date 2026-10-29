@@ -896,28 +896,25 @@ body{ font-variant-numeric: lining-nums; }
 .st-link{ font-weight: 700; color: var(--oxblood); text-decoration: none; border-bottom: 1.5px solid currentColor; padding-bottom: 2px; }
 .st-link:hover{ color: var(--oxblood-deep); }
 
-/* Chapter 1: the logo splits like a bean, sparks fall, mockups rise. */
-.st-logo{ position: absolute; left: 50%; top: 4%; width: 78%; aspect-ratio: 1400 / 748; transform: translateX(-50%); z-index: 2; }
-.st-half{
-  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 18px;
-  box-shadow: 0 24px 50px rgba(52,41,31,.28);
-  transition: none;
+/* Chapter 1: three demo websites start stacked and fan out. */
+.st-demos{ perspective: 1400px; }
+.st-win{
+  position: absolute; left: 50%; top: 50%; width: 72%; display: block; text-decoration: none;
+  background: #1a140f; border-radius: 12px; overflow: hidden; border: 1px solid rgba(232,198,127,.28);
+  box-shadow: 0 26px 60px rgba(0,0,0,.45);
+  --s: clamp(0, calc(var(--p) * 1.5), 1);
 }
-.st-half-l{ clip-path: inset(0 50% 0 0 round 18px 0 0 18px); transform-origin: 50% 100%; transform: translateX(calc(var(--p) * -9%)) rotate(calc(var(--p) * -9deg)); }
-.st-half-r{ clip-path: inset(0 0 0 50% round 0 18px 18px 0); transform-origin: 50% 100%; transform: translateX(calc(var(--p) *  9%)) rotate(calc(var(--p) *  9deg)); }
-.st-spark{
-  position: absolute; left: 50%; top: 40%; width: 9px; height: 9px; border-radius: 50%; z-index: 1;
-  background: radial-gradient(circle at 35% 35%, #fff4d6, var(--honey) 45%, var(--champagne));
-  box-shadow: 0 0 10px rgba(232,198,127,.9);
-  transform: translate(var(--x), calc(var(--p) * var(--k) * 70px));
-  opacity: clamp(0, calc(var(--p) * 6 - .3), 1);
+.st-win img{ display: block; width: 100%; height: auto; }
+.st-bar{ display: flex; gap: 5px; padding: 7px 10px; background: #2c231b; }
+.st-bar i{ width: 7px; height: 7px; border-radius: 50%; background: #6b5a47; }
+.st-win b{
+  position: absolute; left: 10px; bottom: 10px; padding: 4px 10px; border-radius: 999px;
+  background: rgba(26,20,15,.86); color: var(--honey); font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
 }
-.st-tee{
-  position: absolute; bottom: 0; width: 34%; border-radius: 16px; box-shadow: 0 20px 40px rgba(52,41,31,.2);
-  opacity: clamp(0, calc(var(--p) * 2.4 - .4), 1);
-}
-.st-tee-l{ left: 6%;  transform: translateY(calc((1 - var(--p)) * 90px)) rotate(calc(-7deg * var(--p))) scale(calc(.75 + var(--p) * .25)); }
-.st-tee-r{ right: 6%; transform: translateY(calc((1 - var(--p)) * 120px)) rotate(calc(7deg * var(--p))) scale(calc(.75 + var(--p) * .25)); }
+.st-win-c{ z-index: 3; transform: translate(-50%, calc(-50% + var(--s) * 4%)) translateZ(calc(var(--s) * 60px)); }
+.st-win-l{ z-index: 1; transform: translate(calc(-50% - var(--s) * 24%), calc(-50% - var(--s) * 26%)) rotate(calc(var(--s) * -6deg)) scale(calc(1 - var(--s) * .14)); }
+.st-win-r{ z-index: 2; transform: translate(calc(-50% + var(--s) * 24%), calc(-50% - var(--s) * 18%)) rotate(calc(var(--s) * 6deg)) scale(calc(1 - var(--s) * .14)); }
+.st-win:hover{ border-color: var(--honey); }
 
 /* Chapter 2: the laptop opens up flat and the phone slides in. */
 .st-laptop{
@@ -935,17 +932,36 @@ body{ font-variant-numeric: lining-nums; }
 }
 .st-phone img{ display: block; width: 100%; height: auto; border-radius: 14px; }
 
-/* Chapter 3: cards fly in one by one and settle, tilted, like a moodboard. */
-.st-card{
-  --q: clamp(0, calc(var(--p) * 1.7 - var(--i) * .17), 1);
-  position: absolute; left: 50%; top: 50%; width: 50%; margin: 0;
-  background: var(--card); padding: 6px 6px 0; border-radius: 12px; box-shadow: 0 18px 40px rgba(52,41,31,.22);
-  transform: translate(-50%, -50%) translate(calc(var(--x) * 2 + (1 - var(--q)) * var(--fx)), calc(var(--y) * 2 + (1 - var(--q)) * var(--fy))) rotate(calc(var(--r) + (1 - var(--q)) * var(--fr)));
-  opacity: clamp(0, calc(var(--q) * 3), 1);
+/* Chapter 3: one laptop screen holds all five, laid out as a neat grid.
+   Tiles settle in one by one; then each gets a slow zoom in turn, like a slideshow. */
+.st-laptop-flat{ transform: translate(-50%, -52%); }
+.st-bento{
+  display: grid; grid-template-columns: 1fr 1fr .62fr; grid-template-rows: 1fr 1fr; gap: 6px;
+  aspect-ratio: 16 / 10; background: #15100c; padding: 6px; border-radius: 4px;
 }
-.st-card img{ display: block; width: 100%; height: auto; border-radius: 8px; }
-.st-card figcaption{ font-size: 11px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--oxblood); padding: 7px 4px 8px; }
-.st-book{ width: 25%; }
+.st-tile{
+  --q: clamp(0, calc(var(--p) * 2.2 - var(--i) * .22), 1);
+  position: relative; margin: 0; overflow: hidden; border-radius: 6px; background: #2a211a;
+  opacity: var(--q); transform: translateY(calc((1 - var(--q)) * 24px)) scale(calc(.94 + var(--q) * .06));
+}
+.st-tile img{ display: block; width: 100%; height: 100%; object-fit: cover; object-position: top left; }
+.st-cover img{ object-fit: contain; object-position: center; padding: 6px; }
+.st-t1{ grid-column: 1; grid-row: 1; }
+.st-t2{ grid-column: 2; grid-row: 1; }
+.st-t3{ grid-column: 1 / 3; grid-row: 2; }
+.st-t4{ grid-column: 3; grid-row: 1; }
+.st-t5{ grid-column: 3; grid-row: 2; }
+.st-tile figcaption{
+  position: absolute; left: 6px; bottom: 6px; padding: 3px 8px; border-radius: 999px;
+  background: rgba(21,16,12,.85); color: var(--honey); font-size: 9.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+}
+.motion-ok .st-tile img{ animation: st-kenburns 12.5s ease-in-out infinite; animation-delay: calc(var(--i) * 2.5s); }
+@keyframes st-kenburns{ 0%, 24%, 100%{ transform: scale(1); } 10%{ transform: scale(1.08); } }
+.motion-ok .st-tile::after{
+  content: ""; position: absolute; inset: 0; border-radius: 6px; pointer-events: none; box-shadow: inset 0 0 0 2px var(--honey);
+  opacity: 0; animation: st-glow 12.5s ease-in-out infinite; animation-delay: calc(var(--i) * 2.5s);
+}
+@keyframes st-glow{ 0%, 24%, 100%{ opacity: 0; } 8%, 14%{ opacity: 1; } }
 
 /* Motion on: tall chapters with a pinned stage. */
 .story-on .st-chapter{ height: 170vh; }
@@ -955,9 +971,6 @@ body{ font-variant-numeric: lining-nums; }
 @media (max-width: 900px){
   .st-pin{ grid-template-columns: 1fr; grid-template-rows: auto 1fr auto; gap: 14px; align-content: start; padding: 64px 20px 28px; }
   .st-word{ font-size: clamp(48px, 15vw, 96px); }
-  .st-card{ width: 46%; }
-  .st-card.st-book{ width: 25%; }
-  .st-card{ transform: translate(-50%, -50%) translate(calc(var(--x) * 1.7 + (1 - var(--q)) * var(--fx)), calc(var(--y) * 1.9 + (1 - var(--q)) * var(--fy))) rotate(calc(var(--r) + (1 - var(--q)) * var(--fr))); }
   .st-word span{ display: inline-block; }
   .st-art{ height: min(44vh, 360px); width: min(100%, 420px); justify-self: center; }
   .st-num{ top: 18px; left: 20px; font-size: 34px; }
@@ -986,3 +999,105 @@ body{ font-variant-numeric: lining-nums; }
 .cta-band .cta-big{ font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(36px, 5.4vw, 68px); line-height: 1.02; letter-spacing: -.02em; max-width: 16ch; margin: 0 auto 16px; }
 .cta-band .cta-big em{ color: var(--honey); }
 .cta-band{ padding: 96px 0; }
+
+/* =====================================================================
+   Espresso theme (29 Oct 2026): the whole site takes the dark espresso,
+   cream and gold of the closing band. Tokens first, then the few places
+   that used hard-coded light colours. Gold text uses --oxblood (honey,
+   about 9:1 on these browns). The demo websites in demos/salon|boutique|
+   clinic keep their own kit colours.
+   ===================================================================== */
+:root{
+  --ink: #fff3e2;
+  --ink-soft: #e6d6bf;
+  --paper: #241c16;
+  --paper-deep: #1b1510;
+  --card: #30261e;
+  --oxblood: #e8c67f;
+  --oxblood-deep: #f3dba6;
+  --soft-yellow: #3a2e22;
+  --thread: #4a3c2f;
+  --text: #eadcc6;
+  --text-soft: #c8b69c;
+  --sage: #476240;
+  --dark: #1a140f;
+  --shadow: 0 2px 5px rgba(0,0,0,.25), 0 16px 38px rgba(0,0,0,.35);
+  --shadow-soft: 0 7px 18px rgba(0,0,0,.2), 0 18px 36px rgba(0,0,0,.22);
+  --shadow-lift: 0 12px 26px rgba(0,0,0,.3), 0 30px 60px rgba(0,0,0,.38);
+  --shadow-deep: 0 14px 28px rgba(0,0,0,.3), 0 34px 70px rgba(0,0,0,.36);
+  color-scheme: dark;
+}
+body{ background: radial-gradient(ellipse at 50% -10%, #3a2c20 0%, transparent 55%) no-repeat, var(--paper); }
+::selection{ background: var(--honey); color: var(--dark); }
+
+/* Buttons: gold solid, cream outline. */
+.btn-ink, .site-nav a.btn-ink{ background: var(--honey); border-color: var(--honey); color: var(--dark); box-shadow: 0 6px 18px rgba(232,198,127,.18); }
+.btn-ink:hover, .site-nav a.btn-ink:hover{ background: var(--oxblood-deep); border-color: var(--oxblood-deep); color: var(--dark); }
+.btn-outline{ color: var(--ink); border-color: rgba(232,198,127,.55); }
+.btn-outline:hover{ background: var(--ink); border-color: var(--ink); color: var(--dark); }
+.btn-light, .cta-band .btn-light{ background: var(--honey); border-color: var(--honey); color: var(--dark); }
+.btn-light:hover{ background: var(--oxblood-deep); }
+.tab.active{ background: var(--honey); border-color: var(--honey); color: var(--dark); }
+.tab{ color: var(--ink-soft); }
+
+/* Header, menu and footer */
+.site-header{ background: rgba(28,22,17,.88); box-shadow: 0 6px 24px rgba(0,0,0,.25); }
+@media (max-width: 820px){ .site-nav{ background: var(--paper); box-shadow: 0 12px 24px rgba(0,0,0,.35); } }
+.site-footer{ background: var(--dark); color: rgba(255,243,226,.72); border-top: 1px solid var(--thread); }
+.site-footer nav a{ color: rgba(255,243,226,.72); }
+.site-footer .brand, .site-footer h4, .site-footer nav a:hover{ color: var(--ink); }
+
+/* Hero */
+.hero{ background: radial-gradient(ellipse at 80% 15%, rgba(232,198,127,.16), transparent 42%), radial-gradient(ellipse at 5% 95%, rgba(199,164,107,.10), transparent 38%), linear-gradient(140deg, #2b2119 0%, #241c16 55%, #1d1712 100%); }
+.hero h1 em{ color: var(--honey); }
+.hero-pill{ background: rgba(232,198,127,.1); color: var(--honey); border-color: rgba(232,198,127,.35); }
+.hero-badge-dark{ background: var(--dark); color: var(--ink); border: 1px solid var(--thread); }
+.hero-badge-warm{ background: var(--honey); color: var(--dark); }
+.hero-work{ border-color: rgba(232,198,127,.3); box-shadow: 0 16px 56px rgba(0,0,0,.4); }
+.hero-work .browser-bar, .layer-front .browser-bar{ background: linear-gradient(135deg, #3a2e24, #2c231b); }
+.hero-work .browser-bar span, .layer-front .browser-bar span{ background: #6b5a47; }
+
+/* Sections and cards */
+.section-alt{ background: linear-gradient(145deg, #2b2119 0%, #30261e 52%, #281f18 100%); }
+.offer, .package, .guide-card, .process-grid li, .work-stats li, .tee, .chapter, .story-card, .quote-card, .work-item, .shot{ border-color: rgba(232,198,127,.16); }
+.offer:hover, .package:hover, .project-card:hover, .shot.panel3d:hover{ border-color: rgba(232,198,127,.5); }
+.section-process .process-grid li{ border-top-color: rgba(232,198,127,.5); background: transparent; }
+.bundle{ background: radial-gradient(ellipse at 85% 10%, rgba(232,198,127,.14), transparent 45%), linear-gradient(120deg, #15100c, #2a2119); border: 1px solid rgba(232,198,127,.25); color: var(--text); }
+.bundle .btn-ink{ background: var(--honey); border-color: var(--honey); color: var(--dark); }
+.bundle .ebook-price-note{ color: var(--text-soft); }
+.marquee{ background: var(--dark); }
+
+/* Forms */
+input, select, textarea, .quote-form textarea, .you-form textarea, .you-form input, .you-form select{ background: #1d1712; color: var(--ink); border-color: var(--thread); }
+input::placeholder, textarea::placeholder{ color: #9c8b74; }
+.form-note.form-error{ color: #ff9d8a; }
+.form-note{ color: #a9c99a; }
+
+/* My Work, case studies, demos page */
+.blog-empty{ background: rgba(48,38,30,.6); border-color: rgba(232,198,127,.35); }
+.demo-callout{ background: rgba(232,198,127,.08); }
+.play{ background: rgba(255,243,226,.95); color: var(--dark); }
+.play-icon{ background: var(--dark); }
+.demo-stage:hover .play, .demo-stage:focus-visible .play{ background: #fff3e2; }
+.laptop-screen, .st-screen, .phone, .st-phone{ background: #0f0b08; box-shadow: 0 0 0 1px rgba(232,198,127,.18), 0 30px 60px rgba(0,0,0,.5); }
+.laptop-base, .st-base{ border-top-color: #5b4a39; }
+
+/* Placeholder notes on legal pages keep their yellow highlight for clarity. */
+.placeholder{ background: #fbe9a6; color: #5a4300; }
+
+/* Closing band: a little deeper than the page so it still reads as the finale. */
+.cta-band{ background: radial-gradient(ellipse at 75% 20%, rgba(232,198,127,.18), transparent 45%), linear-gradient(135deg, #3a2c20, #15100c); border-top: 1px solid var(--thread); }
+
+/* Story on dark: the gold thread glows a little more. */
+.st-thread path{ stroke: var(--honey); filter: drop-shadow(0 0 8px rgba(232,198,127,.55)); }
+
+/* Typewriter caret on the hero's highlighted words (cinematic.js) */
+.typer.typing::after{
+  content: ""; display: inline-block; width: 2px; height: .9em; margin-left: 4px; vertical-align: -.08em;
+  background: var(--honey); animation: caret 1s steps(1) infinite;
+}
+@keyframes caret{ 50%{ opacity: 0; } }
+
+/* Journal ruled sheet on dark: a dark page with faint gold rules. */
+.ruled-sheet{ background: repeating-linear-gradient(to bottom, transparent, transparent 31px, rgba(232,198,127,.18) 32px), linear-gradient(#1d1712, #1d1712); }
+.ruled-sheet textarea, .ruled-sheet input{ background: transparent; color: var(--ink); }
