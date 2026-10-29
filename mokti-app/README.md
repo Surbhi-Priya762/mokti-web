@@ -118,3 +118,11 @@ Netlify gives you a live link immediately, like `random-name-123.netlify.app`.
 2. Supabase backend so Public journal entries + Quotes are visible to *everyone*, not just you.
 3. Simple content-unlock-after-payment flow (email delivery to start, automated later).
 4. Blog Post section pulling from real posts instead of placeholders.
+
+## Blog
+
+Posts live in `blog/posts/` as Markdown files with a small header (title, date, summary, cover). On every Netlify deploy, `scripts/build-blog.mjs` turns them into `blog/index.html`, one page per post at `/blog/<slug>/`, and `blog/posts.json`. The home page's "From the blog" strip reads that JSON. Those generated files are not committed (see `.gitignore`); run `node scripts/build-blog.mjs` to see them locally.
+
+To write a post, open `https://mokti.in/admin/` and sign in with GitHub (Decap CMS, set up in `admin/config.yml`). New posts start as drafts. **Publish** commits the post to `main`, which triggers one Netlify deploy (15 credits). Sign-in needs a GitHub OAuth app added once in Netlify under Access & security > OAuth.
+
+The old Writing section and Journal page were removed on 2026-10-29; `/journal.html` redirects to `/blog/`.

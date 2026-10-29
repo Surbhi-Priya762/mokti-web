@@ -1,0 +1,42 @@
+# Decap CMS settings for the Mokti blog. Sign-in goes through GitHub using
+# Netlify's OAuth provider (Netlify: Project configuration > Access & security > OAuth).
+backend:
+  name: github
+  repo: Surbhi-Priya762/mokti-web
+  branch: main
+  commit_messages:
+    create: 'Blog: new post "{{slug}}"'
+    update: 'Blog: update "{{slug}}"'
+    delete: 'Blog: delete "{{slug}}"'
+    uploadMedia: 'Blog: upload "{{path}}"'
+    deleteMedia: 'Blog: delete "{{path}}"'
+
+# Drafts and "In review" stay off the site. Only "Publish" puts a post live.
+publish_mode: editorial_workflow
+
+site_url: https://mokti.in
+display_url: https://mokti.in/blog/
+logo_url: https://mokti.in/cover-ai-combo.jpg
+
+media_folder: mokti-app/blog/images
+public_folder: /blog/images
+
+collections:
+  - name: posts
+    label: Blog posts
+    label_singular: Blog post
+    folder: mokti-app/blog/posts
+    create: true
+    slug: '{{slug}}'
+    extension: md
+    format: frontmatter
+    summary: '{{title}} · {{date | date("D MMM YYYY")}}'
+    sortable_fields: [date, title]
+    preview_path: 'blog/{{slug}}/'
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Publish date, name: date, widget: datetime, date_format: 'DD MMM YYYY', time_format: false, format: 'YYYY-MM-DD' }
+      - { label: 'Short summary (shows on the blog list and in WhatsApp previews)', name: summary, widget: text, required: false }
+      - { label: 'Cover image', name: cover, widget: image, required: false }
+      - { label: 'Cover image description (for people who cannot see it)', name: cover_alt, widget: string, required: false }
+      - { label: Post, name: body, widget: markdown, buttons: [bold, italic, link, heading-two, heading-three, quote, bulleted-list, numbered-list], editor_components: [image] }
