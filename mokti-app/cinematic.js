@@ -33,6 +33,31 @@
   }, { threshold: 0.25 }) : null;
   if (player) videos.forEach(v => player.observe(v));
 
+  // ---------- Story chapters: pin each one and drive its pieces by scroll ----------
+  // --e goes 0 to 1 as a chapter scrolls into view, --p 0 to 1 while it is pinned.
+  const story = document.querySelector('.story');
+  if (story) {
+    story.classList.add('story-on');
+    const chapters = [...story.querySelectorAll('.st-chapter')];
+    const clamp01 = n => Math.min(1, Math.max(0, n));
+    let queued = false;
+    const update = () => {
+      queued = false;
+      const vh = window.innerHeight;
+      chapters.forEach(ch => {
+        const r = ch.getBoundingClientRect();
+        const pin = ch.firstElementChild.offsetHeight;
+        const top = parseFloat(getComputedStyle(ch.firstElementChild).top) || 0;
+        ch.style.setProperty('--e', clamp01((vh - r.top) / (vh - top)).toFixed(3));
+        ch.style.setProperty('--p', clamp01((top - r.top) / (r.height - pin)).toFixed(3));
+      });
+    };
+    const queue = () => { if (!queued) { queued = true; requestAnimationFrame(update); } };
+    window.addEventListener('scroll', queue, { passive: true });
+    window.addEventListener('resize', queue);
+    update();
+  }
+
   // ---------- Scroll reveals (one shared observer) ----------
   const revealTargets = '.section-head, .offer, .process-grid li, .service, .package, .guide-card, .ebook-card, .bundle, .work-item, .work-stats li, .tee, .writing-panel, .cta-inner, .info-inner > *, .feature-text, .work-strip a, .cs-body section, .cs-next';
   const revealer = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
