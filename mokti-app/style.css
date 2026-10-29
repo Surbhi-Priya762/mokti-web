@@ -806,3 +806,4 @@ body{ font-variant-numeric: lining-nums; }
 .demo-note p{ color: var(--text-soft); }
 @media (max-width: 960px){ .demo-feature.flip .feature-stage{ order: 0; } }
 .demo-callout{ margin: 36px 0 0; padding: 18px 22px; border-radius: 12px; background: var(--soft-yellow); border: 1px solid rgba(199,164,107,0.35); font-size: 16px; }
+.package-note{ margin: 16px 0 0; }
